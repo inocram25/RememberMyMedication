@@ -1,0 +1,695 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AF136E41CD29CE900FD16FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E31CD29CE900FD16FF /* AppDelegate.swift */; };
+		9AF136E61CD29CE900FD16FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E51CD29CE900FD16FF /* ViewController.swift */; };
+		9AF136E91CD29CE900FD16FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136E71CD29CE900FD16FF /* Main.storyboard */; };
+		9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */; };
+		9AF136EE1CD29CE900FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136ED1CD29CE900FD16FF /* Assets.xcassets */; };
+		9AF136F11CD29CE900FD16FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */; };
+		9AF136FC1CD29CE900FD16FF /* RememberMedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136FB1CD29CE900FD16FF /* RememberMedicationTests.swift */; };
+		9AF1370C1CD29D0500FD16FF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF1370A1CD29D0500FD16FF /* Interface.storyboard */; };
+		9AF1370E1CD29D0500FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF1370D1CD29D0500FD16FF /* Assets.xcassets */; };
+		9AF137151CD29D0500FD16FF /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9AF137141CD29D0500FD16FF /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9AF1371C1CD29D0500FD16FF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1371B1CD29D0500FD16FF /* InterfaceController.swift */; };
+		9AF1371E1CD29D0500FD16FF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1371D1CD29D0500FD16FF /* ExtensionDelegate.swift */; };
+		9AF137201CD29D0500FD16FF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1371F1CD29D0500FD16FF /* NotificationController.swift */; };
+		9AF137221CD29D0500FD16FF /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF137211CD29D0500FD16FF /* GlanceController.swift */; };
+		9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF137231CD29D0500FD16FF /* ComplicationController.swift */; };
+		9AF137261CD29D0500FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF137251CD29D0500FD16FF /* Assets.xcassets */; };
+		9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9AF137081CD29D0500FD16FF /* Watch.app */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9AF136F81CD29CE900FD16FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF136D81CD29CE800FD16FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF136DF1CD29CE800FD16FF;
+			remoteInfo = RememberMedication;
+		};
+		9AF137161CD29D0500FD16FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF136D81CD29CE800FD16FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF137131CD29D0500FD16FF;
+			remoteInfo = "Watch Extension";
+		};
+		9AF137281CD29D0500FD16FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF136D81CD29CE800FD16FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF137071CD29D0500FD16FF;
+			remoteInfo = Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9AF1372E1CD29D0500FD16FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9AF137151CD29D0500FD16FF /* Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF137321CD29D0500FD16FF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9AF136E01CD29CE800FD16FF /* RememberMedication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMedication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF136E31CD29CE900FD16FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AF136E51CD29CE900FD16FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9AF136E81CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RememberMedication.xcdatamodel; sourceTree = "<group>"; };
+		9AF136ED1CD29CE900FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF136F01CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AF136F21CD29CE900FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF136F71CD29CE900FD16FF /* RememberMedicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMedicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF136FB1CD29CE900FD16FF /* RememberMedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberMedicationTests.swift; sourceTree = "<group>"; };
+		9AF136FD1CD29CE900FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF137081CD29D0500FD16FF /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF1370B1CD29D0500FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9AF1370D1CD29D0500FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF1370F1CD29D0500FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF137141CD29D0500FD16FF /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF1371A1CD29D0500FD16FF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		9AF1371B1CD29D0500FD16FF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9AF1371D1CD29D0500FD16FF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9AF1371F1CD29D0500FD16FF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9AF137211CD29D0500FD16FF /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		9AF137231CD29D0500FD16FF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9AF137251CD29D0500FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF137271CD29D0500FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AF136DD1CD29CE800FD16FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF136F41CD29CE900FD16FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF137111CD29D0500FD16FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AF136D71CD29CE800FD16FF = {
+			isa = PBXGroup;
+			children = (
+				9AF136E21CD29CE900FD16FF /* RememberMedication */,
+				9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */,
+				9AF137091CD29D0500FD16FF /* Watch */,
+				9AF137181CD29D0500FD16FF /* Watch Extension */,
+				9AF136E11CD29CE800FD16FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9AF136E11CD29CE800FD16FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AF136E01CD29CE800FD16FF /* RememberMedication.app */,
+				9AF136F71CD29CE900FD16FF /* RememberMedicationTests.xctest */,
+				9AF137081CD29D0500FD16FF /* Watch.app */,
+				9AF137141CD29D0500FD16FF /* Watch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AF136E21CD29CE900FD16FF /* RememberMedication */ = {
+			isa = PBXGroup;
+			children = (
+				9AF136E31CD29CE900FD16FF /* AppDelegate.swift */,
+				9AF136E51CD29CE900FD16FF /* ViewController.swift */,
+				9AF136E71CD29CE900FD16FF /* Main.storyboard */,
+				9AF136ED1CD29CE900FD16FF /* Assets.xcassets */,
+				9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */,
+				9AF136F21CD29CE900FD16FF /* Info.plist */,
+				9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */,
+			);
+			path = RememberMedication;
+			sourceTree = "<group>";
+		};
+		9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9AF136FB1CD29CE900FD16FF /* RememberMedicationTests.swift */,
+				9AF136FD1CD29CE900FD16FF /* Info.plist */,
+			);
+			path = RememberMedicationTests;
+			sourceTree = "<group>";
+		};
+		9AF137091CD29D0500FD16FF /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				9AF1370A1CD29D0500FD16FF /* Interface.storyboard */,
+				9AF1370D1CD29D0500FD16FF /* Assets.xcassets */,
+				9AF1370F1CD29D0500FD16FF /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		9AF137181CD29D0500FD16FF /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9AF1371B1CD29D0500FD16FF /* InterfaceController.swift */,
+				9AF1371D1CD29D0500FD16FF /* ExtensionDelegate.swift */,
+				9AF1371F1CD29D0500FD16FF /* NotificationController.swift */,
+				9AF137211CD29D0500FD16FF /* GlanceController.swift */,
+				9AF137231CD29D0500FD16FF /* ComplicationController.swift */,
+				9AF137251CD29D0500FD16FF /* Assets.xcassets */,
+				9AF137271CD29D0500FD16FF /* Info.plist */,
+				9AF137191CD29D0500FD16FF /* Supporting Files */,
+			);
+			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
+		9AF137191CD29D0500FD16FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AF1371A1CD29D0500FD16FF /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AF136DF1CD29CE800FD16FF /* RememberMedication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AF137001CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedication" */;
+			buildPhases = (
+				9AF136DC1CD29CE800FD16FF /* Sources */,
+				9AF136DD1CD29CE800FD16FF /* Frameworks */,
+				9AF136DE1CD29CE800FD16FF /* Resources */,
+				9AF137321CD29D0500FD16FF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AF137291CD29D0500FD16FF /* PBXTargetDependency */,
+			);
+			name = RememberMedication;
+			productName = RememberMedication;
+			productReference = 9AF136E01CD29CE800FD16FF /* RememberMedication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9AF136F61CD29CE900FD16FF /* RememberMedicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AF137031CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedicationTests" */;
+			buildPhases = (
+				9AF136F31CD29CE900FD16FF /* Sources */,
+				9AF136F41CD29CE900FD16FF /* Frameworks */,
+				9AF136F51CD29CE900FD16FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AF136F91CD29CE900FD16FF /* PBXTargetDependency */,
+			);
+			name = RememberMedicationTests;
+			productName = RememberMedicationTests;
+			productReference = 9AF136F71CD29CE900FD16FF /* RememberMedicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9AF137071CD29D0500FD16FF /* Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AF1372F1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch" */;
+			buildPhases = (
+				9AF137061CD29D0500FD16FF /* Resources */,
+				9AF1372E1CD29D0500FD16FF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AF137171CD29D0500FD16FF /* PBXTargetDependency */,
+			);
+			name = Watch;
+			productName = Watch;
+			productReference = 9AF137081CD29D0500FD16FF /* Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9AF137131CD29D0500FD16FF /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AF1372B1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				9AF137101CD29D0500FD16FF /* Sources */,
+				9AF137111CD29D0500FD16FF /* Frameworks */,
+				9AF137121CD29D0500FD16FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			productName = "Watch Extension";
+			productReference = 9AF137141CD29D0500FD16FF /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AF136D81CD29CE800FD16FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alexandre Calil Marconi";
+				TargetAttributes = {
+					9AF136DF1CD29CE800FD16FF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9AF136F61CD29CE900FD16FF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9AF136DF1CD29CE800FD16FF;
+					};
+					9AF137071CD29D0500FD16FF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9AF137131CD29D0500FD16FF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 9AF136DB1CD29CE800FD16FF /* Build configuration list for PBXProject "RememberMedication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AF136D71CD29CE800FD16FF;
+			productRefGroup = 9AF136E11CD29CE800FD16FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AF136DF1CD29CE800FD16FF /* RememberMedication */,
+				9AF136F61CD29CE900FD16FF /* RememberMedicationTests */,
+				9AF137071CD29D0500FD16FF /* Watch */,
+				9AF137131CD29D0500FD16FF /* Watch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AF136DE1CD29CE800FD16FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF136F11CD29CE900FD16FF /* LaunchScreen.storyboard in Resources */,
+				9AF136EE1CD29CE900FD16FF /* Assets.xcassets in Resources */,
+				9AF136E91CD29CE900FD16FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF136F51CD29CE900FD16FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF137061CD29D0500FD16FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF1370E1CD29D0500FD16FF /* Assets.xcassets in Resources */,
+				9AF1370C1CD29D0500FD16FF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF137121CD29D0500FD16FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF137261CD29D0500FD16FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AF136DC1CD29CE800FD16FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */,
+				9AF136E61CD29CE900FD16FF /* ViewController.swift in Sources */,
+				9AF136E41CD29CE900FD16FF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF136F31CD29CE900FD16FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF136FC1CD29CE900FD16FF /* RememberMedicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AF137101CD29D0500FD16FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF137201CD29D0500FD16FF /* NotificationController.swift in Sources */,
+				9AF1371E1CD29D0500FD16FF /* ExtensionDelegate.swift in Sources */,
+				9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */,
+				9AF1371C1CD29D0500FD16FF /* InterfaceController.swift in Sources */,
+				9AF137221CD29D0500FD16FF /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9AF136F91CD29CE900FD16FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AF136DF1CD29CE800FD16FF /* RememberMedication */;
+			targetProxy = 9AF136F81CD29CE900FD16FF /* PBXContainerItemProxy */;
+		};
+		9AF137171CD29D0500FD16FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AF137131CD29D0500FD16FF /* Watch Extension */;
+			targetProxy = 9AF137161CD29D0500FD16FF /* PBXContainerItemProxy */;
+		};
+		9AF137291CD29D0500FD16FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AF137071CD29D0500FD16FF /* Watch */;
+			targetProxy = 9AF137281CD29D0500FD16FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9AF136E71CD29CE900FD16FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF136E81CD29CE900FD16FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF136F01CD29CE900FD16FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9AF1370A1CD29D0500FD16FF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF1370B1CD29D0500FD16FF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AF136FE1CD29CE900FD16FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9AF136FF1CD29CE900FD16FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AF137011CD29CE900FD16FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RememberMedication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9AF137021CD29CE900FD16FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RememberMedication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9AF137041CD29CE900FD16FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RememberMedicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMedication.app/RememberMedication";
+			};
+			name = Debug;
+		};
+		9AF137051CD29CE900FD16FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RememberMedicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RememberMedication.app/RememberMedication";
+			};
+			name = Release;
+		};
+		9AF1372C1CD29D0500FD16FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		9AF1372D1CD29D0500FD16FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		9AF137301CD29D0500FD16FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		9AF137311CD29D0500FD16FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AF136DB1CD29CE800FD16FF /* Build configuration list for PBXProject "RememberMedication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF136FE1CD29CE900FD16FF /* Debug */,
+				9AF136FF1CD29CE900FD16FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AF137001CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF137011CD29CE900FD16FF /* Debug */,
+				9AF137021CD29CE900FD16FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9AF137031CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF137041CD29CE900FD16FF /* Debug */,
+				9AF137051CD29CE900FD16FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9AF1372B1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF1372C1CD29D0500FD16FF /* Debug */,
+				9AF1372D1CD29D0500FD16FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9AF1372F1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF137301CD29D0500FD16FF /* Debug */,
+				9AF137311CD29D0500FD16FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */,
+			);
+			currentVersion = 9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */;
+			path = RememberMedication.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9AF136D81CD29CE800FD16FF /* Project object */;
+}
