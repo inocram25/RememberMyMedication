@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */; };
+		9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */; };
+		9A2F6E6D1CD3CF90006F3133 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E6C1CD3CF90006F3133 /* ManagedObjectContextSettable.swift */; };
+		9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */; };
+		9A2F6E731CD3D67C006F3133 /* ConsultasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */; };
 		9AF136E41CD29CE900FD16FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E31CD29CE900FD16FF /* AppDelegate.swift */; };
-		9AF136E61CD29CE900FD16FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E51CD29CE900FD16FF /* ViewController.swift */; };
+		9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */; };
 		9AF136E91CD29CE900FD16FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136E71CD29CE900FD16FF /* Main.storyboard */; };
 		9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */; };
 		9AF136EE1CD29CE900FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136ED1CD29CE900FD16FF /* Assets.xcassets */; };
@@ -24,6 +29,8 @@
 		9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF137231CD29D0500FD16FF /* ComplicationController.swift */; };
 		9AF137261CD29D0500FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF137251CD29D0500FD16FF /* Assets.xcassets */; };
 		9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9AF137081CD29D0500FD16FF /* Watch.app */; };
+		9AF137341CD29EE500FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137331CD29EE500FD16FF /* HealthKit.framework */; };
+		9AF137381CD29F7C00FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137371CD29F7C00FD16FF /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,14 +83,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WithColor.swift"; sourceTree = "<group>"; };
+		9A2F6E6C1CD3CF90006F3133 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
+		9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultasViewController.swift; sourceTree = "<group>"; };
 		9AF136E01CD29CE800FD16FF /* RememberMedication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMedication.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AF136E31CD29CE900FD16FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF136E51CD29CE900FD16FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9AF136E31CD29CE900FD16FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RememberMedication/AppDelegate.swift; sourceTree = "<group>"; };
+		9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesViewController.swift; sourceTree = "<group>"; };
 		9AF136E81CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RememberMedication.xcdatamodel; sourceTree = "<group>"; };
-		9AF136ED1CD29CE900FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF136ED1CD29CE900FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RememberMedication/Assets.xcassets; sourceTree = "<group>"; };
 		9AF136F01CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9AF136F21CD29CE900FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF136F21CD29CE900FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RememberMedication/Info.plist; sourceTree = "<group>"; };
 		9AF136F71CD29CE900FD16FF /* RememberMedicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RememberMedicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF136FB1CD29CE900FD16FF /* RememberMedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberMedicationTests.swift; sourceTree = "<group>"; };
 		9AF136FD1CD29CE900FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +112,10 @@
 		9AF137231CD29D0500FD16FF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		9AF137251CD29D0500FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF137271CD29D0500FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF137331CD29EE500FD16FF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RememberMedication.entitlements; path = RememberMedication/RememberMedication.entitlements; sourceTree = "<group>"; };
+		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
+		9AF137371CD29F7C00FD16FF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF137341CD29EE500FD16FF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,15 +138,82 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF137381CD29F7C00FD16FF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A2F6E631CD3CE17006F3133 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F6E701CD3D151006F3133 /* Custom */,
+				9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */,
+				9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9A2F6E641CD3CE21006F3133 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9A2F6E651CD3CE2A006F3133 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9A2F6E661CD3CE31006F3133 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9A2F6E6B1CD3CF70006F3133 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F6E6C1CD3CF90006F3133 /* ManagedObjectContextSettable.swift */,
+			);
+			name = Persistence;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		9A2F6E701CD3D151006F3133 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */,
+				9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		9A2F6E711CD3D166006F3133 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */,
+				9AF136E31CD29CE900FD16FF /* AppDelegate.swift */,
+				9AF136ED1CD29CE900FD16FF /* Assets.xcassets */,
+				9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */,
+				9AF136F21CD29CE900FD16FF /* Info.plist */,
+				9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		9AF136D71CD29CE800FD16FF = {
 			isa = PBXGroup;
 			children = (
+				9AF137371CD29F7C00FD16FF /* HealthKit.framework */,
+				9AF137331CD29EE500FD16FF /* HealthKit.framework */,
 				9AF136E21CD29CE900FD16FF /* RememberMedication */,
 				9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */,
 				9AF137091CD29D0500FD16FF /* Watch */,
@@ -152,13 +236,13 @@
 		9AF136E21CD29CE900FD16FF /* RememberMedication */ = {
 			isa = PBXGroup;
 			children = (
-				9AF136E31CD29CE900FD16FF /* AppDelegate.swift */,
-				9AF136E51CD29CE900FD16FF /* ViewController.swift */,
 				9AF136E71CD29CE900FD16FF /* Main.storyboard */,
-				9AF136ED1CD29CE900FD16FF /* Assets.xcassets */,
-				9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */,
-				9AF136F21CD29CE900FD16FF /* Info.plist */,
-				9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */,
+				9A2F6E711CD3D166006F3133 /* Resources */,
+				9A2F6E6B1CD3CF70006F3133 /* Persistence */,
+				9A2F6E661CD3CE31006F3133 /* Extensions */,
+				9A2F6E651CD3CE2A006F3133 /* Models */,
+				9A2F6E641CD3CE21006F3133 /* Views */,
+				9A2F6E631CD3CE17006F3133 /* ViewControllers */,
 			);
 			path = RememberMedication;
 			sourceTree = "<group>";
@@ -185,6 +269,7 @@
 		9AF137181CD29D0500FD16FF /* Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */,
 				9AF1371B1CD29D0500FD16FF /* InterfaceController.swift */,
 				9AF1371D1CD29D0500FD16FF /* ExtensionDelegate.swift */,
 				9AF1371F1CD29D0500FD16FF /* NotificationController.swift */,
@@ -291,6 +376,12 @@
 				TargetAttributes = {
 					9AF136DF1CD29CE800FD16FF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HZGB8HVWTX;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					9AF136F61CD29CE900FD16FF = {
 						CreatedOnToolsVersion = 7.3;
@@ -301,6 +392,12 @@
 					};
 					9AF137131CD29D0500FD16FF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HZGB8HVWTX;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -367,8 +464,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */,
 				9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */,
-				9AF136E61CD29CE900FD16FF /* ViewController.swift in Sources */,
+				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
+				9A2F6E731CD3D67C006F3133 /* ConsultasViewController.swift in Sources */,
+				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
+				9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */,
+				9A2F6E6D1CD3CF90006F3133 /* ManagedObjectContextSettable.swift in Sources */,
 				9AF136E41CD29CE900FD16FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +530,7 @@
 				9AF136F01CD29CE900FD16FF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = RememberMedication;
 			sourceTree = "<group>";
 		};
 		9AF1370A1CD29D0500FD16FF /* Interface.storyboard */ = {
@@ -478,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -517,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -528,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RememberMedication/RememberMedication.entitlements;
 				INFOPLIST_FILE = RememberMedication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication;
@@ -539,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RememberMedication/RememberMedication.entitlements;
 				INFOPLIST_FILE = RememberMedication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication;
@@ -574,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp.watchkitextension;
@@ -589,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandre.RememberMedication.watchkitapp.watchkitextension;
@@ -651,6 +758,7 @@
 				9AF137021CD29CE900FD16FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AF137031CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedicationTests" */ = {
 			isa = XCConfigurationList;
@@ -659,6 +767,7 @@
 				9AF137051CD29CE900FD16FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AF1372B1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
 			isa = XCConfigurationList;
@@ -667,6 +776,7 @@
 				9AF1372D1CD29D0500FD16FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AF1372F1CD29D0500FD16FF /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
@@ -675,6 +785,7 @@
 				9AF137311CD29D0500FD16FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -685,7 +796,8 @@
 				9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */,
 			);
 			currentVersion = 9AF136EB1CD29CE900FD16FF /* RememberMedication.xcdatamodel */;
-			path = RememberMedication.xcdatamodeld;
+			name = RememberMedication.xcdatamodeld;
+			path = RememberMedication/RememberMedication.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

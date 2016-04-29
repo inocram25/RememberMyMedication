@@ -8,15 +8,22 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
+import HealthKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let healthStore = HKHealthStore()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
         return true
     }
 
@@ -104,6 +111,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+    
+    func applicationShouldRequestHealthAuthorization(application: UIApplication) {
+        
+        self.healthStore.handleAuthorizationForExtensionWithCompletion { success, error in
+            
         }
     }
 
