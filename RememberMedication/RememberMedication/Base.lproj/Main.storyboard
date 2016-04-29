@@ -102,20 +102,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzy-GG-TyC">
-                                <rect key="frame" x="402" y="341" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-wf-pMZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicinesCell" id="xgq-uc-MSH" customClass="MedicinesTableViewCell" customModule="RememberMedication" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgq-uc-MSH" id="6O6-fT-5Pk">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-Gy-oiJ">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nVA-Gy-oiJ" firstAttribute="centerY" secondItem="6O6-fT-5Pk" secondAttribute="centerY" id="FkS-aJ-IeM"/>
+                                                <constraint firstItem="nVA-Gy-oiJ" firstAttribute="leading" secondItem="6O6-fT-5Pk" secondAttribute="leading" constant="8" id="Ur6-fK-chC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="medicineNameLabel" destination="nVA-Gy-oiJ" id="B5X-N5-0s7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bMv-ED-8vy" id="qYb-Dd-hlT"/>
+                                    <outlet property="delegate" destination="bMv-ED-8vy" id="vqc-1z-M6c"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yzy-GG-TyC" firstAttribute="centerX" secondItem="SuT-aU-BhD" secondAttribute="centerX" id="67Q-FM-r6t"/>
-                            <constraint firstItem="yzy-GG-TyC" firstAttribute="centerY" secondItem="SuT-aU-BhD" secondAttribute="centerY" id="zvV-gS-Vbk"/>
+                            <constraint firstItem="goZ-wf-pMZ" firstAttribute="top" secondItem="Q8b-Cw-Ani" secondAttribute="bottom" constant="142" id="2IG-RG-VNE"/>
+                            <constraint firstItem="goZ-wf-pMZ" firstAttribute="leading" secondItem="SuT-aU-BhD" secondAttribute="leading" id="AwZ-xa-teC"/>
+                            <constraint firstAttribute="trailing" secondItem="goZ-wf-pMZ" secondAttribute="trailing" constant="196" id="Jdg-1t-NsE"/>
+                            <constraint firstAttribute="trailing" secondItem="goZ-wf-pMZ" secondAttribute="trailing" id="K8v-BY-t1V"/>
+                            <constraint firstItem="PqZ-Ls-uaI" firstAttribute="top" secondItem="goZ-wf-pMZ" secondAttribute="bottom" id="U77-EW-n6E"/>
+                            <constraint firstItem="PqZ-Ls-uaI" firstAttribute="top" secondItem="goZ-wf-pMZ" secondAttribute="bottom" constant="217" id="d0O-Dl-aym"/>
+                            <constraint firstItem="goZ-wf-pMZ" firstAttribute="top" secondItem="Q8b-Cw-Ani" secondAttribute="bottom" id="qJt-lb-wg3"/>
+                            <constraint firstItem="goZ-wf-pMZ" firstAttribute="leading" secondItem="SuT-aU-BhD" secondAttribute="leading" id="yWY-mq-6s0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2IG-RG-VNE"/>
+                                <exclude reference="AwZ-xa-teC"/>
+                                <exclude reference="Jdg-1t-NsE"/>
+                                <exclude reference="d0O-Dl-aym"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="rpa-qn-AL7"/>
+                    <navigationItem key="navigationItem" id="rpa-qn-AL7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="aEH-52-zQX">
+                            <connections>
+                                <action selector="addMedicineButton:" destination="bMv-ED-8vy" id="Gxu-Jw-Gcb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="medicinesTableView" destination="goZ-wf-pMZ" id="qX7-rw-4Am"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLl-3n-OvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
