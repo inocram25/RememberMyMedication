@@ -43,23 +43,23 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label alignment="left" text="test" id="XkS-y5-khE"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                        <segue destination="wJ2-H2-dXX" kind="relationship" relationship="dynamicNotificationInterface" id="ZGe-FS-Vt0"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
+        <!--Dynamic Notification Interface Controller-->
+        <scene sceneID="t2d-22-CoR">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Watch" customModuleProvider="target"/>
+                <controller id="wJ2-H2-dXX"/>
             </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
+            <point key="canvasLocation" x="535" y="1001"/>
         </scene>
     </scenes>
 </document>

@@ -218,6 +218,7 @@
 				9AF137371CD29F7C00FD16FF /* HealthKit.framework */,
 				9AF137331CD29EE500FD16FF /* HealthKit.framework */,
 				9AF136E21CD29CE900FD16FF /* RememberMedication */,
+				9AF136E71CD29CE900FD16FF /* Main.storyboard */,
 				9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */,
 				9AF137091CD29D0500FD16FF /* Watch */,
 				9AF137181CD29D0500FD16FF /* Watch Extension */,
@@ -239,7 +240,6 @@
 		9AF136E21CD29CE900FD16FF /* RememberMedication */ = {
 			isa = PBXGroup;
 			children = (
-				9AF136E71CD29CE900FD16FF /* Main.storyboard */,
 				9A2F6E711CD3D166006F3133 /* Resources */,
 				9A2F6E6B1CD3CF70006F3133 /* Persistence */,
 				9A2F6E661CD3CE31006F3133 /* Extensions */,
@@ -526,6 +526,7 @@
 				9AF136E81CD29CE900FD16FF /* Base */,
 			);
 			name = Main.storyboard;
+			path = RememberMedication;
 			sourceTree = "<group>";
 		};
 		9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */ = {

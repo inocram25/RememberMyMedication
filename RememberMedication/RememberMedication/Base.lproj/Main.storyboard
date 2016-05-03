@@ -8,7 +8,6 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="yvK-iz-5Yd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BJQ-OX-UjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="zZG-0E-Aaf" customClass="CustomTabBarController" customModule="RememberMedication" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="z1V-Ap-2eg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -20,6 +19,7 @@
                         <segue destination="gOc-iv-dhM" kind="relationship" relationship="viewControllers" id="moV-2M-BxW"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJQ-OX-UjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-345" y="-738"/>
         </scene>
@@ -110,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgq-uc-MSH" id="6O6-fT-5Pk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-Gy-oiJ">
