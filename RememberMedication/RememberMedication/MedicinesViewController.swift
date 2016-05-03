@@ -22,10 +22,17 @@ class MedicinesViewController: UIViewController {
         scheduleLocal(d)
         scheduleLocal(a)
         
-        medicines.append("gardenal")
-        medicines.append("viagra")
-        medicines.append("prosac")
-        medicines.append("boa noite cinderela")
+//        medicines.append("gardenal")
+//        medicines.append("viagra")
+//        medicines.append("prosac")
+//        medicines.append("boa noite cinderela")
+        
+        let data = MedicationDAO.returnAll()! as [MedicationCD]
+        
+        medicines.removeAll()
+        for meds in data {
+            medicines.append(meds.medicationName)
+        }
 
     }
     
@@ -39,7 +46,17 @@ class MedicinesViewController: UIViewController {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     @IBAction func addMedicineButton(sender: AnyObject) {
-        medicines.append("remedio")
+        
+        let medication = "Gardenal"
+        let amount = 666
+        let takingEach = 4
+        let starting = NSDate(timeIntervalSinceNow: 10)
+
+        MedicationServices.createDataCD(medication, amount: amount, takingEach: takingEach, startTaking: starting)
+
+        
+        
+//        medicines.append("remedio")
         medicinesTableView.reloadData()
     }
 
