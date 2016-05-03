@@ -39,6 +39,7 @@
 		9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9AF137081CD29D0500FD16FF /* Watch.app */; };
 		9AF137341CD29EE500FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137331CD29EE500FD16FF /* HealthKit.framework */; };
 		9AF137381CD29F7C00FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137371CD29F7C00FD16FF /* HealthKit.framework */; };
+		CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RememberMedication.entitlements; path = RememberMedication/RememberMedication.entitlements; sourceTree = "<group>"; };
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		9AF137371CD29F7C00FD16FF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				9A2F6E701CD3D151006F3133 /* Custom */,
 				9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */,
 				9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */,
+				CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
 				7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */,
 				9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */,
+				CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */,
 				7FC9CD9D1CD7B44B00A87AC0 /* MedicationDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
