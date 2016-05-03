@@ -45,6 +45,7 @@ class MedicinesViewController: UIViewController {
         notification.userInfo = ["CustomField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
+    
     @IBAction func addMedicineButton(sender: AnyObject) {
         
         let medication = "Gardenal"
@@ -54,12 +55,12 @@ class MedicinesViewController: UIViewController {
 
         MedicationServices.createDataCD(medication, amount: amount, takingEach: takingEach, startTaking: starting)
 
-        
-        
-//        medicines.append("remedio")
         medicinesTableView.reloadData()
     }
 
+    @IBAction func unwindSegueToMedicinesViewController(segue: UIStoryboardSegue) {
+        
+    }
 }
 
 extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
