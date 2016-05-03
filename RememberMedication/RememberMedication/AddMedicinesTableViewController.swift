@@ -12,30 +12,29 @@ class AddMedicineTableViewController: UITableViewController {
     
     var pickerVisible = false
     
-    @IBOutlet weak var toggle: UISwitch!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        dateLabel.text = dateFormatter.stringFromDate(NSDate())
+        
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRectZero)
-        
-        
-    }
-    
-    @IBAction func switchAction(sender: AnyObject) {
-        tableView.reloadData()
     }
     
     @IBAction func pickerTest(sender: UIDatePicker) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        // date.text = dateFormatter.stringFromDate(sender.date)
+        dateLabel.text = dateFormatter.stringFromDate(sender.date)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 0 && indexPath.section == 1 {
             pickerVisible = !pickerVisible
             tableView.reloadData()
         }
@@ -44,11 +43,8 @@ class AddMedicineTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if indexPath.row == 2 {
-            if toggle.on == false || pickerVisible == false {
-                return 0.0
-            }
-            return 165.0
+        if indexPath.row == 1 && indexPath.section == 1 {
+            return pickerVisible == false ? 0.0 : 165.0
         }
         return 44.0
     }
