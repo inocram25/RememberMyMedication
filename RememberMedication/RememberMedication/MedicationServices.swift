@@ -8,16 +8,22 @@
 
 import Foundation
 
-class MedicationServices{
+struct Medication {
+    let name: String
+    let amount: NSInteger
+    let takingEach: NSInteger
+    let startTaking: NSDate
+}
+
+class MedicationServices {
     
-    static func createDataCD(medicationName:String, amount:NSInteger, takingEach:NSInteger, startTaking:NSDate){
+    static func createDataCD(medicaiton: Medication) {
         
         let data:MedicationCD = MedicationCD()
-        
-        data.medicationName = medicationName
-        data.takingEach = takingEach
-        data.startTaking = startTaking
-        data.amount = amount
+        data.medicationName = medicaiton.name
+        data.takingEach = medicaiton.takingEach
+        data.startTaking = medicaiton.startTaking
+        data.amount = medicaiton.amount
         
         MedicationDAO.insert(data)
     }

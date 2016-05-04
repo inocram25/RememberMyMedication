@@ -13,11 +13,14 @@ class AddMedicineTableViewController: UITableViewController {
     var pickerVisible = false
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var dosageTextField: UITextField!
+    
+    let dateFormatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
         dateLabel.text = dateFormatter.stringFromDate(NSDate())
@@ -26,11 +29,15 @@ class AddMedicineTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
-    @IBAction func pickerTest(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+    @IBAction func pickerDate(sender: UIDatePicker) {
         dateLabel.text = dateFormatter.stringFromDate(sender.date)
+    }
+    @IBAction func saveButtonFunction(sender: AnyObject) {
+        
+        guard nameTextfield.text != nil else { return }
+        let date = dateFormatter.dateFromString(dateLabel.text!)
+        let medication = Medication(name: nameTextfield.text!, amount: 1, takingEach: 1, startTaking: date!)
+        MedicationServices.createDataCD(medication)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
