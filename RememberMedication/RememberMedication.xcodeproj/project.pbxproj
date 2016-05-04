@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4474AB1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */; };
+		7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */; };
 		7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */; };
 		7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */; };
 		7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */; };
@@ -92,6 +94,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointimentsTableViewCell.swift; sourceTree = "<group>"; };
+		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
 		7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationCD.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */,
 				9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */,
 				CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */,
+				7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */,
+				7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -515,8 +521,10 @@
 				7FC9CDA11CD7B8BD00A87AC0 /* AppointmentCD.swift in Sources */,
 				7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */,
 				7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */,
+				7F4474AB1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift in Sources */,
 				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
 				7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */,
+				7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */,
 				9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */,
 				9A2F6E731CD3D67C006F3133 /* ConsultasViewController.swift in Sources */,
 				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
