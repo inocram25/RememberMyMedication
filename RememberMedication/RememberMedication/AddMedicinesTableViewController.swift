@@ -33,11 +33,18 @@ class AddMedicineTableViewController: UITableViewController {
         dateLabel.text = dateFormatter.stringFromDate(sender.date)
     }
     @IBAction func saveButtonFunction(sender: AnyObject) {
-        
-        guard nameTextfield.text != nil else { return }
+        guard nameTextfield.text != "" else { return } //Colocar uma notificacao quando o usuario nao colocar o nome do remedio.
         let date = dateFormatter.dateFromString(dateLabel.text!)
         let medication = Medication(name: nameTextfield.text!, amount: 1, takingEach: 1, startTaking: date!)
         MedicationServices.createDataCD(medication)
+        navigationController!.dismissViewControllerAnimated(true) { 
+//            let data = MedicationDAO.returnAll()! as [MedicationCD]
+//            medicines.removeAll()
+//            for meds in data {
+//                medicines.append(meds.medicationName)
+//            }
+//            medicinesTableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

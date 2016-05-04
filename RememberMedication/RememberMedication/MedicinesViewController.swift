@@ -17,23 +17,24 @@ class MedicinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let d = NSDate(timeIntervalSinceNow: 10)
-        let a = NSDate(timeIntervalSinceNow: 15)
-        scheduleLocal(d)
-        scheduleLocal(a)
-        
-//        medicines.append("gardenal")
-//        medicines.append("viagra")
-//        medicines.append("prosac")
-//        medicines.append("boa noite cinderela")
-        
         let data = MedicationDAO.returnAll()! as [MedicationCD]
-        
         medicines.removeAll()
         for meds in data {
             medicines.append(meds.medicationName)
         }
-
+        
+        scheduleLocal(NSDate(timeIntervalSinceNow: 10))
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let data = MedicationDAO.returnAll()! as [MedicationCD]
+        medicines.removeAll()
+        for meds in data {
+            medicines.append(meds.medicationName)
+        }
+        medicinesTableView.reloadData()
     }
     
     func scheduleLocal(date: NSDate) {
@@ -47,19 +48,10 @@ class MedicinesViewController: UIViewController {
     }
     
     @IBAction func addMedicineButton(sender: AnyObject) {
-        
-        let medication = "Gardenal"
-        let amount = 666
-        let takingEach = 4
-        let starting = NSDate(timeIntervalSinceNow: 10)
-
-        MedicationServices.createDataCD(medication, amount: amount, takingEach: takingEach, startTaking: starting)
-
         medicinesTableView.reloadData()
     }
 
     @IBAction func unwindSegueToMedicinesViewController(segue: UIStoryboardSegue) {
-        
     }
 }
 
