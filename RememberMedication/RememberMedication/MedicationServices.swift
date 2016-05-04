@@ -10,22 +10,24 @@ import Foundation
 
 struct Medication {
     let name: String
-    let amount: NSInteger
-    let takingEach: NSInteger
+    let amount: Int64
+    let takingEach: Int64
     let startTaking: NSDate
+    let weekDay: WeekDay
 }
 
 class MedicationServices {
     
-    static func createDataCD(medicaiton: Medication) {
+    static func createDataCD(medication: Medication) {
         
-        let data:MedicationCD = MedicationCD()
-        data.medicationName = medicaiton.name
-        data.takingEach = medicaiton.takingEach
-        data.startTaking = medicaiton.startTaking
-        data.amount = medicaiton.amount
+        let m = MedicationCD()
+        m.name = medication.name
+        m.takingEach = medication.takingEach
+        m.startTaking = medication.startTaking
+        m.amount = medication.amount
+        m.weekDay = medication.weekDay
         
-        MedicationDAO.insert(data)
+        MedicationDAO.insert(m)
     }
     
     static func deleteByName(name: String){
@@ -37,7 +39,6 @@ class MedicationServices {
             let data:MedicationCD? = MedicationDAO.findByName(name)
             if (data != nil)
             {
-                // delete data
                 MedicationDAO.delete(data!)
             }
         })

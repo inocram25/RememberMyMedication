@@ -18,6 +18,8 @@
 		7FC9CDA11CD7B8BD00A87AC0 /* AppointmentCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */; };
 		7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */; };
 		7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */; };
+		9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED621CDAA955002D1785 /* BorderedView.swift */; };
+		9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED641CDAAAEF002D1785 /* WeekDay.swift */; };
 		9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */; };
 		9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */; };
 		9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */; };
@@ -97,14 +99,16 @@
 		7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointimentsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
 		7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationCD.swift; sourceTree = "<group>"; };
-		7FC9CD981CD7B44B00A87AC0 /* MedicationDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDAO.swift; sourceTree = "<group>"; };
-		7FC9CD991CD7B44B00A87AC0 /* MedicationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationServices.swift; sourceTree = "<group>"; };
-		7FC9CD9A1CD7B44B00A87AC0 /* SQLCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLCoordinator.swift; sourceTree = "<group>"; };
-		7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentCD.swift; sourceTree = "<group>"; };
-		7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDAO.swift; sourceTree = "<group>"; };
-		7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentServices.swift; sourceTree = "<group>"; };
+		7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = RememberMedication/DatabaseManager.swift; sourceTree = "<group>"; };
+		7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicationCD.swift; path = RememberMedication/MedicationCD.swift; sourceTree = "<group>"; };
+		7FC9CD981CD7B44B00A87AC0 /* MedicationDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicationDAO.swift; path = RememberMedication/MedicationDAO.swift; sourceTree = "<group>"; };
+		7FC9CD991CD7B44B00A87AC0 /* MedicationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicationServices.swift; path = RememberMedication/MedicationServices.swift; sourceTree = "<group>"; };
+		7FC9CD9A1CD7B44B00A87AC0 /* SQLCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLCoordinator.swift; path = RememberMedication/SQLCoordinator.swift; sourceTree = "<group>"; };
+		7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentCD.swift; path = RememberMedication/AppointmentCD.swift; sourceTree = "<group>"; };
+		7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDAO.swift; path = RememberMedication/AppointmentDAO.swift; sourceTree = "<group>"; };
+		7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentServices.swift; path = RememberMedication/AppointmentServices.swift; sourceTree = "<group>"; };
+		9A04ED621CDAA955002D1785 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
+		9A04ED641CDAAAEF002D1785 /* WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
 		9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WithColor.swift"; sourceTree = "<group>"; };
 		9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -167,29 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7FC9CD921CD7B35800A87AC0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7FC9CD931CD7B3E000A87AC0 /* Data Base */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7FC9CD931CD7B3E000A87AC0 /* Data Base */ = {
-			isa = PBXGroup;
-			children = (
-				7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */,
-				7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */,
-				7FC9CD981CD7B44B00A87AC0 /* MedicationDAO.swift */,
-				7FC9CD991CD7B44B00A87AC0 /* MedicationServices.swift */,
-				7FC9CD9A1CD7B44B00A87AC0 /* SQLCoordinator.swift */,
-				7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */,
-				7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */,
-				7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */,
-			);
-			name = "Data Base";
-			sourceTree = "<group>";
-		};
 		9A2F6E631CD3CE17006F3133 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +188,7 @@
 			children = (
 				9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */,
 				7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */,
+				9A04ED621CDAA955002D1785 /* BorderedView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -214,6 +196,7 @@
 		9A2F6E651CD3CE2A006F3133 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A04ED641CDAAAEF002D1785 /* WeekDay.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +212,14 @@
 		9A2F6E6B1CD3CF70006F3133 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */,
+				7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */,
+				7FC9CD981CD7B44B00A87AC0 /* MedicationDAO.swift */,
+				7FC9CD991CD7B44B00A87AC0 /* MedicationServices.swift */,
+				7FC9CD9A1CD7B44B00A87AC0 /* SQLCoordinator.swift */,
+				7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */,
+				7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */,
+				7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */,
 			);
 			name = Persistence;
 			path = ..;
@@ -291,7 +282,6 @@
 				9A2F6E651CD3CE2A006F3133 /* Model */,
 				9A2F6E641CD3CE21006F3133 /* View */,
 				9A2F6E631CD3CE17006F3133 /* ViewController */,
-				7FC9CD921CD7B35800A87AC0 /* Supporting Files */,
 			);
 			path = RememberMedication;
 			sourceTree = "<group>";
@@ -513,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */,
 				9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */,
 				7FC9CD9F1CD7B44B00A87AC0 /* SQLCoordinator.swift in Sources */,
 				7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */,
@@ -521,6 +512,7 @@
 				7FC9CDA11CD7B8BD00A87AC0 /* AppointmentCD.swift in Sources */,
 				7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */,
 				7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */,
+				9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */,
 				7F4474AB1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift in Sources */,
 				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
 				7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */,

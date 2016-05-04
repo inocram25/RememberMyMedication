@@ -14,25 +14,20 @@ class MedicationDAO{
     
     static func findByName(name: String) -> MedicationCD?
     {
-        // creating fetch request
         let request = NSFetchRequest(entityName: "MedicationCD")
         
         // assign predicate
         request.predicate = NSPredicate(format: "medicationName == %@", name)
         
         // perform search
-        let results:[MedicationCD] = (try! DatabaseManager.sharedInstance.managedObjectContext?.executeFetchRequest(request)) as! [MedicationCD]
-        
-        return results[0]
+        let results = (try! DatabaseManager.sharedInstance.managedObjectContext?.executeFetchRequest(request)) as! [MedicationCD]
+        return results.first
     }
 
     static func returnAll() -> [MedicationCD]?
     {
         // creating fetch request
         let request = NSFetchRequest(entityName: "MedicationCD")
-        
-        // assign predicate
-//        request.predicate = NSPredicate(format: "medicationName == %@", name)
         
         // perform search
         let results:[MedicationCD] = (try! DatabaseManager.sharedInstance.managedObjectContext?.executeFetchRequest(request)) as! [MedicationCD]
@@ -53,7 +48,7 @@ class MedicationDAO{
         } catch let error1 as NSError {
             error.memory = error1
         }
-        if (error != nil)
+        if error != nil
         {
             // log error
             print(error, terminator: "")
@@ -71,10 +66,8 @@ class MedicationDAO{
             error.memory = error1
         }
         
-        // log error
-        if (error != nil)
+        if error != nil
         {
-            // log error
             print(error, terminator: "")
         }
     }

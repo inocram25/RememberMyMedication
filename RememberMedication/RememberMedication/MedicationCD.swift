@@ -9,12 +9,27 @@
 import Foundation
 import CoreData
 
-class MedicationCD: NSManagedObject {
-
-    @NSManaged var medicationName: String
-    @NSManaged var amount: NSInteger
-    @NSManaged var takingEach: NSInteger
+public final class MedicationCD: NSManagedObject {
+    @NSManaged var name: String
+    @NSManaged var amount: Int64
+    @NSManaged var takingEach: Int64
     @NSManaged var startTaking: NSDate
+    @NSManaged private var primitiveWeekDay: NSNumber
+    
+    private static let WeekDayKey = "weekDay"
+    var weekDay: WeekDay {
+        get {
+            willAccessValueForKey(MedicationCD.WeekDayKey)
+            let val = WeekDay(rawValue: primitiveWeekDay.shortValue)
+            didAccessValueForKey(MedicationCD.WeekDayKey)
+            return val
+        }
+        set {
+            willChangeValueForKey(MedicationCD.WeekDayKey)
+            primitiveWeekDay = NSNumber(short: newValue.rawValue)
+            didChangeValueForKey(MedicationCD.WeekDayKey)
+        }
+    }
     
     /// The designated initializer
     convenience init()

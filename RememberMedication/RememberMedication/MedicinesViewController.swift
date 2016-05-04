@@ -17,24 +17,23 @@ class MedicinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let data = MedicationDAO.returnAll()! as [MedicationCD]
-        medicines.removeAll()
-        for meds in data {
-            medicines.append(meds.medicationName)
-        }
-        
+        loadMedicines()
+        medicinesTableView.tableFooterView = UIView()
         scheduleLocal(NSDate(timeIntervalSinceNow: 10))
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        loadMedicines()
+        medicinesTableView.reloadData()
+    }
+    
+    func loadMedicines() {
         let data = MedicationDAO.returnAll()! as [MedicationCD]
         medicines.removeAll()
         for meds in data {
-            medicines.append(meds.medicationName)
+            medicines.append(meds.name)
         }
-        medicinesTableView.reloadData()
     }
     
     func scheduleLocal(date: NSDate) {
@@ -45,10 +44,6 @@ class MedicinesViewController: UIViewController {
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["CustomField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
-    @IBAction func addMedicineButton(sender: AnyObject) {
-        medicinesTableView.reloadData()
     }
 
     @IBAction func unwindSegueToMedicinesViewController(segue: UIStoryboardSegue) {

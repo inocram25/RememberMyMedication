@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class ShadowView: UIView {
+@IBDesignable public class BorderedView: UIView {
     
     @IBInspectable public var borderRadius: Float {
         get {
