@@ -37,14 +37,7 @@ class AddMedicineTableViewController: UITableViewController {
         let date = dateFormatter.dateFromString(dateLabel.text!)
         let medication = Medication(name: nameTextfield.text!, amount: 1, takingEach: 1, startTaking: date!)
         MedicationServices.createDataCD(medication)
-        navigationController!.dismissViewControllerAnimated(true) { 
-//            let data = MedicationDAO.returnAll()! as [MedicationCD]
-//            medicines.removeAll()
-//            for meds in data {
-//                medicines.append(meds.medicationName)
-//            }
-//            medicinesTableView.reloadData()
-        }
+        navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
