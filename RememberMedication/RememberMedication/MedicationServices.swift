@@ -37,6 +37,8 @@ class MedicationServices {
         let deleteOperation : NSBlockOperation = NSBlockOperation(block: {
            
             let data:MedicationCD? = MedicationDAO.findByName(name)
+            
+            
             if (data != nil)
             {
                 MedicationDAO.delete(data!)

@@ -17,7 +17,7 @@ class MedicationDAO{
         let request = NSFetchRequest(entityName: "MedicationCD")
         
         // assign predicate
-        request.predicate = NSPredicate(format: "medicationName == %@", name)
+        request.predicate = NSPredicate(format: "name == %@", name)
         
         // perform search
         let results = (try! DatabaseManager.sharedInstance.managedObjectContext?.executeFetchRequest(request)) as! [MedicationCD]
