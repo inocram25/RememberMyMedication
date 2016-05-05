@@ -18,6 +18,7 @@ class MedicinesViewController: UIViewController {
         super.viewDidLoad()
         
         loadMedicines()
+        medicinesTableView.backgroundColor = UIColor.healthU_LightGrey()
         medicinesTableView.tableFooterView = UIView()
         scheduleLocal(NSDate(timeIntervalSinceNow: 10))
     }

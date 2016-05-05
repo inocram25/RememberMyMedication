@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+        setAppearance()
         
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
@@ -51,6 +51,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         healthStore.handleAuthorizationForExtensionWithCompletion { sucess, error in
             
         }
+    }
+    
+    private func setAppearance() {
+        let attrs = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let appearanceNavigationBar = UINavigationBar.appearance()
+        appearanceNavigationBar.translucent = true
+        appearanceNavigationBar.barTintColor = UIColor.healthU_Orange()
+        appearanceNavigationBar.titleTextAttributes = attrs
+        appearanceNavigationBar.tintColor = UIColor.whiteColor()
+        
+        //        let appearanceTabBar = UITabBar.appearance()
+        //        appearanceTabBar.barTintColor = UIColor.ink_graphiteNaviBarColor()
+        
+        let appearanceTabBarItem = UITabBarItem.appearance()
+        appearanceTabBarItem.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState: .Normal)
+        appearanceTabBarItem.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Selected)
+        
+        let appearanceSegmented = UISegmentedControl.appearance()
+        appearanceSegmented.tintColor = UIColor.whiteColor()
     }
     
 }

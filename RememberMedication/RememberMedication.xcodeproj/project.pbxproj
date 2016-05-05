@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F42E4961CDBD5B800F06691 /* UIColor+HealthU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */; };
 		7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */; };
 		7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */; };
 		7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HealthU.swift"; sourceTree = "<group>"; };
 		7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
 		7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		9A2F6E661CD3CE31006F3133 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */,
 				9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */,
 			);
 			name = Extensions;
@@ -506,6 +509,7 @@
 				9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */,
 				9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */,
 				7FC9CD9F1CD7B44B00A87AC0 /* SQLCoordinator.swift in Sources */,
+				7F42E4961CDBD5B800F06691 /* UIColor+HealthU.swift in Sources */,
 				7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */,
 				7FC9CD9E1CD7B44B00A87AC0 /* MedicationServices.swift in Sources */,
 				9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */,
