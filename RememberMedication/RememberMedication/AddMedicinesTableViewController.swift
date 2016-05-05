@@ -8,11 +8,35 @@
 
 import UIKit
 
+private enum AddMedicineTable: String {
+    case Name = "0,0"
+    case Dosage = "0,1"
+    case StartDate = "1,0"
+    case StartDatePicker = "1,1"
+    case EndDate = "1,2"
+    case EndDatePicker = "1,3"
+    case Pacient = "2,0"
+    
+    init?(indexPath: NSIndexPath) {
+        let toString = "\(indexPath.section),\(indexPath.row)"
+        if let option = AddMedicineTable(rawValue: toString) {
+            self = option
+        } else {
+            return nil
+        }
+    }
+}
+
+extension NSIndexPath {
+    private var option: AddMedicineTable? {
+        return AddMedicineTable(indexPath: self)
+    }
+}
+
 class AddMedicineTableViewController: UITableViewController {
     
     var startDatePickerVisible = false
     var endDatePickerVisible = false
-    
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -48,14 +72,16 @@ class AddMedicineTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 && indexPath.section == 1 {
+        if indexPath.option == .StartDate {
             startDatePickerVisible = !startDatePickerVisible
             tableView.reloadData()
         }
-        if indexPath.row == 2 && indexPath.section == 1 {
+        
+        if indexPath.option == .EndDate {
             endDatePickerVisible = !endDatePickerVisible
             tableView.reloadData()
         }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
