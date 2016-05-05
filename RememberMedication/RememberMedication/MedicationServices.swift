@@ -10,9 +10,11 @@ import Foundation
 
 struct Medication {
     let name: String
-    let amount: Int64
-    let takingEach: Int64
-    let startTaking: NSDate
+    let dosage: String
+    let patient: String
+    let timesDay: Int64
+    let startDate: NSDate
+    let endDate: NSDate
     let weekDay: WeekDay
 }
 
@@ -22,9 +24,11 @@ class MedicationServices {
         
         let m = MedicationCD()
         m.name = medication.name
-        m.takingEach = medication.takingEach
-        m.startTaking = medication.startTaking
-        m.amount = medication.amount
+        m.dosage = medication.dosage
+        m.patient = medication.patient
+        m.timesDay = medication.timesDay
+        m.startDate = medication.startDate
+        m.endDate = medication.endDate
         m.weekDay = medication.weekDay
         
         MedicationDAO.insert(m)

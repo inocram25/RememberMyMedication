@@ -69,6 +69,7 @@ extension ConsultasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("appointmentCell") as? AppointmentsTableViewCell
+        
         cell?.configureCell(appointments[indexPath.row])
         return cell!
     }

@@ -43,7 +43,7 @@ class AppointmentDAO{
     static func returnAll() -> [AppointmentCD]?
     {
         // creating fetch request
-        let request = NSFetchRequest(entityName: "AppointimentCD")
+        let request = NSFetchRequest(entityName: "AppointmentCD")
         
         // assign predicate
         //        request.predicate = NSPredicate(format: "medicationName == %@", name)

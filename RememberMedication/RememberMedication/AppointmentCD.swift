@@ -25,7 +25,7 @@ class AppointmentCD: NSManagedObject {
         let context:NSManagedObjectContext = DatabaseManager.sharedInstance.managedObjectContext!
         
         // create entity description
-        let entityDescription:NSEntityDescription? = NSEntityDescription.entityForName("AppointimentCD", inManagedObjectContext: context)
+        let entityDescription:NSEntityDescription? = NSEntityDescription.entityForName("AppointmentCD", inManagedObjectContext: context)
         
         // call super using
         self.init(entity: entityDescription!, insertIntoManagedObjectContext: context)

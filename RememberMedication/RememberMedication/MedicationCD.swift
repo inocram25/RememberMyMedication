@@ -10,10 +10,13 @@ import Foundation
 import CoreData
 
 public final class MedicationCD: NSManagedObject {
+    
     @NSManaged var name: String
-    @NSManaged var amount: Int64
-    @NSManaged var takingEach: Int64
-    @NSManaged var startTaking: NSDate
+    @NSManaged var dosage: String
+    @NSManaged var patient: String
+    @NSManaged var timesDay: Int64
+    @NSManaged var startDate: NSDate
+    @NSManaged var endDate: NSDate
     @NSManaged private var primitiveWeekDay: NSNumber
     
     private static let WeekDayKey = "weekDay"

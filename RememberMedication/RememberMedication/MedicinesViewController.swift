@@ -33,11 +33,9 @@ class MedicinesViewController: UIViewController {
         let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
         medications.removeAll()
         for m in medicationCD {
-            let medication = Medication(name: m.name,
-                                        amount: m.amount,
-                                        takingEach: m.takingEach,
-                                        startTaking: m.startTaking,
-                                        weekDay: m.weekDay)
+            let medication = Medication(name: m.name, dosage: m.dosage,
+                                        patient: m.patient, timesDay: m.timesDay,
+                                        startDate: m.startDate, endDate: m.endDate, weekDay: m.weekDay)
             medications.append(medication)
         }
     }
@@ -80,6 +78,10 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
             medications.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 }
