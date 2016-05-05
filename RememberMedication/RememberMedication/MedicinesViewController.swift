@@ -12,7 +12,7 @@ class MedicinesViewController: UIViewController {
 
     @IBOutlet weak var medicinesTableView: UITableView!
     
-    var medicines = [String]()
+    var medications = [Medication]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,15 @@ class MedicinesViewController: UIViewController {
     }
     
     func loadMedicines() {
-        let data = MedicationDAO.returnAll()! as [MedicationCD]
-        medicines.removeAll()
-        for meds in data {
-            medicines.append(meds.name)
+        let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
+        medications.removeAll()
+        for m in medicationCD {
+            let medication = Medication(name: m.name,
+                                        amount: m.amount,
+                                        takingEach: m.takingEach,
+                                        startTaking: m.startTaking,
+                                        weekDay: m.weekDay)
+            medications.append(medication)
         }
     }
     
@@ -53,7 +58,7 @@ class MedicinesViewController: UIViewController {
 extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicines.count
+        return medications.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -63,15 +68,15 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("medicinesCell") as? MedicinesTableViewCell
-        cell?.configureCell(medicines[indexPath.row])
+        cell?.configureCell(medications[indexPath.row])
         return cell!
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            print(medicines[indexPath.row])
-            MedicationServices.deleteByName(medicines[indexPath.row])
-            medicines.removeAtIndex(indexPath.row)
+            print(medications[indexPath.row])
+            MedicationServices.deleteByName(medications[indexPath.row].name)
+            medications.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

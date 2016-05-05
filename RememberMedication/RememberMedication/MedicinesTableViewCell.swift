@@ -11,6 +11,9 @@ import UIKit
 class MedicinesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var medicineNameLabel: UILabel!
+    @IBOutlet weak var dosageLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -20,8 +23,9 @@ class MedicinesTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(medicine: String) {
-        print(medicine)
-        medicineNameLabel.text = medicine
+    func configureCell(medication: Medication) {
+        print(medication)
+        medicineNameLabel.text = medication.name
+        dosageLabel.text = "Dosagem"
     }
 }
