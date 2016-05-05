@@ -9,7 +9,7 @@
 import UIKit
 
 class AddAppointimentsTableViewController: UITableViewController {
-
+    
     let dateFormatter = NSDateFormatter()
     var pickerVisible = false
     var alarmPickerVisible = false
@@ -74,12 +74,14 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     @IBAction func saveButtonFunction(sender: AnyObject) {
         
-        guard nameTextField.text != nil else { return }
+        guard nameTextField.text != "" else { return } //Colocar uma notificacao quando o usuario nao colocar o nome do remedio.
         let date = dateFormatter.dateFromString(dateLabel.text!)
-//        let medication = Medication(name: nameTextField.text!, amount: 1, takingEach: 1, startTaking: date!)
-//        MedicationServices.createDataCD(medication)
         
-        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        //FAZER CALCULO DO ALARM - DATE P/ ATRIBUIR NO ALARMDATE
+        let appointment = Appointment(name: nameTextField.text!, date: date!, alarmDate: NSDate(), doctor: "dunha" , local: "na cada das prima", notes: "")
+
+        AppointmentServices.createDataCD(appointment)
+        navigationController!.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -105,16 +107,16 @@ class AddAppointimentsTableViewController: UITableViewController {
         if indexPath.row == 4 && indexPath.section == 0 {
             return alarmPickerVisible == false ? 0.0 : 165.0
         }
-
+        
         return 44.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 44.0
     }
-
     
-
+    
+    
 }
 
 extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -131,7 +133,7 @@ extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
+        
         if component == 0 {
             alarm.day = dateAlarm[component][row]
         }

@@ -8,37 +8,48 @@
 
 import Foundation
 
-class AppointimentServices{
+struct Appointment {
+    let name: String
+    let date: NSDate
+    let alarmDate: NSDate
+    let doctor: String
+    let local: String
+    let notes: String
+}
+
+class AppointmentServices{
     
-    static func createDataCD(appointimentType:String, date:NSDate, local:String, notes:String){
+    static func createDataCD(appointment: Appointment){
         
-        let data:AppointimentCD = AppointimentCD()
+        let data:AppointmentCD = AppointmentCD()
         
-        data.appointimentType = appointimentType
-        data.date = date
-        data.local = local
-        data.notes = notes
+        data.name = appointment.name
+        data.doctor = appointment.doctor
+        data.date = appointment.date
+        data.alarmDate = appointment.alarmDate
+        data.notes = appointment.notes
+        data.local = appointment.local
         
-        AppointimentDAO.insert(data)
+        AppointmentDAO.insert(data)
     }
     
-//    static func deleteByName(name: String){
-//        
-//        let auxiliarQueue:NSOperationQueue = NSOperationQueue()
-//        
-//        let deleteOperation : NSBlockOperation = NSBlockOperation(block: {
-//            
-//            let data:AppointimentCD? = AppointimentDAO.findByDate(name)
-//            if (data != nil)
-//            {
-//                // delete data
-//                AppointimentDAO.delete(data!)
-//            }
-//        })
-//        
-//        auxiliarQueue.addOperation(deleteOperation)
-//        
-//    }
+    //    static func deleteByName(name: String){
+    //
+    //        let auxiliarQueue:NSOperationQueue = NSOperationQueue()
+    //
+    //        let deleteOperation : NSBlockOperation = NSBlockOperation(block: {
+    //
+    //            let data:AppointimentCD? = AppointimentDAO.findByDate(name)
+    //            if (data != nil)
+    //            {
+    //                // delete data
+    //                AppointimentDAO.delete(data!)
+    //            }
+    //        })
+    //
+    //        auxiliarQueue.addOperation(deleteOperation)
+    //
+    //    }
     
     static func deleteByDate(date: NSDate){
         
@@ -46,11 +57,11 @@ class AppointimentServices{
         
         let deleteOperation : NSBlockOperation = NSBlockOperation(block: {
             
-            let data:AppointimentCD? = AppointimentDAO.findByDate(date)
+            let data:AppointmentCD? = AppointmentDAO.findByDate(date)
             if (data != nil)
             {
                 // delete data
-                AppointimentDAO.delete(data!)
+                AppointmentDAO.delete(data!)
             }
         })
         

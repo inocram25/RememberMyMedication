@@ -8,22 +8,22 @@
 
 import UIKit
 
-class AppointimentsTableViewCell: UITableViewCell {
+class AppointmentsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var appointimentNameLabel: UILabel!
+    @IBOutlet weak var appointmentNameLabel: UILabel!
     
-    @IBOutlet weak var appointimentDateLabel: UILabel!
+    @IBOutlet weak var appointmentDateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureCell(appointiment: String, date: NSDate) {
-        appointimentNameLabel.text = appointiment
+    func configureCell(appointment: Appointment) {
+        appointmentNameLabel.text = appointment.name
         
         //formatar data conforme necessario
-        appointimentDateLabel.text = date.description
+//        appointmentDateLabel.text = date.description
         
     }
    

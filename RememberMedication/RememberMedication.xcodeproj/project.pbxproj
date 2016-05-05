@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F4474AB1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */; };
+		7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */; };
 		7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */; };
 		7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */; };
 		7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */; };
@@ -96,7 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointimentsTableViewCell.swift; sourceTree = "<group>"; };
+		7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
 		7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = RememberMedication/DatabaseManager.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */,
-				7F4474AA1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift */,
+				7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */,
 				9A04ED621CDAA955002D1785 /* BorderedView.swift */,
 			);
 			name = View;
@@ -513,7 +513,7 @@
 				7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */,
 				7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */,
 				9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */,
-				7F4474AB1CDA6BB100BFE6F6 /* AppointimentsTableViewCell.swift in Sources */,
+				7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */,
 				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
 				7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */,
 				7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */,
