@@ -62,14 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearanceNavigationBar.titleTextAttributes = attrs
         appearanceNavigationBar.tintColor = UIColor.whiteColor()
         
-        //        let appearanceTabBar = UITabBar.appearance()
-        //        appearanceTabBar.barTintColor = UIColor.ink_graphiteNaviBarColor()
+//        let appearanceTabBar = UITabBar.appearance()
+//        appearanceTabBar.barTintColor = UIColor.healthU_Orange()
         
         let appearanceTabBarItem = UITabBarItem.appearance()
         appearanceTabBarItem.setTitleTextAttributes(
             [NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState: .Normal)
         appearanceTabBarItem.setTitleTextAttributes(
-            [NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Selected)
+            [NSForegroundColorAttributeName: UIColor.healthU_Orange()], forState: .Selected)
         
         let appearanceSegmented = UISegmentedControl.appearance()
         appearanceSegmented.tintColor = UIColor.whiteColor()

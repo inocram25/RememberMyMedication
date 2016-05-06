@@ -12,7 +12,6 @@ class CustomTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupViewControllers()
         
         for item in tabBar.items! as [UITabBarItem] {
             if let image = item.image {
@@ -20,7 +19,7 @@ class CustomTabBarController: UITabBarController {
             }
             
             if let selectedImage = item.selectedImage {
-                item.selectedImage = selectedImage.imageWithColor(UIColor.whiteColor())
+                item.selectedImage = selectedImage.imageWithColor(UIColor.healthU_Orange())
                     .imageWithRenderingMode(.AlwaysOriginal)
             }
         }
@@ -44,17 +43,6 @@ class CustomTabBarController: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-    
-    private func setupViewControllers() {
-//        let navFavoritos = Storyboards.Favoritos.instantiateInitialViewController()
-     
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navMedicines = storyboard.instantiateViewControllerWithIdentifier("navMedicines") as! CustomNavigationController
-        
-        let vcs = [navMedicines]
-        
-        setViewControllers(vcs, animated: true)
     }
 }
 

@@ -53,6 +53,8 @@ class AddMedicineTableViewController: UITableViewController {
         dateFormatter.timeStyle = .MediumStyle
         dateLabel.text = dateFormatter.stringFromDate(NSDate())
         
+        endDateLabel.text = ""
+        
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
@@ -64,9 +66,18 @@ class AddMedicineTableViewController: UITableViewController {
         endDateLabel.text = dateFormatter.stringFromDate(sender.date)
     }
     @IBAction func saveButtonFunction(sender: AnyObject) {
-        guard nameTextfield.text != "" else { return } //Colocar uma notificacao quando o usuario nao colocar o nome do remedio.
-        let date = dateFormatter.dateFromString(dateLabel.text!)
-        let medication = Medication(name: nameTextfield.text!, dosage: "100", patient: "maffei", timesDay: 3, startDate: date!, endDate: NSDate(), weekDay: WeekDay.Friday)
+        guard let name = nameTextfield.text else { return }
+        guard let startDate = dateFormatter.dateFromString(dateLabel.text!) else { return }
+        let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
+        let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
+        let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
+        let medication = Medication(name: name,
+                                    dosage: dosage!,
+                                    patient: pacient!,
+                                    timesDay: 1,
+                                    startDate: startDate,
+                                    endDate: endDate!,
+                                    weekDay: WeekDay.Friday)
         MedicationServices.createDataCD(medication)
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -87,10 +98,10 @@ class AddMedicineTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if indexPath.row == 1 && indexPath.section == 1 {
+        if indexPath.option == .StartDatePicker {
             return startDatePickerVisible == false ? 0.0 : 165.0
         }
-        if indexPath.row == 3 && indexPath.section == 1 {
+        if indexPath.option == .EndDatePicker {
             return endDatePickerVisible == false ? 0.0 : 165.0
         }
         return 44.0

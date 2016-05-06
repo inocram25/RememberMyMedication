@@ -418,7 +418,7 @@
 				TargetAttributes = {
 					9AF136DF1CD29CE800FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = E2FE72XC3J;
+						DevelopmentTeam = HZGB8HVWTX;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -431,11 +431,11 @@
 					};
 					9AF137071CD29D0500FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = E2FE72XC3J;
+						DevelopmentTeam = HZGB8HVWTX;
 					};
 					9AF137131CD29D0500FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = E2FE72XC3J;
+						DevelopmentTeam = HZGB8HVWTX;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
