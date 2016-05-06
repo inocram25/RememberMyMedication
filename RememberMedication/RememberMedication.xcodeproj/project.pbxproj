@@ -26,6 +26,7 @@
 		9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */; };
 		9A2F6E731CD3D67C006F3133 /* ConsultasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */; };
 		9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */; };
+		9A3A1C5D1CDD3004004989C9 /* WeekDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C5C1CDD3004004989C9 /* WeekDayCollectionViewCell.swift */; };
 		9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */; };
 		9AF136E91CD29CE900FD16FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136E71CD29CE900FD16FF /* Main.storyboard */; };
 		9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */; };
@@ -116,6 +117,7 @@
 		9A2F6E6E1CD3D000006F3133 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultasViewController.swift; sourceTree = "<group>"; };
 		9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicinesTableViewCell.swift; sourceTree = "<group>"; };
+		9A3A1C5C1CDD3004004989C9 /* WeekDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AF136E01CD29CE800FD16FF /* RememberMedication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMedication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesViewController.swift; sourceTree = "<group>"; };
 		9AF136E81CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */,
 				7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */,
 				9A04ED621CDAA955002D1785 /* BorderedView.swift */,
+				9A3A1C5C1CDD3004004989C9 /* WeekDayCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
 				7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */,
 				9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */,
+				9A3A1C5D1CDD3004004989C9 /* WeekDayCollectionViewCell.swift in Sources */,
 				CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */,
 				7FC9CD9D1CD7B44B00A87AC0 /* MedicationDAO.swift in Sources */,
 			);

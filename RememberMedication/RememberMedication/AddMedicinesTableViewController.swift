@@ -15,6 +15,8 @@ private enum AddMedicineTable: String {
     case StartDatePicker = "1,1"
     case EndDate = "1,2"
     case EndDatePicker = "1,3"
+    case Frequency = "1,4"
+    case WeekDay = "1,5"
     case Pacient = "2,0"
     
     init?(indexPath: NSIndexPath) {
@@ -37,12 +39,14 @@ class AddMedicineTableViewController: UITableViewController {
     
     var startDatePickerVisible = false
     var endDatePickerVisible = false
+    var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var pacientTextField: UITextField!
+    @IBOutlet weak var weekDayCollectionView: UICollectionView!
     
     let dateFormatter = NSDateFormatter()
     
@@ -57,6 +61,9 @@ class AddMedicineTableViewController: UITableViewController {
         
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        weekDayCollectionView.delegate = self
+        weekDayCollectionView.dataSource = self
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
@@ -104,6 +111,10 @@ class AddMedicineTableViewController: UITableViewController {
         if indexPath.option == .EndDatePicker {
             return endDatePickerVisible == false ? 0.0 : 165.0
         }
+        if indexPath.option == .WeekDay {
+            return 200.0
+        }
+        
         return 44.0
     }
     
@@ -111,4 +122,37 @@ class AddMedicineTableViewController: UITableViewController {
         return 44.0
     }
     
+}
+
+extension AddMedicineTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return weekDay.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let identifier = "WeekDayCell"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as? WeekDayCollectionViewCell
+        print(weekDay[indexPath.row])
+        cell?.configureCell(weekDay[indexPath.row])
+        
+        return cell!
+    }
+    
+    //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    //
+    //        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+    //        let border = flowLayout.sectionInset.left + flowLayout.sectionInset.right
+    //        let itemWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
+    //        let totalWidth = collectionView.bounds.width - border
+    //        let numberOfCells = floor(totalWidth / itemWidth)
+    //        let usedSpace = itemWidth * numberOfCells
+    //        let bonusSpace = flowLayout.minimumInteritemSpacing * numberOfCells
+    //        let edgeInsets = floor((totalWidth - usedSpace + bonusSpace) / (numberOfCells + 1.0))
+    //
+    //        return UIEdgeInsets(top: flowLayout.sectionInset.top, left: edgeInsets, bottom: flowLayout.sectionInset.bottom, right: edgeInsets)
+    //    }
 }
