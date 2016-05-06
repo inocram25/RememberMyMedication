@@ -112,7 +112,7 @@ class AddMedicineTableViewController: UITableViewController {
             return endDatePickerVisible == false ? 0.0 : 165.0
         }
         if indexPath.option == .WeekDay {
-            return 200.0
+            return 80.0
         }
         
         return 44.0
@@ -141,18 +141,4 @@ extension AddMedicineTableViewController: UICollectionViewDelegate, UICollection
         
         return cell!
     }
-    
-    //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-    //
-    //        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-    //        let border = flowLayout.sectionInset.left + flowLayout.sectionInset.right
-    //        let itemWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
-    //        let totalWidth = collectionView.bounds.width - border
-    //        let numberOfCells = floor(totalWidth / itemWidth)
-    //        let usedSpace = itemWidth * numberOfCells
-    //        let bonusSpace = flowLayout.minimumInteritemSpacing * numberOfCells
-    //        let edgeInsets = floor((totalWidth - usedSpace + bonusSpace) / (numberOfCells + 1.0))
-    //
-    //        return UIEdgeInsets(top: flowLayout.sectionInset.top, left: edgeInsets, bottom: flowLayout.sectionInset.bottom, right: edgeInsets)
-    //    }
 }
