@@ -30,6 +30,7 @@ class MedicinesTableViewCell: UITableViewCell {
     }
     
     func configureCell(medication: Medication) {
+        print(medication)
         medicineNameLabel.text = medication.name
         patient.text = medication.patient
         

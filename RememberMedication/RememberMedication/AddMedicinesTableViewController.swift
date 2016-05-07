@@ -39,7 +39,12 @@ class AddMedicineTableViewController: UITableViewController {
     
     var startDatePickerVisible = false
     var endDatePickerVisible = false
+    var weekDayVisible = false
+    
+//    var weekDayDictionary = ["Dom" : WeekDay.Sunday, "Seg" : WeekDay.Monday, "Ter" : WeekDay.Tuesday, "Qua": WeekDay.Wednesday,
+//                   "Qui" : WeekDay.Thursday, "Sex" : WeekDay.Friday, "Sab" : WeekDay.Saturday]
     var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+    var weekDaySelected: WeekDay?
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -47,6 +52,7 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var pacientTextField: UITextField!
     @IBOutlet weak var weekDayCollectionView: UICollectionView!
+    @IBOutlet weak var frequencySwitch: UISwitch!
     
     let dateFormatter = NSDateFormatter()
     
@@ -78,15 +84,31 @@ class AddMedicineTableViewController: UITableViewController {
         let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
+        let days:WeekDay?
+
+        if weekDaySelected == nil {
+            print("ae")
+            days = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday]
+        } else {
+            print("gg")
+            days = weekDaySelected
+        }
+        
         let medication = Medication(name: name,
                                     dosage: dosage!,
                                     patient: pacient!,
                                     timesDay: 1,
                                     startDate: startDate,
                                     endDate: endDate!,
-                                    weekDay: WeekDay.Friday)
+                                    weekDay: days!)
+        
         MedicationServices.createDataCD(medication)
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    @IBAction func switchAction(sender: UISwitch) {
+        tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -112,7 +134,7 @@ class AddMedicineTableViewController: UITableViewController {
             return endDatePickerVisible == false ? 0.0 : 165.0
         }
         if indexPath.option == .WeekDay {
-            return 80.0
+            return frequencySwitch.on ? 75.0 : 0.0
         }
         
         return 44.0
@@ -140,5 +162,22 @@ extension AddMedicineTableViewController: UICollectionViewDelegate, UICollection
         cell?.configureCell(weekDay[indexPath.row])
         
         return cell!
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as? WeekDayCollectionViewCell
+        guard let cellValue = cell!.weekdayValue else { return }
+        
+        if weekDaySelected?.contains(cellValue) == true {
+            weekDaySelected?.remove(cellValue)
+            cell?.backgroundColor = UIColor.lightGrayColor()
+        }else {
+            if let day = weekDaySelected {
+                weekDaySelected = [day, cellValue]
+            } else {
+                weekDaySelected = cellValue
+            }
+            cell?.backgroundColor = UIColor.healthU_Orange()
+        }
     }
 }

@@ -54,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setAppearance() {
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         let attrs = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         let appearanceNavigationBar = UINavigationBar.appearance()

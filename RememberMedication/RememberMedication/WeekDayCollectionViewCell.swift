@@ -43,6 +43,12 @@ import UIKit
         }
     }
     
+    private var weekDayDictionary = ["Dom" : WeekDay.Sunday, "Seg" : WeekDay.Monday,
+                                     "Ter" : WeekDay.Tuesday, "Qua": WeekDay.Wednesday,
+                                     "Qui" : WeekDay.Thursday, "Sex" : WeekDay.Friday,
+                                     "Sab" : WeekDay.Saturday]
+    var weekdayValue: WeekDay?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -51,5 +57,6 @@ import UIKit
     
     func configureCell(weekDay: String) {
         weekDayLabel.text = weekDay
+        weekdayValue = weekDayDictionary[weekDay]
     }
 }
