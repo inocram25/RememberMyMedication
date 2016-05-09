@@ -54,6 +54,13 @@ class ConsultasViewController: UIViewController {
         notification.userInfo = ["CustomField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AppointmentDetail" {
+            let vc = segue.destinationViewController as! AppointmentDetailViewController
+            vc.date = (sender as! NSDate)
+        }
+    }
 }
 
 extension ConsultasViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,6 +88,10 @@ extension ConsultasViewController: UITableViewDelegate, UITableViewDataSource {
             appointments.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("AppointmentDetail", sender: appointments[indexPath.row].date)
     }
     
 }

@@ -29,7 +29,7 @@ class AppointmentDAO{
     static func findByDate(date: NSDate) -> AppointmentCD?
     {
         // creating fetch request
-        let request = NSFetchRequest(entityName: "MedicationCD")
+        let request = NSFetchRequest(entityName: "AppointmentCD")
         
         // assign predicate
         request.predicate = NSPredicate(format: "date == %@", date)

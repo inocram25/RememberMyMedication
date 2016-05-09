@@ -15,6 +15,9 @@ class AddAppointimentsTableViewController: UITableViewController {
     var alarmPickerVisible = false
     var dateAlarm = [[String]]()
     
+    var alarmDate = NSDate()
+    var appointmentDate = NSDate()
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -24,6 +27,7 @@ class AddAppointimentsTableViewController: UITableViewController {
     @IBOutlet weak var alarmPickerView: UIPickerView!
     
     var alarm = (day:"1 day", hour:"0 hours", min:"0 mins")
+    var day = 0, hour = 0, min = 0
     
     //pensar em como configurar o local e o notes
     
@@ -31,16 +35,17 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(alarm.day[alarm.day.startIndex])
         
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         dateLabel.text = dateFormatter.stringFromDate(NSDate())
         
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRectZero)
         
         var hours = [String]()
-        for i in 1...14 {
+        for i in 0...14 {
             hours.append(String(i) + " days")
         }
         
@@ -69,10 +74,12 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     @IBAction func pickerDate(sender: UIDatePicker) {
         dateLabel.text = dateFormatter.stringFromDate(sender.date)
+        appointmentDate = sender.date
     }
     
     
     @IBAction func saveButtonFunction(sender: AnyObject) {
+        transformToDate()
         
         guard nameTextField.text != "" else { return } //Colocar uma notificacao quando o usuario nao colocar o nome do remedio.
         let date = dateFormatter.dateFromString(dateLabel.text!)
@@ -81,8 +88,12 @@ class AddAppointimentsTableViewController: UITableViewController {
         let appointment = Appointment(name: nameTextField.text!, date: date!, alarmDate: NSDate(), doctor: "dunha" , local: "na cada das prima", notes: "")
 
         AppointmentServices.createDataCD(appointment)
-        navigationController!.dismissViewControllerAnimated(true, completion: nil)
         
+        print(alarmDate)
+        scheduleLocal(alarmDate)
+        
+        navigationController!.dismissViewControllerAnimated(true, completion: nil)
+    
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -117,6 +128,29 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     
     
+    
+    func transformToDate(){
+        
+        let components = NSDateComponents()
+        components.day = -day
+        components.hour = -hour
+        components.minute = -min
+        alarmDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: appointmentDate, options: NSCalendarOptions.init(rawValue: 0))!
+        
+        print("Calculo da data = \(alarmDate)")
+        
+    }
+    
+    func scheduleLocal(date: NSDate) {
+        let notification = UILocalNotification()
+        notification.fireDate = date
+        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+        notification.alertAction = "be awesome!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["CustomField1": "w00t"]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
 }
 
 extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -136,15 +170,21 @@ extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerVie
         
         if component == 0 {
             alarm.day = dateAlarm[component][row]
+            day = row
         }
         else if component == 1 {
             alarm.hour = dateAlarm[component][row]
+            hour = row
         }
         else {
             alarm.min = dateAlarm[component][row]
+            min = row
         }
         
+        transformToDate()
         alarmLabel.text = alarm.day + ", " + alarm.hour + " and " + alarm.min + " before."
     }
+    
+    
     
 }

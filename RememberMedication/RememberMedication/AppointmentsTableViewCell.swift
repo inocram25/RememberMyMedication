@@ -11,8 +11,11 @@ import UIKit
 class AppointmentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var appointmentNameLabel: UILabel!
-    
     @IBOutlet weak var appointmentDateLabel: UILabel!
+    @IBOutlet weak var appointmentDoctorLabel: UILabel!
+    @IBOutlet weak var appointmentLocalLabel: UILabel!
+    
+    let dateFormatter = NSDateFormatter()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,11 +24,11 @@ class AppointmentsTableViewCell: UITableViewCell {
 
     func configureCell(appointment: Appointment) {
         appointmentNameLabel.text = appointment.name
-        
-        //formatar data conforme necessario
-//        appointmentDateLabel.text = date.description
-        
-    }
-   
 
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        appointmentDateLabel.text = dateFormatter.stringFromDate(appointment.date)
+        appointmentDoctorLabel.text = appointment.doctor
+        appointmentLocalLabel.text = appointment.local
+    }
 }

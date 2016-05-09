@@ -10,6 +10,7 @@
 		7F42E4961CDBD5B800F06691 /* UIColor+HealthU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */; };
 		7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */; };
 		7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */; };
+		7F60E43D1CE0F00F00116FAB /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F60E43C1CE0F00F00116FAB /* AppointmentDetailViewController.swift */; };
 		7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */; };
 		7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */; };
 		7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */; };
@@ -101,6 +102,7 @@
 		7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HealthU.swift"; sourceTree = "<group>"; };
 		7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
+		7F60E43C1CE0F00F00116FAB /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC9CD961CD7B44B00A87AC0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = RememberMedication/DatabaseManager.swift; sourceTree = "<group>"; };
 		7FC9CD971CD7B44B00A87AC0 /* MedicationCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedicationCD.swift; path = RememberMedication/MedicationCD.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				9A2F6E721CD3D67C006F3133 /* ConsultasViewController.swift */,
 				CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */,
 				7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */,
+				7F60E43C1CE0F00F00116FAB /* AppointmentDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */,
+				7F60E43D1CE0F00F00116FAB /* AppointmentDetailViewController.swift in Sources */,
 				9A2F6E6A1CD3CF25006F3133 /* UIImage+WithColor.swift in Sources */,
 				7FC9CD9F1CD7B44B00A87AC0 /* SQLCoordinator.swift in Sources */,
 				7F42E4961CDBD5B800F06691 /* UIColor+HealthU.swift in Sources */,
