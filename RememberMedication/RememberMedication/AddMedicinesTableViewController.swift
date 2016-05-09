@@ -100,16 +100,33 @@ class AddMedicineTableViewController: UITableViewController {
                                     timesDay: 1,
                                     startDate: startDate,
                                     endDate: endDate!,
-                                    weekDay: days!)
+                                    weekDay: days!,
+                                    id: NSUUID().UUIDString)
         
         MedicationServices.createDataCD(medication)
+        scheduleLocal(medication)
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func scheduleLocal(medication: Medication) {
+        print("add notification for - \(medication)")
+        let notification = UILocalNotification()
+        notification.fireDate = medication.startDate
+        notification.alertBody = "Hora de tomar remedio!"
+        notification.alertAction = "be awesome!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["ID": medication.id]
+        if medication.startDate.difference(medication.endDate) > 0 {
+            notification.repeatInterval = .Day
+        }
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
 
     @IBAction func switchAction(sender: UISwitch) {
         tableView.reloadData()
     }
+    
+    //Tableview
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.option == .StartDate {

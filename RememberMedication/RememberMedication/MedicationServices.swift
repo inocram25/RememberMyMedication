@@ -16,6 +16,11 @@ struct Medication {
     let startDate: NSDate
     let endDate: NSDate
     let weekDay: WeekDay
+    let id: String
+    
+    func verifyEndDate() -> Bool {
+        return NSCalendar.currentCalendar().compareDate(NSDate(), toDate: endDate, toUnitGranularity: .Hour) == .OrderedSame ? true : false
+    }
 }
 
 class MedicationServices {
@@ -30,6 +35,7 @@ class MedicationServices {
         m.startDate = medication.startDate
         m.endDate = medication.endDate
         m.weekDay = medication.weekDay
+        m.id = medication.id
         
         MedicationDAO.insert(m)
     }

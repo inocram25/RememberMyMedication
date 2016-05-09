@@ -17,6 +17,7 @@ public final class MedicationCD: NSManagedObject {
     @NSManaged var timesDay: Int64
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
+    @NSManaged var id: String
     @NSManaged private var primitiveWeekDay: NSNumber
     
     private static let WeekDayKey = "weekDay"
