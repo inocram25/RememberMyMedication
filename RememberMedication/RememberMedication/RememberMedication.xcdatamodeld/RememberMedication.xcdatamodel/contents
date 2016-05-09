@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
     <entity name="AppointmentCD" representedClassName="RememberMedication.AppointmentCD" syncable="YES">
-        <attribute name="alarmDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="doctor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="local" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,7 +18,7 @@
         <attribute name="weekDay" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AppointmentCD" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="AppointmentCD" positionX="-54" positionY="18" width="128" height="120"/>
         <element name="MedicationCD" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

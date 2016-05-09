@@ -15,6 +15,8 @@ class AppointmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var appointmentDoctorLabel: UILabel!
     @IBOutlet weak var appointmentLocalLabel: UILabel!
     
+    var currentAppointment: Appointment?
+    
     let dateFormatter = NSDateFormatter()
 
     override func awakeFromNib() {
@@ -23,8 +25,9 @@ class AppointmentsTableViewCell: UITableViewCell {
     }
 
     func configureCell(appointment: Appointment) {
+        currentAppointment = appointment
+        
         appointmentNameLabel.text = appointment.name
-
         dateFormatter.dateStyle = .MediumStyle
         dateFormatter.timeStyle = .ShortStyle
         appointmentDateLabel.text = dateFormatter.stringFromDate(appointment.date)

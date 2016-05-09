@@ -15,7 +15,6 @@ class AppointmentCD: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var local: String
     @NSManaged var date: NSDate
-    @NSManaged var alarmDate: NSDate
     @NSManaged var doctor: String
     
     /// The designated initializer

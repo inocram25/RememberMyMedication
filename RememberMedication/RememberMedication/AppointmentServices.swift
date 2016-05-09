@@ -11,7 +11,6 @@ import Foundation
 struct Appointment {
     let name: String
     let date: NSDate
-    let alarmDate: NSDate
     let doctor: String
     let local: String
     let notes: String
@@ -26,7 +25,6 @@ class AppointmentServices{
         data.name = appointment.name
         data.doctor = appointment.doctor
         data.date = appointment.date
-        data.alarmDate = appointment.alarmDate
         data.notes = appointment.notes
         data.local = appointment.local
         

@@ -26,7 +26,6 @@ class AddAppointimentsTableViewController: UITableViewController {
     @IBOutlet weak var localTextfield: UITextField!
     @IBOutlet weak var alarmPickerView: UIPickerView!
     
-    var alarm = (day:"1 day", hour:"0 hours", min:"0 mins")
     var day = 0, hour = 0, min = 0
     
     //pensar em como configurar o local e o notes
@@ -35,7 +34,6 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(alarm.day[alarm.day.startIndex])
         
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
@@ -46,14 +44,14 @@ class AddAppointimentsTableViewController: UITableViewController {
         
         var hours = [String]()
         for i in 0...14 {
-            hours.append(String(i) + " days")
+            hours.append(String(i) + " dias")
         }
         
         dateAlarm.append(hours)
         
         hours.removeAll()
         for i in 0...23 {
-            hours.append(String(i) + " hours")
+            hours.append(String(i) + " horas")
         }
         
         dateAlarm.append(hours)
@@ -68,8 +66,7 @@ class AddAppointimentsTableViewController: UITableViewController {
         alarmPickerView.dataSource = self
         alarmPickerView.delegate = self
         
-        alarmLabel.text = "1 day before."
-        
+        alarmLabel.text = ""
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
@@ -80,17 +77,29 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     @IBAction func saveButtonFunction(sender: AnyObject) {
         transformToDate()
+
+        var name = ""
+       
+        if nameTextField.text != "" {
+            name = nameTextField.text!
+        }else{
+            let alert = UIAlertController(title: "Error", message: "Digite o nome da Consulta", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+            return
+        }
         
-        guard nameTextField.text != "" else { return } //Colocar uma notificacao quando o usuario nao colocar o nome do remedio.
-        let date = dateFormatter.dateFromString(dateLabel.text!)
+        guard let date = dateFormatter.dateFromString(dateLabel.text!) else { return }
+        let doctor = doctorTextfield.text?.isEmpty == false ? doctorTextfield.text : ""
+        let local = localTextfield.text?.isEmpty == false ? localTextfield.text : ""
+        let notes = notesTextfield.text?.isEmpty == false ? notesTextfield.text : ""
         
-        //FAZER CALCULO DO ALARM - DATE P/ ATRIBUIR NO ALARMDATE
-        let appointment = Appointment(name: nameTextField.text!, date: date!, alarmDate: NSDate(), doctor: "dunha" , local: "na cada das prima", notes: "")
+        let appointment = Appointment(name: name, date: date, doctor: doctor! , local: local!, notes: notes!)
 
         AppointmentServices.createDataCD(appointment)
         
         print(alarmDate)
-        scheduleLocal(alarmDate)
+        scheduleLocal(appointment)
         
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
     
@@ -141,16 +150,14 @@ class AddAppointimentsTableViewController: UITableViewController {
         
     }
     
-    func scheduleLocal(date: NSDate) {
+    func scheduleLocal(appointment: Appointment) {
         let notification = UILocalNotification()
-        notification.fireDate = date
-        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
-        notification.alertAction = "be awesome!"
+        notification.fireDate = alarmDate
+        notification.alertBody = "Sua consulta é \(appointment.date) "
+        notification.alertAction = "ver"
         notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["CustomField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
-    
 }
 
 extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -169,20 +176,53 @@ extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if component == 0 {
-            alarm.day = dateAlarm[component][row]
             day = row
         }
         else if component == 1 {
-            alarm.hour = dateAlarm[component][row]
             hour = row
         }
         else {
-            alarm.min = dateAlarm[component][row]
             min = row
         }
         
         transformToDate()
-        alarmLabel.text = alarm.day + ", " + alarm.hour + " and " + alarm.min + " before."
+        
+        var text = ""
+        
+        if day == 0 {
+            if hour == 0 {
+                if min != 0 {
+                    text = "\(min) mins antes"
+                }
+            }
+            else {
+                if min != 0 {
+                    text = "\(hour) hrs e \(min) mins antes"
+                }
+                else {
+                    text = "\(hour) hrs antes"
+                }
+            }
+        }
+        else {
+            if hour == 0 {
+                if min != 0 {
+                    text = "\(day) dias e \(min) mins antes"
+                }
+                else {
+                    text = "\(day) dias antes"
+                }
+            }
+            else {
+                if min != 0 {
+                    text = "\(day) dias, \(hour) hrs e \(min) mins antes"
+                }
+                else {
+                    text = "\(day) dias e \(hour) hrs antes"
+                }
+            }
+        }
+        alarmLabel.text = text
     }
     
     

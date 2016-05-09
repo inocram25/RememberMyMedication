@@ -79,7 +79,18 @@ class AddMedicineTableViewController: UITableViewController {
         endDateLabel.text = dateFormatter.stringFromDate(sender.date)
     }
     @IBAction func saveButtonFunction(sender: AnyObject) {
-        guard let name = nameTextfield.text else { return }
+        
+        var name = ""
+        
+        if nameTextfield.text != "" {
+            name = nameTextfield.text!
+        }else{
+            let alert = UIAlertController(title: "Error", message: "Digite o nome do Remedio", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
         guard let startDate = dateFormatter.dateFromString(dateLabel.text!) else { return }
         let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"

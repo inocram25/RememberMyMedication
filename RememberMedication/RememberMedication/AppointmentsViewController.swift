@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConsultasViewController: UIViewController {
+class AppointmentsViewController: UIViewController {
     
     @IBOutlet weak var appointmentsTableView: UITableView!
     
@@ -16,14 +16,9 @@ class ConsultasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let d = NSDate(timeIntervalSinceNow: 10)
-        let a = NSDate(timeIntervalSinceNow: 15)
-        scheduleLocal(d)
-        scheduleLocal(a)
-        
+
         loadAppointments()
         appointmentsTableView.tableFooterView = UIView()
-        scheduleLocal(NSDate(timeIntervalSinceNow: 10))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,34 +31,26 @@ class ConsultasViewController: UIViewController {
         let data = AppointmentDAO.returnAll()! as [AppointmentCD]
         appointments.removeAll()
         for appoint in data {
-            let appointment = Appointment(name: appoint.name, date: appoint.date,
-                                          alarmDate: appoint.alarmDate, doctor: appoint.doctor,
+            let appointment = Appointment(name: appoint.name, date: appoint.date, doctor: appoint.doctor,
                                           local: appoint.local, notes: appoint.notes)
             appointments.append(appointment)
         }
 
     }
     
-    
-    func scheduleLocal(date: NSDate) {
-        let notification = UILocalNotification()
-        notification.fireDate = date
-        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
-        notification.alertAction = "be awesome!"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["CustomField1": "w00t"]
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AppointmentDetail" {
-            let vc = segue.destinationViewController as! AppointmentDetailViewController
-            vc.date = (sender as! NSDate)
+            let vc = segue.destinationViewController as! AppointmentDetailsViewController
+            let cell = sender as? AppointmentsTableViewCell
+            vc.appointment = cell?.currentAppointment
         }
+    }
+    
+    @IBAction func unwindSegueToAppointmentViewController(segue: UIStoryboardSegue) {
     }
 }
 
-extension ConsultasViewController: UITableViewDelegate, UITableViewDataSource {
+extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appointments.count
@@ -91,7 +78,8 @@ extension ConsultasViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("AppointmentDetail", sender: appointments[indexPath.row].date)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? AppointmentsTableViewCell
+        performSegueWithIdentifier("AppointmentDetail", sender: cell)
     }
     
 }

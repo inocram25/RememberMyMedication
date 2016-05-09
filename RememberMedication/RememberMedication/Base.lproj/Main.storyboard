@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="-345" y="37"/>
         </scene>
-        <!--Consultas View Controller-->
+        <!--Consultas-->
         <scene sceneID="20C-z1-4R8">
             <objects>
-                <viewController id="3RM-O9-YtU" customClass="ConsultasViewController" customModule="RememberMedication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3RM-O9-YtU" customClass="AppointmentsViewController" customModule="RememberMedication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dlr-mj-2YH"/>
                         <viewControllerLayoutGuide type="bottom" id="oLE-iT-I4c"/>
@@ -123,7 +123,7 @@
                             <constraint firstItem="5fg-8L-ixC" firstAttribute="leading" secondItem="vX0-St-ywE" secondAttribute="leading" id="zo2-4E-jQE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LFs-EY-4N5">
+                    <navigationItem key="navigationItem" title="Consultas" id="LFs-EY-4N5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cgQ-kn-eo8" userLabel="Add">
                             <connections>
                                 <segue destination="hor-YP-ncc" kind="presentation" id="A9d-N9-2bF"/>
@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="-345" y="828"/>
         </scene>
-        <!--Appointment Detail View Controller-->
+        <!--Appointment Details View Controller-->
         <scene sceneID="SKB-yz-KOU">
             <objects>
-                <viewController id="PPz-o8-P6j" customClass="AppointmentDetailViewController" customModule="RememberMedication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PPz-o8-P6j" customClass="AppointmentDetailsViewController" customModule="RememberMedication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BU6-If-kb9"/>
                         <viewControllerLayoutGuide type="bottom" id="wIa-86-olp"/>
@@ -150,8 +150,102 @@
                     <view key="view" contentMode="scaleToFill" id="58U-B7-lmN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppointmentFilledIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yoG-pF-VTB">
+                                <rect key="frame" x="28" y="85" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="35I-Z8-thm"/>
+                                    <constraint firstAttribute="height" constant="100" id="Gf1-gQ-T2s"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardiologista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-X0-0Un">
+                                <rect key="frame" x="136" y="119" width="154" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avenida General Osorio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FD-Vr-IVV">
+                                <rect key="frame" x="66" y="257" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marker-100" translatesAutoresizingMaskIntoConstraints="NO" id="eJM-cm-tXh">
+                                <rect key="frame" x="28" y="253" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="5R2-CP-BCZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="yWC-jP-Ak7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doctor Male-100" translatesAutoresizingMaskIntoConstraints="NO" id="kgc-KC-lEA">
+                                <rect key="frame" x="28" y="307" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="q8x-uv-O9h"/>
+                                    <constraint firstAttribute="width" constant="30" id="qrA-K8-oVd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Douglas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SR4-0E-L4K">
+                                <rect key="frame" x="66" y="311" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFz-Br-4zM">
+                                <rect key="frame" x="28" y="364" width="544" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock-100" translatesAutoresizingMaskIntoConstraints="NO" id="7sZ-io-Frp">
+                                <rect key="frame" x="28" y="199" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CSk-eN-5fw"/>
+                                    <constraint firstAttribute="width" constant="30" id="ZWf-O7-OKo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX7-2W-RfP">
+                                <rect key="frame" x="66" y="203" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7sZ-io-Frp" firstAttribute="top" secondItem="yoG-pF-VTB" secondAttribute="bottom" constant="14" id="1XH-kK-Qac"/>
+                            <constraint firstItem="yoG-pF-VTB" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leadingMargin" constant="8" id="3xu-Rc-4x0"/>
+                            <constraint firstItem="SR4-0E-L4K" firstAttribute="leading" secondItem="kgc-KC-lEA" secondAttribute="trailing" constant="8" id="6Ke-2v-HCR"/>
+                            <constraint firstItem="SR4-0E-L4K" firstAttribute="centerY" secondItem="kgc-KC-lEA" secondAttribute="centerY" id="Ceh-Rg-HyU"/>
+                            <constraint firstItem="2FD-Vr-IVV" firstAttribute="leading" secondItem="eJM-cm-tXh" secondAttribute="trailing" constant="8" id="G0E-jK-Ct5"/>
+                            <constraint firstItem="sFz-Br-4zM" firstAttribute="top" secondItem="SR4-0E-L4K" secondAttribute="bottom" constant="32" id="Huo-BI-R81"/>
+                            <constraint firstItem="yoG-pF-VTB" firstAttribute="top" secondItem="BU6-If-kb9" secondAttribute="bottom" constant="21" id="IYa-Pc-u1U"/>
+                            <constraint firstItem="kgc-KC-lEA" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leadingMargin" constant="-8" id="N9W-X1-ZWm"/>
+                            <constraint firstAttribute="trailing" secondItem="sFz-Br-4zM" secondAttribute="trailing" constant="28" id="NGB-Df-7rw"/>
+                            <constraint firstItem="7sZ-io-Frp" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leadingMargin" constant="8" id="QRa-PF-S5b"/>
+                            <constraint firstItem="eJM-cm-tXh" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leadingMargin" constant="8" id="SNC-sE-Fmx"/>
+                            <constraint firstItem="eJM-cm-tXh" firstAttribute="top" secondItem="7sZ-io-Frp" secondAttribute="bottom" constant="24" id="TlU-Dv-FMt"/>
+                            <constraint firstItem="kgc-KC-lEA" firstAttribute="top" secondItem="eJM-cm-tXh" secondAttribute="bottom" constant="24" id="bJ6-k8-eM5"/>
+                            <constraint firstItem="sFz-Br-4zM" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leading" constant="28" id="cHz-31-Qfz"/>
+                            <constraint firstItem="2FD-Vr-IVV" firstAttribute="centerY" secondItem="eJM-cm-tXh" secondAttribute="centerY" id="dHi-K8-219"/>
+                            <constraint firstItem="hX7-2W-RfP" firstAttribute="leading" secondItem="7sZ-io-Frp" secondAttribute="trailing" constant="8" id="gXY-Bq-l3h"/>
+                            <constraint firstItem="zp0-X0-0Un" firstAttribute="centerY" secondItem="yoG-pF-VTB" secondAttribute="centerY" id="j5C-Nv-ds2"/>
+                            <constraint firstItem="zp0-X0-0Un" firstAttribute="leading" secondItem="yoG-pF-VTB" secondAttribute="trailing" constant="8" id="mJU-vW-KJj"/>
+                            <constraint firstItem="kgc-KC-lEA" firstAttribute="leading" secondItem="58U-B7-lmN" secondAttribute="leadingMargin" constant="8" id="nPa-qp-ei1"/>
+                            <constraint firstItem="hX7-2W-RfP" firstAttribute="centerY" secondItem="7sZ-io-Frp" secondAttribute="centerY" id="x48-zP-Ma0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="N9W-X1-ZWm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="hX7-2W-RfP" id="RJk-Rs-63a"/>
+                        <outlet property="doctorLabel" destination="SR4-0E-L4K" id="Fh6-U3-usR"/>
+                        <outlet property="localLabel" destination="2FD-Vr-IVV" id="rjP-kX-gda"/>
+                        <outlet property="nameLabel" destination="zp0-X0-0Un" id="jhx-ag-upC"/>
+                        <outlet property="notesLabel" destination="sFz-Br-4zM" id="hgV-2i-PxN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2x-zV-1B5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,11 +342,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="9Bd-mv-Hd8" detailTextLabel="y7Q-rq-ptl" style="IBUITableViewCellStyleValue1" id="XCI-GH-GCc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9Bd-mv-Hd8" detailTextLabel="y7Q-rq-ptl" style="IBUITableViewCellStyleValue1" id="XCI-GH-GCc">
                                         <rect key="frame" x="0.0" y="352" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XCI-GH-GCc" id="Lrc-Kv-jTg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Alarme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Bd-mv-Hd8">
@@ -263,7 +357,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y7Q-rq-ptl">
-                                                    <rect key="frame" x="543.5" y="12" width="41.5" height="19.5"/>
+                                                    <rect key="frame" x="523.5" y="12" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -379,7 +473,7 @@
                     <navigationItem key="navigationItem" title="Appointiments" id="hGs-fP-c4u">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="psh-fC-nPd">
                             <connections>
-                                <segue destination="7c6-g3-eGc" kind="unwind" unwindAction="unwindSegueToMedicinesViewController:" id="bb7-sn-Ldc"/>
+                                <segue destination="7c6-g3-eGc" kind="unwind" unwindAction="unwindSegueToAppointmentViewController:" id="c8H-Jo-Jyf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="yBA-c6-uZi">
@@ -421,7 +515,7 @@
             </objects>
             <point key="canvasLocation" x="-1218" y="37"/>
         </scene>
-        <!--Medicines-->
+        <!--Medicamentos-->
         <scene sceneID="hHh-pN-dtv">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="bMv-ED-8vy" customClass="MedicinesViewController" customModule="RememberMedication" sceneMemberID="viewController">
@@ -605,7 +699,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Medicines" id="rpa-qn-AL7">
+                    <navigationItem key="navigationItem" title="Medicamentos" id="rpa-qn-AL7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aEH-52-zQX">
                             <connections>
                                 <segue destination="FqM-8f-NRv" kind="presentation" id="sxJ-Lr-9GK"/>
@@ -987,6 +1081,9 @@
     <resources>
         <image name="AppointmentFilledIcon" width="25" height="25"/>
         <image name="AppointmentIcon" width="25" height="25"/>
+        <image name="Clock-100" width="100" height="100"/>
+        <image name="Doctor Male-100" width="100" height="100"/>
+        <image name="Marker-100" width="100" height="100"/>
         <image name="MedicineFilledIcon" width="25" height="25"/>
         <image name="MedicineIcon" width="25" height="25"/>
     </resources>
