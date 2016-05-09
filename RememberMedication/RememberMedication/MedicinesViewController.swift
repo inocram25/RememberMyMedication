@@ -18,9 +18,9 @@ class MedicinesViewController: UIViewController {
         super.viewDidLoad()
         
         loadMedicines()
+    
         medicinesTableView.backgroundColor = UIColor.healthU_LightGrey()
         medicinesTableView.tableFooterView = UIView()
-        scheduleLocal(NSDate(timeIntervalSinceNow: 10))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,23 +35,33 @@ class MedicinesViewController: UIViewController {
         for m in medicationCD {
             let medication = Medication(name: m.name, dosage: m.dosage,
                                         patient: m.patient, timesDay: m.timesDay,
-                                        startDate: m.startDate, endDate: m.endDate, weekDay: m.weekDay)
+                                        startDate: m.startDate, endDate: m.endDate,
+                                        weekDay: m.weekDay, id: m.id)
+            
             medications.append(medication)
+            
+            if medication.verifyEndDate() == true {
+                print("cancelNotification")
+                cancelLocalNotification(medication.id)
+            }
         }
-    }
-    
-    func scheduleLocal(date: NSDate) {
-        let notification = UILocalNotification()
-        notification.fireDate = date
-        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
-        notification.alertAction = "be awesome!"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["CustomField1": "w00t"]
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
     @IBAction func unwindSegueToMedicinesViewController(segue: UIStoryboardSegue) {
     }
+    
+    func cancelLocalNotification(uniqueId: String){
+        if let notifyArray = UIApplication.sharedApplication().scheduledLocalNotifications {
+            for notif in notifyArray as [UILocalNotification] {
+                if let info = notif.userInfo as? [String: String] {
+                    if info["ID"] == uniqueId {
+                        UIApplication.sharedApplication().cancelLocalNotification(notif)
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,5 +93,4 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
 }
