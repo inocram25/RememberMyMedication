@@ -46,8 +46,6 @@ class MedicinesTableViewCell: UITableViewCell {
         let completedDays = calendar.components(NSCalendarUnit.Day, fromDate: medication.startDate, toDate: NSDate() , options: NSCalendarOptions.MatchFirst)
         let diff = Float(completedDays.day) / Float (totalDays.day + 1)
         
-//        print("New - \(medication.startDate.difference(medication.endDate))")
-        
         progressView.setProgress(diff, animated: true)
         
         let remainingDays = totalDays.day - completedDays.day

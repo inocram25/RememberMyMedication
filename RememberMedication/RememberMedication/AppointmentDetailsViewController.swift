@@ -8,24 +8,46 @@
 
 import UIKit
 
-class AppointmentDetailsViewController: UIViewController {
+class AppointmentDetailsViewController: UITableViewController {
     
-    var appointment: Appointment?
+    var appointment: Appointment!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var localLabel: UILabel!
-    @IBOutlet weak var doctorLabel: UILabel!
-    @IBOutlet weak var notesLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel?
+    @IBOutlet private weak var dayLabel: UILabel?
+    @IBOutlet private weak var monthLabel: UILabel?
+    @IBOutlet private weak var timeLabel: UILabel?
+    @IBOutlet private weak var doctorLabel: UILabel?
+    @IBOutlet private weak var localLabel: UILabel?
+    @IBOutlet private weak var notesLabel: UILabel?
     
+    @IBOutlet private weak var notesCell: UITableViewCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateLabel.text = appointment?.date.description
-        notesLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
-        print(appointment)
+        nameLabel?.text = appointment.name
+        doctorLabel?.text = appointment.doctor
+        localLabel?.text = appointment.local
+        notesLabel?.text = appointment.notes
+        dayLabel?.text = "\(appointment.day)"
+        timeLabel?.text = "\(appointment.hour):\(appointment.minute)"
+        monthLabel?.text = appointment.month?.description
         
+        tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0001
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 15.0
     }
 }

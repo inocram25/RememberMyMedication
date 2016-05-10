@@ -14,6 +14,23 @@ struct Appointment {
     let doctor: String
     let local: String
     let notes: String
+    
+    var hour: Int {
+        return getComponentForUnit(.Hour)
+    }
+    var minute: Int {
+        return getComponentForUnit(.Minute)
+    }
+    var day: Int {
+        return getComponentForUnit(.Day)
+    }
+    var month: Month? {
+        return Month(rawValue: getComponentForUnit(.Month))
+    }
+    
+    func getComponentForUnit(unit: NSCalendarUnit) -> Int {
+        return NSCalendar.currentCalendar().component(unit, fromDate: date)
+    }
 }
 
 class AppointmentServices{

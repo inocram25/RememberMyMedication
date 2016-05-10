@@ -41,8 +41,6 @@ class AddMedicineTableViewController: UITableViewController {
     var endDatePickerVisible = false
     var weekDayVisible = false
     
-//    var weekDayDictionary = ["Dom" : WeekDay.Sunday, "Seg" : WeekDay.Monday, "Ter" : WeekDay.Tuesday, "Qua": WeekDay.Wednesday,
-//                   "Qui" : WeekDay.Thursday, "Sex" : WeekDay.Friday, "Sab" : WeekDay.Saturday]
     var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
     var weekDaySelected: WeekDay?
     
