@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -10,28 +10,66 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="Amm-h1-6mL"/>
-                        <label alignment="left" text="Label" id="y3w-rG-whh"/>
-                        <imageView alignment="left" id="Aty-eE-rwK"/>
-                        <button width="1" alignment="left" title="Button" id="jaw-JB-5gw"/>
+                        <group width="1" alignment="left" id="qMG-h5-sRh">
+                            <items>
+                                <imageView width="42" height="46" alignment="left" image="MedicineFilledIcon" id="Aty-eE-rwK"/>
+                                <dateLabel width="78" height="52.5" alignment="left" textAlignment="center" numberOfLines="2" id="LYy-Wu-xQG">
+                                    <fontDescription key="font" type="system" pointSize="19"/>
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                    <dateFormatterStyle key="timeStyle" short="YES"/>
+                                </dateLabel>
+                            </items>
+                            <color key="backgroundColor" red="0.92620192307692306" green="0.51194355233354438" blue="0.23642698091333272" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                        <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="xfc-Ug-xjw">
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <label width="136" height="14.5" alignment="left" text="20 ml" textAlignment="center" id="Cpo-mR-dv7">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <label width="136" height="14.5" alignment="left" text="João Paulo" textAlignment="center" id="KUC-70-ZV0">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <button width="1" alignment="left" title="Já tomei" id="jaw-JB-5gw"/>
                     </items>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
-                        <outlet property="deviceLabel" destination="Amm-h1-6mL" id="zia-tP-0sI"/>
                         <outlet property="heart" destination="Aty-eE-rwK" id="WIu-T1-XxL"/>
-                        <outlet property="label" destination="y3w-rG-whh" id="eHr-ZA-4EM"/>
                         <outlet property="startStopButton" destination="jaw-JB-5gw" id="5xa-xD-LKt"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="235" y="338"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <imageView width="43" height="46" alignment="left" image="MedicineFilledIcon" id="aFj-hY-ARu">
+                                    <color key="tintColor" red="0.88229078166044528" green="0.92620192307692306" blue="0.86899212105909052" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                                <dateLabel width="77" height="67.5" alignment="left" textAlignment="center" numberOfLines="2" id="BRr-bI-kfz">
+                                    <fontDescription key="font" type="system" pointSize="19"/>
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                    <dateFormatterStyle key="timeStyle" short="YES"/>
+                                </dateLabel>
+                            </items>
+                            <color key="backgroundColor" red="0.89803921568627454" green="0.43529411764705883" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="mJ9-MT-ulP">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <label width="136" height="14.5" alignment="left" text="João Paulo" textAlignment="center" id="zkR-Rk-Ax2">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
