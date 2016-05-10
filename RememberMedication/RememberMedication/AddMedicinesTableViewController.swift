@@ -129,6 +129,7 @@ class AddMedicineTableViewController: UITableViewController {
         notification.userInfo = ["ID": medication.id]
         if medication.startDate.difference(medication.endDate) > 0 {
             notification.repeatInterval = .Day
+            
         }
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }

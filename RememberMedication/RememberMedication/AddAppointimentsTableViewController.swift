@@ -222,6 +222,7 @@ extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerVie
                 }
             }
         }
+        tableView.reloadData()
         alarmLabel.text = text
     }
     
