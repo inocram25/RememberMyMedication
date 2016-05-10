@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="qMG-h5-sRh">
+                        <group width="134" alignment="left" id="qMG-h5-sRh">
                             <items>
                                 <imageView width="42" height="46" alignment="left" image="MedicineFilledIcon" id="Aty-eE-rwK"/>
                                 <dateLabel width="78" height="52.5" alignment="left" textAlignment="center" numberOfLines="2" id="LYy-Wu-xQG">
@@ -19,7 +19,7 @@
                                     <dateFormatterStyle key="timeStyle" short="YES"/>
                                 </dateLabel>
                             </items>
-                            <color key="backgroundColor" red="0.92620192307692306" green="0.51194355233354438" blue="0.23642698091333272" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.76470588235294112" green="0.41960784313725491" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                         <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="xfc-Ug-xjw">
                             <fontDescription key="font" type="system" pointSize="18"/>
@@ -57,7 +57,7 @@
                                     <dateFormatterStyle key="timeStyle" short="YES"/>
                                 </dateLabel>
                             </items>
-                            <color key="backgroundColor" red="0.89803921568627454" green="0.43529411764705883" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.81568627450980391" green="0.49803921568627452" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
@@ -83,21 +83,17 @@
                     <items>
                         <label alignment="left" text="test" id="XkS-y5-khE"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="titleColor" red="0.94580027472426664" green="0.94713498268942975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sashColor" red="0.76470588235294112" green="0.3908419027670969" blue="0.012833751319711532" alpha="1" colorSpace="calibratedRGB"/>
+                    </notificationCategory>
+                    <color key="backgroundColor" red="0.85905448717948718" green="0.56687025297284988" blue="0.0092981190384413669" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="wJ2-H2-dXX" kind="relationship" relationship="dynamicNotificationInterface" id="ZGe-FS-Vt0"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="t2d-22-CoR">
-            <objects>
-                <controller id="wJ2-H2-dXX" customClass="NotificationController" customModule="Watch_Extension"/>
-            </objects>
-            <point key="canvasLocation" x="535" y="1001"/>
         </scene>
     </scenes>
 </document>
