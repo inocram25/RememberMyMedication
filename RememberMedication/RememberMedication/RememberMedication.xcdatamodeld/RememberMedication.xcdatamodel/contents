@@ -11,10 +11,10 @@
         <attribute name="dosage" attributeType="String" syncable="YES"/>
         <attribute name="endDate" attributeType="Date" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="interval" attributeType="Integer 64" defaultValueString="1" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="patient" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" syncable="YES"/>
-        <attribute name="timesDay" attributeType="Integer 64" defaultValueString="1" syncable="YES"/>
         <attribute name="weekDay" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>

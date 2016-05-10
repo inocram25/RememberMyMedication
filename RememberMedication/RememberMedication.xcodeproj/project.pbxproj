@@ -20,6 +20,7 @@
 		7FC9CDA11CD7B8BD00A87AC0 /* AppointmentCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */; };
 		7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */; };
 		7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */; };
+		7FF840D51CE2660F009F779C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF840D41CE2660F009F779C /* NotificationScheduler.swift */; };
 		9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED621CDAA955002D1785 /* BorderedView.swift */; };
 		9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED641CDAAAEF002D1785 /* WeekDay.swift */; };
 		9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */; };
@@ -113,6 +114,7 @@
 		7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentCD.swift; path = RememberMedication/AppointmentCD.swift; sourceTree = "<group>"; };
 		7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDAO.swift; path = RememberMedication/AppointmentDAO.swift; sourceTree = "<group>"; };
 		7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentServices.swift; path = RememberMedication/AppointmentServices.swift; sourceTree = "<group>"; };
+		7FF840D41CE2660F009F779C /* NotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		9A04ED621CDAA955002D1785 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		9A04ED641CDAAAEF002D1785 /* WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
 		9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				9A04ED641CDAAAEF002D1785 /* WeekDay.swift */,
+				7FF840D41CE2660F009F779C /* NotificationScheduler.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				7FC9CD9B1CD7B44B00A87AC0 /* DatabaseManager.swift in Sources */,
 				7FC9CD9C1CD7B44B00A87AC0 /* MedicationCD.swift in Sources */,
 				9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */,
+				7FF840D51CE2660F009F779C /* NotificationScheduler.swift in Sources */,
 				7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */,
 				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
 				7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */,

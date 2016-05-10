@@ -16,6 +16,7 @@ class AppointmentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appointmentsTableView.backgroundColor = UIColor.healthU_LightGrey()
 
         loadAppointments()
         appointmentsTableView.tableFooterView = UIView()
@@ -70,7 +71,6 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            print(appointments[indexPath.row])
             AppointmentServices.deleteByDate(appointments[indexPath.row].date)
             appointments.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)

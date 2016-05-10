@@ -97,8 +97,6 @@ class AddAppointimentsTableViewController: UITableViewController {
         let appointment = Appointment(name: name, date: date, doctor: doctor! , local: local!, notes: notes!)
 
         AppointmentServices.createDataCD(appointment)
-        
-        print(alarmDate)
         scheduleLocal(appointment)
         
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
@@ -145,8 +143,6 @@ class AddAppointimentsTableViewController: UITableViewController {
         components.hour = -hour
         components.minute = -min
         alarmDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: appointmentDate, options: NSCalendarOptions.init(rawValue: 0))!
-        
-        print("Calculo da data = \(alarmDate)")
         
     }
     

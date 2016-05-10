@@ -108,7 +108,7 @@ class AddMedicineTableViewController: UITableViewController {
         let medication = Medication(name: name,
                                     dosage: dosage!,
                                     patient: pacient!,
-                                    timesDay: 1,
+                                    interval: 1,
                                     startDate: startDate,
                                     endDate: endDate!,
                                     weekDay: days!,

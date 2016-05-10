@@ -14,7 +14,7 @@ public final class MedicationCD: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var dosage: String
     @NSManaged var patient: String
-    @NSManaged var timesDay: Int64
+    @NSManaged var interval: Int64
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
     @NSManaged var id: String

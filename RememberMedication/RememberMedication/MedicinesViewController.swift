@@ -34,7 +34,7 @@ class MedicinesViewController: UIViewController {
         medications.removeAll()
         for m in medicationCD {
             let medication = Medication(name: m.name, dosage: m.dosage,
-                                        patient: m.patient, timesDay: m.timesDay,
+                                        patient: m.patient, interval: m.interval,
                                         startDate: m.startDate, endDate: m.endDate,
                                         weekDay: m.weekDay, id: m.id)
             

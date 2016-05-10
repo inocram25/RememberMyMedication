@@ -12,7 +12,7 @@ struct Medication {
     let name: String
     let dosage: String
     let patient: String
-    let timesDay: Int64
+    let interval: Int64
     let startDate: NSDate
     let endDate: NSDate
     let weekDay: WeekDay
@@ -31,7 +31,7 @@ class MedicationServices {
         m.name = medication.name
         m.dosage = medication.dosage
         m.patient = medication.patient
-        m.timesDay = medication.timesDay
+        m.interval = medication.interval
         m.startDate = medication.startDate
         m.endDate = medication.endDate
         m.weekDay = medication.weekDay
