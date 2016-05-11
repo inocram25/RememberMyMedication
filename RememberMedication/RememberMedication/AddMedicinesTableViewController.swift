@@ -51,6 +51,7 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var pacientTextField: UITextField!
     @IBOutlet weak var weekDayCollectionView: UICollectionView!
     @IBOutlet weak var frequencySwitch: UISwitch!
+    @IBOutlet weak var intervalLabel: UILabel!
     
     let dateFormatter = NSDateFormatter()
     

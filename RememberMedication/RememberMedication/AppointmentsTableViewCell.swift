@@ -15,6 +15,7 @@ class AppointmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var appointmentLocalLabel: UILabel!
     @IBOutlet weak var appointmentDayLabel: UILabel!
     @IBOutlet weak var appointmentMonthLabel: UILabel!
+    @IBOutlet weak var borderedView: BorderedView!
 
     
     var currentAppointment: Appointment?
@@ -22,8 +23,9 @@ class AppointmentsTableViewCell: UITableViewCell {
     func configureCell(appointment: Appointment) {
         currentAppointment = appointment
         
+        borderedView.backgroundColor = appointment.date.month?.color
         appointmentNameLabel.text = appointment.name
-     
+        
         let hour = appointment.date.hour
         let minute = appointment.date.minute
         appointmentDoctorHourLabel.text = appointment.doctor.isEmpty == false ? "Horário: \(hour):\(minute) / \(appointment.doctor)" : "Horário: \(hour):\(minute)"
