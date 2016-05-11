@@ -62,6 +62,15 @@ class MedicinesViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "MedicineDetail" {
+            let vc = segue.destinationViewController as! MedicinesDetailsViewController
+            let cell = sender as? MedicinesTableViewCell
+            vc.medication = cell?.currentMedication
+        }
+    }
+
+    
 }
 
 extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -91,6 +100,9 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? MedicinesTableViewCell
+        performSegueWithIdentifier("MedicineDetail", sender: cell)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
     }
 }

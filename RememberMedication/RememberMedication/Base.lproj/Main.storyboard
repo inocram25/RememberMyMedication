@@ -776,6 +776,34 @@
             </objects>
             <point key="canvasLocation" x="-1218" y="37"/>
         </scene>
+        <!--Medicines Details View Controller-->
+        <scene sceneID="U16-3C-hef">
+            <objects>
+                <tableViewController id="TgG-bK-9Sv" customClass="MedicinesDetailsViewController" customModule="RememberMedication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rf6-KM-gOj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Ky-Ek-Sjx">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ky-Ek-Sjx" id="56t-Op-xxt">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TgG-bK-9Sv" id="Pka-RK-Tme"/>
+                            <outlet property="delegate" destination="TgG-bK-9Sv" id="Lb1-jo-Ute"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2m3-Vc-M68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2033" y="864"/>
+        </scene>
         <!--Medicamentos-->
         <scene sceneID="hHh-pN-dtv">
             <objects>
@@ -948,6 +976,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="medicinesTableView" destination="goZ-wf-pMZ" id="qX7-rw-4Am"/>
+                        <segue destination="TgG-bK-9Sv" kind="show" identifier="MedicineDetail" id="M9M-PE-C4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLl-3n-OvI" userLabel="First Responder" sceneMemberID="firstResponder"/>

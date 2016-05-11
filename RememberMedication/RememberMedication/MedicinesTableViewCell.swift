@@ -17,6 +17,7 @@ class MedicinesTableViewCell: UITableViewCell {
     @IBOutlet weak var patient: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    var currentMedication: Medication?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -27,6 +28,8 @@ class MedicinesTableViewCell: UITableViewCell {
     }
     
     func configureCell(medication: Medication) {
+        currentMedication = medication
+        
         borderedView.backgroundColor = medication.startDate.month?.color
         progressView.tintColor = medication.startDate.month?.color
         medicineNameLabel.text = medication.name
