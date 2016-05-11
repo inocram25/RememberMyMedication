@@ -35,7 +35,6 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="heart" destination="Aty-eE-rwK" id="WIu-T1-XxL"/>
-                        <outlet property="startStopButton" destination="jaw-JB-5gw" id="5xa-xD-LKt"/>
                     </connections>
                 </controller>
             </objects>
@@ -64,7 +63,7 @@
                                 <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="mJ9-MT-ulP">
                                     <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                 </label>
-                                <label width="136" height="14.5" alignment="left" text="João Paulo" textAlignment="center" id="zkR-Rk-Ax2">
+                                <label width="136" height="20" alignment="left" text="João Paulo" textAlignment="center" id="zkR-Rk-Ax2">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                 </label>
                             </items>
@@ -72,6 +71,11 @@
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="dateOutlet" destination="BRr-bI-kfz" id="Fpm-9F-fPn"/>
+                        <outlet property="nameOutlet" destination="mJ9-MT-ulP" id="KLO-9A-ZWd"/>
+                        <outlet property="patientNameOutlet" destination="zkR-Rk-Ax2" id="6HO-pp-YQi"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
