@@ -43,6 +43,7 @@ class AddMedicineTableViewController: UITableViewController {
     
     var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
     var weekDaySelected: WeekDay?
+    var interval = 0
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -94,6 +95,7 @@ class AddMedicineTableViewController: UITableViewController {
         let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
+        
         let days:WeekDay?
 
         if weekDaySelected == nil {
@@ -105,7 +107,7 @@ class AddMedicineTableViewController: UITableViewController {
         let medication = Medication(name: name,
                                     dosage: dosage!,
                                     patient: pacient!,
-                                    interval: 1,
+                                    interval: Int64(interval),
                                     startDate: startDate,
                                     endDate: endDate!,
                                     weekDay: days!,
@@ -133,6 +135,14 @@ class AddMedicineTableViewController: UITableViewController {
 
     @IBAction func switchAction(sender: UISwitch) {
         tableView.reloadData()
+    }
+    
+    @IBAction func unwindSegueToAddMedicinesViewController(segue: UIStoryboardSegue) {
+        let vc = segue.sourceViewController as? IntervalTableViewController
+        if let selectedInterval = vc?.selectedInterval {
+            intervalLabel.text = "\(selectedInterval.description) horas"
+            interval = selectedInterval
+        }
     }
     
     //Tableview
