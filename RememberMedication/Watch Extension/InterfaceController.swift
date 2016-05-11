@@ -28,6 +28,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
     let heartRateUnit = HKUnit(fromString: "count/min")
     var anchor = HKQueryAnchor(fromValue: Int(HKAnchoredObjectQueryNoAnchor))
     
+
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
