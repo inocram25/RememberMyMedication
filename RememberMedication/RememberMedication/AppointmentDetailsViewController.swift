@@ -19,6 +19,7 @@ class AppointmentDetailsViewController: UITableViewController {
     @IBOutlet private weak var doctorLabel: UILabel?
     @IBOutlet private weak var localLabel: UILabel?
     @IBOutlet private weak var notesLabel: UILabel?
+    @IBOutlet weak var borderedView: BorderedView!
     
     @IBOutlet private weak var notesCell: UITableViewCell?
 
@@ -32,11 +33,13 @@ class AppointmentDetailsViewController: UITableViewController {
         doctorLabel?.text = appointment.doctor
         localLabel?.text = appointment.local
         notesLabel?.text = appointment.notes
-        dayLabel?.text = "\(appointment.day)"
-        timeLabel?.text = "\(appointment.hour):\(appointment.minute)"
-        monthLabel?.text = appointment.month?.description
+        dayLabel?.text = "\(appointment.date.day)"
+        timeLabel?.text = "\(appointment.date.hour):\(appointment.date.minute)"
+        monthLabel?.text = appointment.date.month?.description
+        borderedView.backgroundColor = appointment.date.month?.color
         
         tableView.reloadData()
+        tableView.allowsSelection = false
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

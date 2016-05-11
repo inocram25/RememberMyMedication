@@ -8,54 +8,6 @@
 
 import UIKit
 
-enum Month: Int {
-    case January = 1
-    case February
-    case March
-    case April
-    case May
-    case June
-    case July
-    case August
-    case September
-    case October
-    case November
-    case December
-    
-}
-
-extension Month: CustomStringConvertible {
-    var description: String {
-        switch self {
-        case .January:
-            return "JAN"
-        case .February:
-            return "FEV"
-        case .March:
-            return "MAR"
-        case .April:
-            return "ABR"
-        case .May:
-            return "MAI"
-        case .June:
-            return "JUN"
-        case .July:
-            return "JUL"
-        case .August:
-            return "AGO"
-        case .September:
-            return "SET"
-        case .October:
-            return "OUT"
-        case .November:
-            return "NOV"
-        case .December:
-            return "DEZ"
-
-        }
-    }
-}
-
 class AppointmentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var appointmentNameLabel: UILabel!
@@ -71,16 +23,12 @@ class AppointmentsTableViewCell: UITableViewCell {
         currentAppointment = appointment
         
         appointmentNameLabel.text = appointment.name
-        
-        let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: appointment.date)
-        let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: appointment.date)
-        let day = NSCalendar.currentCalendar().component(.Day, fromDate: appointment.date)
-        let month = NSCalendar.currentCalendar().component(.Month, fromDate: appointment.date)
-        
      
+        let hour = appointment.date.hour
+        let minute = appointment.date.minute
         appointmentDoctorHourLabel.text = appointment.doctor.isEmpty == false ? "Horário: \(hour):\(minute) / \(appointment.doctor)" : "Horário: \(hour):\(minute)"
-        appointmentDayLabel.text = "\(day)"
-        appointmentMonthLabel.text = Month.init(rawValue: month)?.description
+        appointmentDayLabel.text = appointment.date.day.description
+        appointmentMonthLabel.text = appointment.date.month?.description
         appointmentLocalLabel.text = appointment.local
         
     }

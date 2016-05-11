@@ -8,21 +8,6 @@
 
 import Foundation
 
-struct Medication {
-    let name: String
-    let dosage: String
-    let patient: String
-    let interval: Int64
-    let startDate: NSDate
-    let endDate: NSDate
-    let weekDay: WeekDay
-    let id: String
-    
-    func verifyEndDate() -> Bool {
-        return NSCalendar.currentCalendar().compareDate(NSDate(), toDate: endDate, toUnitGranularity: .Hour) == .OrderedSame ? true : false
-    }
-}
-
 class MedicationServices {
     
     static func createDataCD(medication: Medication) {

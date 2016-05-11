@@ -30,6 +30,9 @@
 		9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */; };
 		9A3A1C5D1CDD3004004989C9 /* WeekDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C5C1CDD3004004989C9 /* WeekDayCollectionViewCell.swift */; };
 		9A3A1C5F1CE0F96B004989C9 /* NSDate+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C5E1CE0F96B004989C9 /* NSDate+Diff.swift */; };
+		9A3A1C641CE39B91004989C9 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C631CE39B91004989C9 /* Month.swift */; };
+		9A3A1C661CE39DAE004989C9 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C651CE39DAE004989C9 /* Appointment.swift */; };
+		9A3A1C681CE39E12004989C9 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C671CE39E12004989C9 /* Medication.swift */; };
 		9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */; };
 		9AF136E91CD29CE900FD16FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF136E71CD29CE900FD16FF /* Main.storyboard */; };
 		9AF136EC1CD29CE900FD16FF /* RememberMedication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AF136EA1CD29CE900FD16FF /* RememberMedication.xcdatamodeld */; };
@@ -124,6 +127,9 @@
 		9A2F6E741CD3DC13006F3133 /* MedicinesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicinesTableViewCell.swift; sourceTree = "<group>"; };
 		9A3A1C5C1CDD3004004989C9 /* WeekDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A3A1C5E1CE0F96B004989C9 /* NSDate+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Diff.swift"; sourceTree = "<group>"; };
+		9A3A1C631CE39B91004989C9 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		9A3A1C651CE39DAE004989C9 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		9A3A1C671CE39E12004989C9 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		9AF136E01CD29CE800FD16FF /* RememberMedication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMedication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF136E51CD29CE900FD16FF /* MedicinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesViewController.swift; sourceTree = "<group>"; };
 		9AF136E81CD29CE900FD16FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 			children = (
 				9A04ED641CDAAAEF002D1785 /* WeekDay.swift */,
 				7FF840D41CE2660F009F779C /* NotificationScheduler.swift */,
+				9A3A1C631CE39B91004989C9 /* Month.swift */,
+				9A3A1C651CE39DAE004989C9 /* Appointment.swift */,
+				9A3A1C671CE39E12004989C9 /* Medication.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -538,8 +547,11 @@
 				7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */,
 				9A3A1C5F1CE0F96B004989C9 /* NSDate+Diff.swift in Sources */,
 				9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */,
+				9A3A1C661CE39DAE004989C9 /* Appointment.swift in Sources */,
 				9A2F6E731CD3D67C006F3133 /* AppointmentsViewController.swift in Sources */,
+				9A3A1C641CE39B91004989C9 /* Month.swift in Sources */,
 				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
+				9A3A1C681CE39E12004989C9 /* Medication.swift in Sources */,
 				7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */,
 				9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */,
 				9A3A1C5D1CDD3004004989C9 /* WeekDayCollectionViewCell.swift in Sources */,

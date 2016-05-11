@@ -96,10 +96,8 @@ class AddMedicineTableViewController: UITableViewController {
         let days:WeekDay?
 
         if weekDaySelected == nil {
-            print("ae")
             days = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday]
         } else {
-            print("gg")
             days = weekDaySelected
         }
         

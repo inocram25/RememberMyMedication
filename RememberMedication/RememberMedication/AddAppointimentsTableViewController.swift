@@ -30,8 +30,6 @@ class AddAppointimentsTableViewController: UITableViewController {
     
     //pensar em como configurar o local e o notes
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,9 +130,6 @@ class AddAppointimentsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 44.0
     }
-    
-    
-    
     
     func transformToDate(){
         
