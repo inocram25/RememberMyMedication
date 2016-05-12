@@ -12,7 +12,9 @@
                     <items>
                         <group width="134" alignment="left" id="qMG-h5-sRh">
                             <items>
-                                <imageView width="42" height="46" alignment="left" image="MedicineFilledIcon" id="Aty-eE-rwK"/>
+                                <imageView width="42" height="46" alignment="left" image="MedicineFilledIcon" id="Aty-eE-rwK">
+                                    <color key="tintColor" red="0.95771478671031229" green="0.95587563825523314" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
                                 <dateLabel width="78" height="52.5" alignment="left" textAlignment="center" numberOfLines="2" id="LYy-Wu-xQG">
                                     <fontDescription key="font" type="system" pointSize="19"/>
                                     <dateFormatterStyle key="dateStyle" short="YES"/>
@@ -45,34 +47,39 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y">
+                        <group alignment="left" spacing="6" id="t8f-Gd-c4y">
                             <items>
-                                <imageView width="43" height="46" alignment="left" image="MedicineFilledIcon" id="aFj-hY-ARu">
-                                    <color key="tintColor" red="0.88229078166044528" green="0.92620192307692306" blue="0.86899212105909052" alpha="1" colorSpace="calibratedRGB"/>
+                                <imageView width="30" height="30" alignment="left" image="MedicineFilledIcon" id="1Tl-Yp-Ig1">
+                                    <color key="tintColor" red="0.49019607843137253" green="0.71764705882352942" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
-                                <dateLabel width="77" height="67.5" alignment="left" textAlignment="center" numberOfLines="2" id="BRr-bI-kfz">
+                                <label width="86" height="31.5" alignment="left" text="abcdefghijklmno" textAlignment="left" numberOfLines="2" id="mJ9-MT-ulP">
+                                    <color key="textColor" red="0.95017404485035384" green="0.97731801434662202" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="19"/>
-                                    <dateFormatterStyle key="dateStyle" short="YES"/>
-                                    <dateFormatterStyle key="timeStyle" short="YES"/>
-                                </dateLabel>
+                                </label>
                             </items>
-                            <color key="backgroundColor" red="0.81568627450980391" green="0.49803921568627452" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
-                                <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="mJ9-MT-ulP">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
+                                <group width="1" height="31.5" alignment="left" id="zH9-mQ-GKD">
+                                    <items>
+                                        <imageView width="20" height="20" alignment="left" id="t2X-4n-TJy"/>
+                                        <label width="52.5" height="22.5" alignment="left" text="15:50" textAlignment="left" numberOfLines="2" id="MxE-Z8-rea">
+                                            <color key="textColor" red="0.98027529871199193" green="0.95454824868942034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                        </label>
+                                    </items>
+                                </group>
                                 <label width="136" height="20" alignment="left" text="João Paulo" textAlignment="center" id="zkR-Rk-Ax2">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                 </label>
+                                <label width="60" height="31.5" alignment="left" text="20ml" textAlignment="left" id="Fuw-CE-hsN"/>
                             </items>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="dateOutlet" destination="BRr-bI-kfz" id="Fpm-9F-fPn"/>
+                        <outlet property="dateOutlet" destination="MxE-Z8-rea" id="Tri-6C-zCc"/>
+                        <outlet property="dosageOutlet" destination="Fuw-CE-hsN" id="OgD-UV-bgM"/>
                         <outlet property="nameOutlet" destination="mJ9-MT-ulP" id="KLO-9A-ZWd"/>
                         <outlet property="patientNameOutlet" destination="zkR-Rk-Ax2" id="6HO-pp-YQi"/>
                     </connections>
