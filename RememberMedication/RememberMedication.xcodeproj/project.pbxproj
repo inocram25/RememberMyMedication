@@ -20,7 +20,6 @@
 		7FC9CDA11CD7B8BD00A87AC0 /* AppointmentCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */; };
 		7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */; };
 		7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */; };
-		7FD5C3081CE3B564000F3EB0 /* IntervalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5C3071CE3B564000F3EB0 /* IntervalTableViewController.swift */; };
 		7FD5C30A1CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5C3091CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift */; };
 		7FF840D51CE2660F009F779C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF840D41CE2660F009F779C /* NotificationScheduler.swift */; };
 		9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED621CDAA955002D1785 /* BorderedView.swift */; };
@@ -117,7 +116,6 @@
 		7FC9CDA01CD7B8BD00A87AC0 /* AppointmentCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentCD.swift; path = RememberMedication/AppointmentCD.swift; sourceTree = "<group>"; };
 		7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDAO.swift; path = RememberMedication/AppointmentDAO.swift; sourceTree = "<group>"; };
 		7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentServices.swift; path = RememberMedication/AppointmentServices.swift; sourceTree = "<group>"; };
-		7FD5C3071CE3B564000F3EB0 /* IntervalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTableViewController.swift; sourceTree = "<group>"; };
 		7FD5C3091CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicinesDetailsViewController.swift; sourceTree = "<group>"; };
 		7FF840D41CE2660F009F779C /* NotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		9A04ED621CDAA955002D1785 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */,
 				7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */,
 				7F60E43C1CE0F00F00116FAB /* AppointmentDetailsViewController.swift */,
-				7FD5C3071CE3B564000F3EB0 /* IntervalTableViewController.swift */,
 				7FD5C3091CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift */,
 			);
 			name = ViewController;
@@ -551,7 +548,6 @@
 				9A3A1C641CE39B91004989C9 /* Month.swift in Sources */,
 				9AF136E61CD29CE900FD16FF /* MedicinesViewController.swift in Sources */,
 				9A3A1C681CE39E12004989C9 /* Medication.swift in Sources */,
-				7FD5C3081CE3B564000F3EB0 /* IntervalTableViewController.swift in Sources */,
 				7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */,
 				9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */,
 				9A3A1C5D1CDD3004004989C9 /* WeekDayCollectionViewCell.swift in Sources */,

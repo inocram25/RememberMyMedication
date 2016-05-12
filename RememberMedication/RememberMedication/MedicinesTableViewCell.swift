@@ -16,6 +16,7 @@ class MedicinesTableViewCell: UITableViewCell {
     @IBOutlet weak var borderedView: BorderedView!
     @IBOutlet weak var patient: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     var currentMedication: Medication?
     
@@ -25,6 +26,12 @@ class MedicinesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let layer = backView.layer
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOffset = CGSize(width: 0, height: 0.5)
+        layer.shadowOpacity = 0.4
+        layer.shadowRadius = 1
     }
     
     func configureCell(medication: Medication) {
