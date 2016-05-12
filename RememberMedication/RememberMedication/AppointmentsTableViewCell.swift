@@ -16,9 +16,20 @@ class AppointmentsTableViewCell: UITableViewCell {
     @IBOutlet weak var appointmentDayLabel: UILabel!
     @IBOutlet weak var appointmentMonthLabel: UILabel!
     @IBOutlet weak var borderedView: BorderedView!
+    @IBOutlet weak var backView: UIView!
 
-    
     var currentAppointment: Appointment?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let layer = backView.layer
+        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowOffset = CGSize(width: 0, height: 0.5)
+        layer.shadowOpacity = 0.4
+        layer.shadowRadius = 1
+    }
+    
 
     func configureCell(appointment: Appointment) {
         currentAppointment = appointment
