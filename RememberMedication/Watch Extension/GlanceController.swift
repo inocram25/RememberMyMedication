@@ -14,10 +14,11 @@ import WatchConnectivity
 class GlanceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var nameOutlet: WKInterfaceLabel!
-    @IBOutlet var dateOutlet: WKInterfaceDate!
+    @IBOutlet var dateOutlet: WKInterfaceLabel!
     @IBOutlet var patientNameOutlet: WKInterfaceLabel!
+    @IBOutlet var dosageOutlet: WKInterfaceLabel!
     
-    var messageDictionary = ["messageType": "getLastDate" , "name": "", "date": ""]
+    var messageDictionary = ["messageType": "getLastDate" , "name": "", "date": "", "patientName": "", "dosage": ""]
 
     
     var session: WCSession? {
@@ -45,7 +46,15 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
             
             session!.sendMessage(messageDictionary, replyHandler: { (response:[String : AnyObject]) -> Void in
                 
+                let name = response["name"] as? String
+                let endDate = response["date"] as? String
+                let patientName = response["patientName"] as? String
+                let dosage = response["dosage"] as? String
                 print(response)
+                self.nameOutlet.setText(name)
+                self.dateOutlet.setText(endDate)
+                self.patientNameOutlet.setText(patientName)
+                self.dosageOutlet.setText(dosage)
                 
                 }, errorHandler: { (error) -> Void in
                     

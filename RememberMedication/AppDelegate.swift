@@ -14,6 +14,7 @@ import WatchConnectivity
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
     
+    var medications = [Medication]()
     var window: UIWindow?
     var healthStore = HKHealthStore()
     //session for watch recieving messages medication
@@ -33,9 +34,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
         
         
         if type == "getLastDate" {
+            let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
+            medications.removeAll()
+            for m in medicationCD {
+                let medication = Medication(name: m.name, dosage: m.dosage,
+                                            patient: m.patient, interval: m.interval,
+                                            startDate: m.startDate, endDate: m.endDate,
+                                            weekDay: m.weekDay, id: m.id)
+                
+                medications.append(medication)
+            }
+            
             m["messageType"] = "returnLast"
-            m["name"] = "patientName"
-            m["date"] = NSDate()
+            m["name"] = medications[0].name
+            m["date"] = "\(medications[0].endDate.hour):\(medications[0].endDate.minute)"
+            m["patientName"] = medications[0].patient
+            m["dosage"] = medications[0].dosage
+            
             
             replyHandler(m)
         }
