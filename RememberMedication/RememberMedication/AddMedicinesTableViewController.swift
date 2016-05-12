@@ -17,6 +17,7 @@ private enum AddMedicineTable: String {
     case EndDatePicker = "1,3"
     case Frequency = "1,4"
     case WeekDay = "1,5"
+    case Interval = "1,6"
     case Pacient = "2,0"
     
     init?(indexPath: NSIndexPath) {
@@ -52,7 +53,8 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var pacientTextField: UITextField!
     @IBOutlet weak var weekDayCollectionView: UICollectionView!
     @IBOutlet weak var frequencySwitch: UISwitch!
-    @IBOutlet weak var intervalLabel: UILabel!
+    @IBOutlet weak var sliderInterval: UISlider!
+    @IBOutlet weak var intervalTimeLabel: UILabel!
     
     let dateFormatter = NSDateFormatter()
     
@@ -95,9 +97,9 @@ class AddMedicineTableViewController: UITableViewController {
         let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
+        let i = interval == 24 ? 0 : interval
         
         let days:WeekDay?
-
         if weekDaySelected == nil {
             days = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday]
         } else {
@@ -107,7 +109,7 @@ class AddMedicineTableViewController: UITableViewController {
         let medication = Medication(name: name,
                                     dosage: dosage!,
                                     patient: pacient!,
-                                    interval: Int64(interval),
+                                    interval: Int64(i),
                                     startDate: startDate,
                                     endDate: endDate!,
                                     weekDay: days!,
@@ -137,14 +139,11 @@ class AddMedicineTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBAction func unwindSegueToAddMedicinesViewController(segue: UIStoryboardSegue) {
-        let vc = segue.sourceViewController as? IntervalTableViewController
-        if let selectedInterval = vc?.selectedInterval {
-            intervalLabel.text = "\(selectedInterval.description) horas"
-            interval = selectedInterval
-        }
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        interval = Int(sender.value)
+        intervalTimeLabel.text = "\(interval) horas"
     }
-    
+
     //Tableview
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -171,6 +170,10 @@ class AddMedicineTableViewController: UITableViewController {
         }
         if indexPath.option == .WeekDay {
             return frequencySwitch.on ? 75.0 : 0.0
+        }
+        
+        if indexPath.option == .Interval {
+            return 70.0
         }
         
         return 44.0

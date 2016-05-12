@@ -39,11 +39,6 @@ class MedicinesViewController: UIViewController {
                                         weekDay: m.weekDay, id: m.id)
             
             medications.append(medication)
-            
-            if medication.verifyEndDate() == true {
-                print("cancelNotification")
-                cancelLocalNotification(medication.id)
-            }
         }
     }
 
