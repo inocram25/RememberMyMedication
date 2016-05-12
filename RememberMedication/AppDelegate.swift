@@ -12,10 +12,39 @@ import HealthKit
 import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
     
     var window: UIWindow?
     var healthStore = HKHealthStore()
+    //session for watch recieving messages medication
+    var session: WCSession? {
+        didSet {
+            if let session = session {
+                session.delegate = self
+                session.activateSession()
+            }
+        }
+    }
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        var m = message
+        
+        let type = message["messageType"] as! String
+        
+        
+        if type == "getLastDate" {
+            m["messageType"] = "returnLast"
+            m["name"] = "patientName"
+            m["date"] = NSDate()
+            
+            replyHandler(m)
+        }
+        
+       // self.lblMessage.setText(message["txtMessage"] as? String)
+    
+        
+    }
+
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -23,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        //hear we make the request apple watch data code
+        if WCSession.isSupported()
+        {
+            session = WCSession.defaultSession()
+            print("session OK")
+        }
+        else {
+            print("error, session is not suported")
+        }
+        
+        
         return true
     }
     
