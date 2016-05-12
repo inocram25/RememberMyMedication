@@ -51,8 +51,6 @@
 		9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF137231CD29D0500FD16FF /* ComplicationController.swift */; };
 		9AF137261CD29D0500FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF137251CD29D0500FD16FF /* Assets.xcassets */; };
 		9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9AF137081CD29D0500FD16FF /* Watch.app */; };
-		9AF137341CD29EE500FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137331CD29EE500FD16FF /* HealthKit.framework */; };
-		9AF137381CD29F7C00FD16FF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF137371CD29F7C00FD16FF /* HealthKit.framework */; };
 		CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -157,10 +155,8 @@
 		9AF137231CD29D0500FD16FF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		9AF137251CD29D0500FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF137271CD29D0500FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AF137331CD29EE500FD16FF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RememberMedication.entitlements; path = RememberMedication/RememberMedication.entitlements; sourceTree = "<group>"; };
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
-		9AF137371CD29F7C00FD16FF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF137341CD29EE500FD16FF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +179,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF137381CD29F7C00FD16FF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +261,6 @@
 		9A2F6E711CD3D166006F3133 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9AF137371CD29F7C00FD16FF /* HealthKit.framework */,
-				9AF137331CD29EE500FD16FF /* HealthKit.framework */,
 				7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */,
 				9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */,
 				9AF136ED1CD29CE900FD16FF /* Assets.xcassets */,
@@ -445,10 +437,10 @@
 				TargetAttributes = {
 					9AF136DF1CD29CE800FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HZGB8HVWTX;
+						DevelopmentTeam = E2FE72XC3J;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -458,14 +450,14 @@
 					};
 					9AF137071CD29D0500FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HZGB8HVWTX;
+						DevelopmentTeam = E2FE72XC3J;
 					};
 					9AF137131CD29D0500FD16FF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HZGB8HVWTX;
+						DevelopmentTeam = E2FE72XC3J;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -725,7 +717,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RememberMedication/RememberMedication.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RememberMedication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -738,7 +729,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RememberMedication/RememberMedication.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RememberMedication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -775,7 +765,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
@@ -794,7 +783,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Watch Extension/Info.plist";

@@ -15,7 +15,7 @@ class NotificationScheduler {
     let limitNotification = 64
     
     func scheduleNotificationWithMedications(medications: [Medication]) {
-        
+        dates.removeAll()
         let notifications =  createNotificationsWithMedications(medications)
         scheduleNotification(notifications)
         
@@ -40,9 +40,33 @@ class NotificationScheduler {
     }
     
     func createDatesWithMedication(medication: Medication) -> [NSDate] {
-        //medication.weekDay.contains(WeekDay.Sunday)
+        var date = medication.startDate
+        dates.append(date)
+        print(medication.weekDay.contains(WeekDay.Thursday))
         
-        return [NSDate]()
+        let components = NSDateComponents()
+        if medication.interval == 0 {
+            components.hour = 24
+        }else{
+            components.hour = Int(medication.interval)
+        }
+        
+        while(true){
+            let newDate = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: date, options: NSCalendarOptions.init(rawValue: 0))!
+            if newDate.isGreaterThanDate(medication.endDate){
+                break;
+            }
+            if medication.weekDay.contains(WeekDay(rawValue: Int16(newDate.dayOfWeek()!))) {
+                dates.append(newDate)
+            }
+            date = newDate
+        }
+        
+        for i in dates {
+            print(i)
+        }
+        
+        return dates
     }
     
     func scheduleNotification(notifications: [UILocalNotification]) {
@@ -59,5 +83,31 @@ class NotificationScheduler {
         notification.alertAction = "be awesome!"
         notification.soundName = UILocalNotificationDefaultSoundName
         return notification
+    }
+    
+}
+
+extension NSDate {
+    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isGreater = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
+            isGreater = true
+        }
+        
+        //Return Result
+        return isGreater
+    }
+    
+    func dayOfWeek() -> Int? {
+        if
+            let cal: NSCalendar = NSCalendar.currentCalendar(),
+            let comp: NSDateComponents = cal.components(.Weekday, fromDate: self) {
+            return  1 << (comp.weekday - 1)
+        } else {
+            return nil
+        }
     }
 }
