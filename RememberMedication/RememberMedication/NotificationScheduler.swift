@@ -11,11 +11,11 @@ import UIKit
 
 class NotificationScheduler {
     
-    var dates = [NSDate]()
+    var meds = [Medication]()
     let limitNotification = 64
     
     func scheduleNotificationWithMedications(medications: [Medication]) {
-        dates.removeAll()
+        meds.removeAll()
         let notifications =  createNotificationsWithMedications(medications)
         scheduleNotification(notifications)
         
@@ -23,25 +23,29 @@ class NotificationScheduler {
     
     func createNotificationsWithMedications(medications: [Medication]) -> [UILocalNotification] {
         for medication in medications {
-            let datesMedication = createDatesWithMedication(medication)
-            dates.appendContentsOf(datesMedication)
+            createDatesWithMedication(medication)
         }
-        let orderDates = dates.sort { $0.compare($1) == .OrderedAscending }
+        
+        let orderDates = meds.sort { $0.startDate.compare($1.startDate) == .OrderedAscending }
         let result = orderDates[0..<min(limitNotification, orderDates.count)]
         
         
         var notifications = [UILocalNotification]()
-        for date in result {
-            notifications.append(createNotificationWithDate(date))
+        for med in result {
+            notifications.append(createNotificationWithDate(med.startDate))
+            print("Nome = \(med.name)    ----- Data = \(med.startDate)")
         }
         
         
         return notifications
     }
     
-    func createDatesWithMedication(medication: Medication) -> [NSDate] {
+    func createDatesWithMedication(medication: Medication) {
         var date = medication.startDate
-        dates.append(date)
+        if medication.startDate.isGreaterThanDate(NSDate()) {
+            meds.append(medication)
+        }
+        
         print(medication.weekDay.contains(WeekDay.Thursday))
         
         let components = NSDateComponents()
@@ -57,16 +61,14 @@ class NotificationScheduler {
                 break;
             }
             if medication.weekDay.contains(WeekDay(rawValue: Int16(newDate.dayOfWeek()!))) {
-                dates.append(newDate)
+                print(newDate)
+                if newDate.isGreaterThanDate(NSDate()) {
+                    let m = Medication(name: medication.name, dosage: medication.dosage, patient: medication.patient, interval: medication.interval, startDate: newDate, endDate: medication.endDate, weekDay: medication.weekDay, id: medication.id)
+                    meds.append(m)
+                }
             }
             date = newDate
         }
-        
-        for i in dates {
-            print(i)
-        }
-        
-        return dates
     }
     
     func scheduleNotification(notifications: [UILocalNotification]) {

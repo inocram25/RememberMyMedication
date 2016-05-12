@@ -116,23 +116,8 @@ class AddMedicineTableViewController: UITableViewController {
                                     id: NSUUID().UUIDString)
         
         MedicationServices.createDataCD(medication)
-        scheduleLocal(medication)
+        // Chamar Notificacao
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func scheduleLocal(medication: Medication) {
-        print("add notification for - \(medication)")
-        let notification = UILocalNotification()
-        notification.fireDate = medication.startDate
-        notification.alertBody = "Hora de tomar remedio!"
-        notification.alertAction = "be awesome!"
-        notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = ["ID": medication.id]
-        if medication.startDate.difference(medication.endDate) > 0 {
-            notification.repeatInterval = .Day
-            
-        }
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
     @IBAction func switchAction(sender: UISwitch) {

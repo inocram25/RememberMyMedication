@@ -26,6 +26,8 @@ class MedicinesViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadMedicines()
+        let notification = NotificationScheduler()
+        notification.scheduleNotificationWithMedications(medications)
         medicinesTableView.reloadData()
     }
     
