@@ -23,6 +23,9 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var nameLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
     @IBOutlet var patientLabel: WKInterfaceLabel!
+    @IBOutlet var secondNameLabel: WKInterfaceLabel!
+    @IBOutlet var secondTimeLabel: WKInterfaceLabel!
+    @IBOutlet var secondPatientLabel: WKInterfaceLabel!
     
     var medicines = [MedicineWatch]()
     var messageDictionary = ["messageType": "medicine"]
@@ -59,13 +62,21 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                 dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                 dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
                 let date = dateFormatter.dateFromString(self.medicines[0].date)
+                let seocndDate = dateFormatter.dateFromString(self.medicines[1].date)
                 
                 let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date!)
                 let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: date!)
                 
+                let secondHour = NSCalendar.currentCalendar().component(.Hour, fromDate: seocndDate!)
+                let secondMinute = NSCalendar.currentCalendar().component(.Minute, fromDate: seocndDate!)
+                
                 self.nameLabel.setText(self.medicines[0].name)
                 self.timeLabel.setText("\(hour):\(minute)")
                 self.patientLabel.setText("toninho")
+                
+                self.secondNameLabel.setText(self.medicines[1].name)
+                self.secondTimeLabel.setText("\(secondHour):\(secondMinute)")
+                self.secondPatientLabel.setText("maffei")
                 
                 }, errorHandler: { error in
                     print(#function,error)
