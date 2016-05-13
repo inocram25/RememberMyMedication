@@ -29,10 +29,15 @@ class NotificationScheduler {
         let orderDates = meds.sort { $0.startDate.compare($1.startDate) == .OrderedAscending }
         let result = orderDates[0..<min(limitNotification, orderDates.count)]
         
+        if !result.isEmpty {
+            let userDefault =  NSUserDefaults(suiteName: "medicines")
+            userDefault?.setValue(result[0].name, forKey: "medicineName")
+            userDefault?.synchronize()
+        }
         
         var notifications = [UILocalNotification]()
         for med in result {
-            notifications.append(createNotificationWithDate(med.startDate))
+            notifications.append(createNotificationWithDate(med))
             print("Nome = \(med.name)    ----- Data = \(med.startDate)")
         }
         
@@ -69,21 +74,27 @@ class NotificationScheduler {
             }
             date = newDate
         }
+        
     }
     
     func scheduleNotification(notifications: [UILocalNotification]) {
+        //VAI PERDER TODOS ALARMS DAS CONSULTAS (?)
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         for notification in notifications {
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }
     }
     
-    func createNotificationWithDate (date: NSDate) -> UILocalNotification {
+    func createNotificationWithDate (medication: Medication) -> UILocalNotification {
         let notification = UILocalNotification()
-        notification.fireDate = date
-        notification.alertBody = "Hora de tomar remedio!"
-        notification.alertAction = "be awesome!"
+        notification.fireDate = medication.startDate
+        notification.alertBody = "Hora de tomar \(medication.name)"
+        notification.alertAction = "Ver"
         notification.soundName = UILocalNotificationDefaultSoundName
+        notification.category = "myCategory"
+        notification.userInfo = ["name" : medication.name,
+                                 "dosage" : medication.dosage,
+                                 "patient" : medication.patient]
         return notification
     }
     

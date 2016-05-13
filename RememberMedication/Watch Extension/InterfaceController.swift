@@ -37,6 +37,10 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
     override func willActivate() {
         super.willActivate()
         
+        let userDefault =  NSUserDefaults(suiteName: "medicines")
+        let name = userDefault?.valueForKey("medicineName")
+        print(name)
+        
         guard HKHealthStore.isHealthDataAvailable() == true else {
             label.setText("not available")
             return
@@ -56,7 +60,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
     }
     
     func displayNotAllowed() {
-        label.setText("not allowed")
+        //label.setText("not allowed")
     }
     
     func workoutSession(workoutSession: HKWorkoutSession, didChangeToState toState: HKWorkoutSessionState, fromState: HKWorkoutSessionState, date: NSDate) {

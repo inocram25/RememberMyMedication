@@ -101,10 +101,27 @@
                     <color key="backgroundColor" red="0.85905448717948718" green="0.56687025297284988" blue="0.0092981190384413669" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="U8n-3G-r6a" kind="relationship" relationship="dynamicNotificationInterface" id="n94-uI-dWa"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Np0-wJ-A8M">
+            <objects>
+                <controller id="U8n-3G-r6a" customClass="NotificationController" customModule="Watch_Extension">
+                    <items>
+                        <label width="1" height="30" alignment="left" text="Label" numberOfLines="0" id="pFq-9x-mxe"/>
+                        <label alignment="left" text="Label" id="l4Y-m4-gaE"/>
+                    </items>
+                    <connections>
+                        <outlet property="dosageLabel" destination="l4Y-m4-gaE" id="joz-dx-jRY"/>
+                        <outlet property="nameLabel" destination="pFq-9x-mxe" id="nJF-vF-sGU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="535" y="1001"/>
         </scene>
     </scenes>
 </document>

@@ -20,6 +20,10 @@ class AppointmentsViewController: UIViewController {
 
         loadAppointments()
         appointmentsTableView.tableFooterView = UIView()
+        
+        let userDefault =  NSUserDefaults(suiteName: "medicines")
+        let name = userDefault?.valueForKey("medicineName")
+        print(name)
     }
     
     override func viewWillAppear(animated: Bool) {
