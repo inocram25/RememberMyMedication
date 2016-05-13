@@ -276,7 +276,6 @@
 				9AF136E71CD29CE900FD16FF /* Main.storyboard */,
 				9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */,
 				9AF137091CD29D0500FD16FF /* Watch */,
-				9AF137181CD29D0500FD16FF /* Watch Extension */,
 				9AF136E11CD29CE800FD16FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -320,6 +319,7 @@
 				9AF1370A1CD29D0500FD16FF /* Interface.storyboard */,
 				9AF1370D1CD29D0500FD16FF /* Assets.xcassets */,
 				9AF1370F1CD29D0500FD16FF /* Info.plist */,
+				9AF137181CD29D0500FD16FF /* Watch Extension */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 				9AF137191CD29D0500FD16FF /* Supporting Files */,
 			);
 			path = "Watch Extension";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		9AF137191CD29D0500FD16FF /* Supporting Files */ = {
 			isa = PBXGroup;

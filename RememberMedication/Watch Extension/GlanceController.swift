@@ -19,10 +19,10 @@ struct MedicineWatch {
 
 class GlanceController: WKInterfaceController, WCSessionDelegate {
 
+
     @IBOutlet var nameLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
     @IBOutlet var patientLabel: WKInterfaceLabel!
-    @IBOutlet var dosageLabel: WKInterfaceLabel!
     
     var medicines = [MedicineWatch]()
     var messageDictionary = ["messageType": "medicine"]
@@ -55,10 +55,17 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                     self.medicines.append(medicine)
                 }
                 
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                let date = dateFormatter.dateFromString(self.medicines[0].date)
+                
+                let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date!)
+                let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: date!)
+                
                 self.nameLabel.setText(self.medicines[0].name)
-                self.dosageLabel.setText(self.medicines[0].dosage)
-                self.timeLabel.setText(self.medicines[0].date)
-                self.patientLabel.setText("Maffei")
+                self.timeLabel.setText("\(hour):\(minute)")
+                self.patientLabel.setText("toninho")
                 
                 }, errorHandler: { error in
                     print(#function,error)

@@ -34,8 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
             
             let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
             
+            //
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            //
             for medicine in medicationCD {
-                let medDictionary = ["name" : medicine.name, "dosage" : medicine.dosage, "data" : medicine.startDate.description]
+                let date = dateFormatter.stringFromDate(medicine.startDate)
+                let medDictionary = ["name" : medicine.name, "dosage" : medicine.dosage, "data" : date]
                 medicines.append(medDictionary)
             }
             

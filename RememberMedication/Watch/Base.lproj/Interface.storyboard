@@ -10,34 +10,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <group width="134" alignment="left" id="qMG-h5-sRh">
+                        <table alignment="left" id="XKw-UO-eJB">
                             <items>
-                                <imageView width="42" height="46" alignment="left" image="MedicineFilledIcon" id="Aty-eE-rwK">
-                                    <color key="tintColor" red="0.95771478671031229" green="0.95587563825523314" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </imageView>
-                                <dateLabel width="78" height="52.5" alignment="left" textAlignment="center" numberOfLines="2" id="LYy-Wu-xQG">
-                                    <fontDescription key="font" type="system" pointSize="19"/>
-                                    <dateFormatterStyle key="dateStyle" short="YES"/>
-                                    <dateFormatterStyle key="timeStyle" short="YES"/>
-                                </dateLabel>
+                                <tableRow id="w2j-ei-Erf">
+                                    <group key="rootItem" width="1" alignment="left" id="c8z-2O-Gpf"/>
+                                </tableRow>
                             </items>
-                            <color key="backgroundColor" red="0.76470588235294112" green="0.41960784313725491" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
-                        </group>
-                        <label width="136" height="21" alignment="left" text="Vaginozil" textAlignment="center" id="xfc-Ug-xjw">
-                            <fontDescription key="font" type="system" pointSize="18"/>
-                        </label>
-                        <label width="136" height="14.5" alignment="left" text="20 ml" textAlignment="center" id="Cpo-mR-dv7">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                        </label>
-                        <label width="136" height="14.5" alignment="left" text="João Paulo" textAlignment="center" id="KUC-70-ZV0">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                        </label>
-                        <button width="1" alignment="left" title="Já tomei" id="jaw-JB-5gw"/>
+                        </table>
                     </items>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <outlet property="heart" destination="Aty-eE-rwK" id="WIu-T1-XxL"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="338"/>
@@ -49,39 +30,38 @@
                     <items>
                         <group alignment="left" spacing="6" id="t8f-Gd-c4y">
                             <items>
-                                <imageView width="30" height="30" alignment="left" image="MedicineFilledIcon" id="1Tl-Yp-Ig1">
-                                    <color key="tintColor" red="0.49019607843137253" green="0.71764705882352942" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </imageView>
-                                <label width="86" height="31.5" alignment="left" text="abcdefghijklmno" textAlignment="left" numberOfLines="2" id="mJ9-MT-ulP">
-                                    <color key="textColor" red="0.95017404485035384" green="0.97731801434662202" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="19"/>
-                                </label>
+                                <imageView width="44" alignment="left" id="uio-6Z-34B"/>
+                                <label width="87.5" height="40.5" alignment="left" text="Label" id="TdV-hR-tVE"/>
                             </items>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
-                                <group width="1" height="31.5" alignment="left" id="zH9-mQ-GKD">
+                                <group width="1" alignment="left" id="gMe-28-HVq">
                                     <items>
-                                        <imageView width="20" height="20" alignment="left" id="t2X-4n-TJy"/>
-                                        <label width="52.5" height="22.5" alignment="left" text="15:50" textAlignment="left" numberOfLines="2" id="MxE-Z8-rea">
-                                            <color key="textColor" red="0.98027529871199193" green="0.95454824868942034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="font" type="system" pointSize="20"/>
-                                        </label>
+                                        <imageView width="36" height="40" alignment="left" image="MedicineFilledIcon" id="9D1-LR-Ve6">
+                                            <color key="tintColor" red="0.94117647058823528" green="0.47843137254901963" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <group alignment="left" layout="vertical" id="OKk-eu-6qS">
+                                            <items>
+                                                <label alignment="left" text="Label" id="jES-Zh-WtA"/>
+                                                <group height="17" alignment="left" spacing="10" id="IM9-3Q-1xD">
+                                                    <items>
+                                                        <label alignment="left" text="Label" id="HRZ-a6-u6w"/>
+                                                        <label alignment="left" text="Label" id="gzM-nJ-4t3"/>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
-                                <label width="136" height="20" alignment="left" text="João Paulo" textAlignment="center" id="zkR-Rk-Ax2">
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                </label>
-                                <label width="60" height="31.5" alignment="left" text="20ml" textAlignment="left" id="Fuw-CE-hsN"/>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="dosageLabel" destination="Fuw-CE-hsN" id="U3Y-Nt-cBJ"/>
-                        <outlet property="nameLabel" destination="mJ9-MT-ulP" id="3x8-OQ-eCQ"/>
-                        <outlet property="patientLabel" destination="zkR-Rk-Ax2" id="2Uu-aH-A0b"/>
-                        <outlet property="timeLabel" destination="MxE-Z8-rea" id="b4y-0l-SqK"/>
+                        <outlet property="nameLabel" destination="jES-Zh-WtA" id="OTo-bP-Ra5"/>
+                        <outlet property="patientLabel" destination="gzM-nJ-4t3" id="D9H-yl-wtA"/>
+                        <outlet property="timeLabel" destination="HRZ-a6-u6w" id="bsF-fs-9gO"/>
                     </connections>
                 </glanceController>
             </objects>
