@@ -78,10 +78,10 @@
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="dateOutlet" destination="MxE-Z8-rea" id="Tri-6C-zCc"/>
-                        <outlet property="dosageOutlet" destination="Fuw-CE-hsN" id="OgD-UV-bgM"/>
-                        <outlet property="nameOutlet" destination="mJ9-MT-ulP" id="KLO-9A-ZWd"/>
-                        <outlet property="patientNameOutlet" destination="zkR-Rk-Ax2" id="6HO-pp-YQi"/>
+                        <outlet property="dosageLabel" destination="Fuw-CE-hsN" id="U3Y-Nt-cBJ"/>
+                        <outlet property="nameLabel" destination="mJ9-MT-ulP" id="3x8-OQ-eCQ"/>
+                        <outlet property="patientLabel" destination="zkR-Rk-Ax2" id="2Uu-aH-A0b"/>
+                        <outlet property="timeLabel" destination="MxE-Z8-rea" id="b4y-0l-SqK"/>
                     </connections>
                 </glanceController>
             </objects>

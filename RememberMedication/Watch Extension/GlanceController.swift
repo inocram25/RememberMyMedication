@@ -10,17 +10,23 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
+struct MedicineWatch {
+    let name: String
+    let dosage: String
+    let date: String
+}
+
 
 class GlanceController: WKInterfaceController, WCSessionDelegate {
 
-    @IBOutlet var nameOutlet: WKInterfaceLabel!
-    @IBOutlet var dateOutlet: WKInterfaceLabel!
-    @IBOutlet var patientNameOutlet: WKInterfaceLabel!
-    @IBOutlet var dosageOutlet: WKInterfaceLabel!
+    @IBOutlet var nameLabel: WKInterfaceLabel!
+    @IBOutlet var timeLabel: WKInterfaceLabel!
+    @IBOutlet var patientLabel: WKInterfaceLabel!
+    @IBOutlet var dosageLabel: WKInterfaceLabel!
     
-    var messageDictionary = ["messageType": "getLastDate" , "name": "", "date": "", "patientName": "", "dosage": ""]
+    var medicines = [MedicineWatch]()
+    var messageDictionary = ["messageType": "medicine"]
 
-    
     var session: WCSession? {
         didSet {
             if let session = session {
@@ -32,40 +38,35 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if WCSession.isSupported()
-        {
+        if WCSession.isSupported() {
             session = WCSession.defaultSession()
             
-            session!.sendMessage(messageDictionary, replyHandler: { (response:[String : AnyObject]) -> Void in
+            session!.sendMessage(messageDictionary, replyHandler: { response in
+                print("response = \(response)")
+                let meds = response["medicines"] as? [[String : String]]
                 
-                let name = response["name"] as? String
-                let endDate = response["date"] as? String
-                let patientName = response["patientName"] as? String
-                let dosage = response["dosage"] as? String
-                print(response)
-                self.nameOutlet.setText(name)
-                self.dateOutlet.setText(endDate)
-                self.patientNameOutlet.setText(patientName)
-                self.dosageOutlet.setText(dosage)
+                for m in meds! {
+                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["data"]!)
+                    self.medicines.append(medicine)
+                }
                 
-                }, errorHandler: { (error) -> Void in
-                    
+                self.nameLabel.setText(self.medicines[0].name)
+                self.dosageLabel.setText(self.medicines[0].dosage)
+                self.timeLabel.setText(self.medicines[0].date)
+                self.patientLabel.setText("Maffei")
+                
+                }, errorHandler: { error in
                     print(#function,error)
             })
-            
         }
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
