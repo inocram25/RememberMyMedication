@@ -14,6 +14,7 @@ struct MedicineWatch {
     let name: String
     let dosage: String
     let date: String
+    let patient: String
 }
 
 
@@ -54,7 +55,7 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                 let meds = response["medicines"] as? [[String : String]]
                 
                 for m in meds! {
-                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["data"]!)
+                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["data"]!, patient: m["patient"]!)
                     self.medicines.append(medicine)
                 }
                 
@@ -72,11 +73,11 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                 
                 self.nameLabel.setText(self.medicines[0].name)
                 self.timeLabel.setText("\(hour):\(minute)")
-                self.patientLabel.setText("toninho")
+                self.patientLabel.setText(self.medicines[0].patient)
                 
                 self.secondNameLabel.setText(self.medicines[1].name)
                 self.secondTimeLabel.setText("\(secondHour):\(secondMinute)")
-                self.secondPatientLabel.setText("maffei")
+                self.secondPatientLabel.setText(self.medicines[0].patient)
                 
                 }, errorHandler: { error in
                     print(#function,error)

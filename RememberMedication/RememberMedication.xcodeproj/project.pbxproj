@@ -51,6 +51,8 @@
 		9AF137261CD29D0500FD16FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF137251CD29D0500FD16FF /* Assets.xcassets */; };
 		9AF1372A1CD29D0500FD16FF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9AF137081CD29D0500FD16FF /* Watch.app */; };
 		CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */; };
+		D189C38E1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */; };
+		D189C38F1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,7 @@
 		9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RememberMedication.entitlements; path = RememberMedication/RememberMedication.entitlements; sourceTree = "<group>"; };
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
+		D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +339,7 @@
 				9AF137251CD29D0500FD16FF /* Assets.xcassets */,
 				9AF137271CD29D0500FD16FF /* Info.plist */,
 				9AF137191CD29D0500FD16FF /* Supporting Files */,
+				D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */,
 			);
 			path = "Watch Extension";
 			sourceTree = SOURCE_ROOT;
@@ -543,6 +547,7 @@
 				7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */,
 				9A3A1C5F1CE0F96B004989C9 /* NSDate+Diff.swift in Sources */,
 				9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */,
+				D189C38E1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */,
 				9A3A1C661CE39DAE004989C9 /* Appointment.swift in Sources */,
 				9A2F6E731CD3D67C006F3133 /* AppointmentsViewController.swift in Sources */,
 				9A3A1C641CE39B91004989C9 /* Month.swift in Sources */,
@@ -572,6 +577,7 @@
 				9AF1371E1CD29D0500FD16FF /* ExtensionDelegate.swift in Sources */,
 				9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */,
 				9AF1371C1CD29D0500FD16FF /* InterfaceController.swift in Sources */,
+				D189C38F1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */,
 				9AF137221CD29D0500FD16FF /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

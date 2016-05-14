@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
             //
             for medicine in medicationCD {
                 let date = dateFormatter.stringFromDate(medicine.startDate)
-                let medDictionary = ["name" : medicine.name, "dosage" : medicine.dosage, "data" : date]
+                let medDictionary = ["name" : medicine.name, "dosage" : medicine.dosage, "data" : date, "patient" : medicine.patient]
                 medicines.append(medDictionary)
             }
             
