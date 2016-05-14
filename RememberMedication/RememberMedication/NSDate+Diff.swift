@@ -33,4 +33,13 @@ extension NSDate {
     func getComponentForUnit(unit: NSCalendarUnit) -> Int {
         return NSCalendar.currentCalendar().component(unit, fromDate: self)
     }
+    
+    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        return self.compare(dateToCompare) == NSComparisonResult.OrderedDescending
+    }
+    
+    func dayOfWeek() -> Int? {
+        let comp = NSCalendar.currentCalendar().components(.Weekday, fromDate: self)
+        return  1 << (comp.weekday - 1)
+    }
 }

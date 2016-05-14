@@ -41,7 +41,6 @@ class NotificationScheduler {
             print("Nome = \(med.name)    ----- Data = \(med.startDate)")
         }
         
-        
         return notifications
     }
     
@@ -50,8 +49,6 @@ class NotificationScheduler {
         if medication.startDate.isGreaterThanDate(NSDate()) {
             meds.append(medication)
         }
-        
-        print(medication.weekDay.contains(WeekDay.Thursday))
         
         let components = NSDateComponents()
         if medication.interval == 0 {
@@ -98,29 +95,4 @@ class NotificationScheduler {
         return notification
     }
     
-}
-
-extension NSDate {
-    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
-        //Declare Variables
-        var isGreater = false
-        
-        //Compare Values
-        if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
-            isGreater = true
-        }
-        
-        //Return Result
-        return isGreater
-    }
-    
-    func dayOfWeek() -> Int? {
-        if
-            let cal: NSCalendar = NSCalendar.currentCalendar(),
-            let comp: NSDateComponents = cal.components(.Weekday, fromDate: self) {
-            return  1 << (comp.weekday - 1)
-        } else {
-            return nil
-        }
-    }
 }
