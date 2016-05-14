@@ -57,9 +57,11 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var intervalTimeLabel: UILabel!
     
     let dateFormatter = NSDateFormatter()
+    var intervals = [1,2,3,4,6,8,12,24]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         dateFormatter.dateStyle = .MediumStyle
         dateFormatter.timeStyle = .MediumStyle
@@ -72,6 +74,7 @@ class AddMedicineTableViewController: UITableViewController {
         
         weekDayCollectionView.delegate = self
         weekDayCollectionView.dataSource = self
+        
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
@@ -125,8 +128,13 @@ class AddMedicineTableViewController: UITableViewController {
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {
-        interval = Int(sender.value)
-        intervalTimeLabel.text = "\(interval) horas"
+        let newInterval = Int(sender.value)
+        sliderInterval?.setValue(Float(newInterval), animated: false)
+        let number = intervals[newInterval]
+        if interval != newInterval {
+            interval = newInterval
+        }
+        intervalTimeLabel.text = "\(number) horas"
     }
 
     //Tableview
