@@ -47,18 +47,6 @@ class MedicinesViewController: UIViewController {
     @IBAction func unwindSegueToMedicinesViewController(segue: UIStoryboardSegue) {
     }
     
-    func cancelLocalNotification(uniqueId: String){
-        if let notifyArray = UIApplication.sharedApplication().scheduledLocalNotifications {
-            for notif in notifyArray as [UILocalNotification] {
-                if let info = notif.userInfo as? [String: String] {
-                    if info["ID"] == uniqueId {
-                        UIApplication.sharedApplication().cancelLocalNotification(notif)
-                    }
-                }
-            }
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MedicineDetail" {
             let vc = segue.destinationViewController as! MedicinesDetailsViewController
@@ -66,8 +54,6 @@ class MedicinesViewController: UIViewController {
             vc.medication = cell?.currentMedication
         }
     }
-
-    
 }
 
 extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
