@@ -10,7 +10,7 @@ import UIKit
 
 class AppointmentDetailsViewController: UITableViewController {
     
-    var appointment: Appointment!
+    var appointment: Appointment?
     
     @IBOutlet private weak var nameLabel: UILabel?
     @IBOutlet private weak var dayLabel: UILabel?
@@ -19,7 +19,7 @@ class AppointmentDetailsViewController: UITableViewController {
     @IBOutlet private weak var doctorLabel: UILabel?
     @IBOutlet private weak var localLabel: UILabel?
     @IBOutlet private weak var notesLabel: UILabel?
-    @IBOutlet weak var borderedView: BorderedView!
+    @IBOutlet private weak var borderedView: BorderedView?
     
     @IBOutlet private weak var notesCell: UITableViewCell?
 
@@ -29,14 +29,16 @@ class AppointmentDetailsViewController: UITableViewController {
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        nameLabel?.text = appointment.name
-        doctorLabel?.text = appointment.doctor
-        localLabel?.text = appointment.local
-        notesLabel?.text = appointment.notes
-        dayLabel?.text = "\(appointment.date.day)"
-        timeLabel?.text = "\(appointment.date.hour):\(appointment.date.minute)"
-        monthLabel?.text = appointment.date.month?.description
-        borderedView.backgroundColor = appointment.date.month?.color
+        if let appointment = appointment {
+            nameLabel?.text = appointment.name
+            doctorLabel?.text = appointment.doctor
+            localLabel?.text = appointment.local
+            notesLabel?.text = appointment.notes
+            dayLabel?.text = "\(appointment.date.day)"
+            timeLabel?.text = "\(appointment.date.hour):\(appointment.date.minute)"
+            monthLabel?.text = appointment.date.month?.description
+            borderedView?.backgroundColor = appointment.date.month?.color
+        }
         
         tableView.reloadData()
         tableView.allowsSelection = false

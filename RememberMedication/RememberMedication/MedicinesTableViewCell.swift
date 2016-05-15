@@ -10,13 +10,13 @@ import UIKit
 
 class MedicinesTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var medicineNameLabel: UILabel!
-    @IBOutlet weak var dosageLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var borderedView: BorderedView!
-    @IBOutlet weak var patient: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet private weak var medicineNameLabel: UILabel?
+    @IBOutlet private weak var dosageLabel: UILabel?
+    @IBOutlet private weak var progressView: UIProgressView?
+    @IBOutlet private weak var borderedView: BorderedView?
+    @IBOutlet private weak var patient: UILabel?
+    @IBOutlet private weak var timeLabel: UILabel?
+    @IBOutlet private weak var backView: UIView?
     
     var currentMedication: Medication?
     
@@ -27,29 +27,29 @@ class MedicinesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let layer = backView.layer
-        layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSize(width: 0, height: 0.5)
-        layer.shadowOpacity = 0.4
-        layer.shadowRadius = 1
+        let layer = backView?.layer
+        layer?.shadowColor = UIColor.blackColor().CGColor
+        layer?.shadowOffset = CGSize(width: 0, height: 0.5)
+        layer?.shadowOpacity = 0.4
+        layer?.shadowRadius = 1
     }
     
     func configureCell(medication: Medication) {
         currentMedication = medication
         
-        borderedView.backgroundColor = medication.startDate.month?.color
-        progressView.tintColor = medication.startDate.month?.color
-        medicineNameLabel.text = medication.name
-        patient.text = medication.patient
-        timeLabel.text = "\(medication.startDate.hour):\(medication.startDate.minute)"
+        borderedView?.backgroundColor = medication.startDate.month?.color
+        progressView?.tintColor = medication.startDate.month?.color
+        medicineNameLabel?.text = medication.name
+        patient?.text = medication.patient
+        timeLabel?.text = "\(medication.startDate.hour):\(medication.startDate.minute)"
         
         let calendar = NSCalendar.currentCalendar()
         let totalDays = calendar.components(NSCalendarUnit.Day, fromDate: medication.startDate, toDate: medication.endDate, options: NSCalendarOptions.MatchFirst)
         let completedDays = calendar.components(NSCalendarUnit.Day, fromDate: medication.startDate, toDate: NSDate() , options: NSCalendarOptions.MatchFirst)
         let diff = Float(completedDays.day) / Float (totalDays.day + 1)
-        progressView.setProgress(diff, animated: true)
+        progressView?.setProgress(diff, animated: true)
         
         let remainingDays = totalDays.day - completedDays.day
-        dosageLabel.text = "Dosagem: \(medication.dosage)mg / \(remainingDays) Restantes"
+        dosageLabel?.text = "Dosagem: \(medication.dosage)mg / \(remainingDays) Restantes"
     }
 }

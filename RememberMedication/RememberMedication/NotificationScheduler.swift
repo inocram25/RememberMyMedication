@@ -62,7 +62,7 @@ class NotificationScheduler {
             if newDate.isGreaterThanDate(medication.endDate){
                 break;
             }
-            if medication.weekDay.contains(WeekDay(rawValue: Int16(newDate.dayOfWeek()!))) {
+            if medication.weekDay.contains(WeekDay(rawValue: Int16(newDate.dayOfWeek!))) {
                 print(newDate)
                 if newDate.isGreaterThanDate(NSDate()) {
                     let m = Medication(name: medication.name, dosage: medication.dosage, patient: medication.patient, interval: medication.interval, startDate: newDate, endDate: medication.endDate, weekDay: medication.weekDay, id: medication.id)

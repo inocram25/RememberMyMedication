@@ -53,6 +53,7 @@
 		CA19474D1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */; };
 		D189C38E1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */; };
 		D189C38F1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */; };
+		FBEDC6561CE82D7900172B16 /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEDC6551CE82D7900172B16 /* String+toDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
 		D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRow.swift; sourceTree = "<group>"; };
+		FBEDC6551CE82D7900172B16 /* String+toDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */,
 				9A2F6E691CD3CF25006F3133 /* UIImage+WithColor.swift */,
 				9A3A1C5E1CE0F96B004989C9 /* NSDate+Diff.swift */,
+				FBEDC6551CE82D7900172B16 /* String+toDate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				7F4474AB1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift in Sources */,
 				9A2F6E6F1CD3D000006F3133 /* CustomNavigationController.swift in Sources */,
 				7FC9CD951CD7B41F00A87AC0 /* AppDelegate.swift in Sources */,
+				FBEDC6561CE82D7900172B16 /* String+toDate.swift in Sources */,
 				7F4474AD1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift in Sources */,
 				9A3A1C5F1CE0F96B004989C9 /* NSDate+Diff.swift in Sources */,
 				9A2F6E751CD3DC13006F3133 /* MedicinesTableViewCell.swift in Sources */,

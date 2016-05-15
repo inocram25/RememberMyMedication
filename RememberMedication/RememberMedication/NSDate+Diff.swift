@@ -10,11 +10,11 @@ import Foundation
 
 extension NSDate {
     
-    func difference(date: NSDate) -> Float {
-        let calendar = NSCalendar.currentCalendar()
-        let totalDays = calendar.components(NSCalendarUnit.Day, fromDate: self, toDate: date, options: NSCalendarOptions.MatchFirst)
-        let completedDays = calendar.components(NSCalendarUnit.Day, fromDate: self, toDate: NSDate() , options: NSCalendarOptions.MatchFirst)
-        return Float(completedDays.day) / Float (totalDays.day + 1)
+    var toString: String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        return dateFormatter.stringFromDate(self)
     }
     
     var hour: String {
@@ -38,7 +38,7 @@ extension NSDate {
         return self.compare(dateToCompare) == NSComparisonResult.OrderedDescending
     }
     
-    func dayOfWeek() -> Int? {
+    var dayOfWeek: Int? {
         let comp = NSCalendar.currentCalendar().components(.Weekday, fromDate: self)
         return  1 << (comp.weekday - 1)
     }

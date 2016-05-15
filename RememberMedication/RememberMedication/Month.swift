@@ -22,7 +22,6 @@ enum Month: Int {
     case October
     case November
     case December
-    
 }
 
 extension Month: CustomStringConvertible {

@@ -10,16 +10,16 @@ import UIKit
 
 class AppointmentsViewController: UIViewController {
     
-    @IBOutlet weak var appointmentsTableView: UITableView!
+    @IBOutlet private weak var appointmentsTableView: UITableView!
     
-    var appointments = [Appointment]()
+    private var appointments = [Appointment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appointmentsTableView.backgroundColor = UIColor.healthU_LightGrey()
-
-        loadAppointments()
         appointmentsTableView.tableFooterView = UIView()
+        
+        loadAppointments()
         
         let userDefault =  NSUserDefaults(suiteName: "medicines")
         let name = userDefault?.valueForKey("medicineName")

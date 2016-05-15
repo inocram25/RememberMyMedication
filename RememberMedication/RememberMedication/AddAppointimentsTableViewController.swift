@@ -10,32 +10,32 @@ import UIKit
 
 class AddAppointimentsTableViewController: UITableViewController {
     
-    let dateFormatter = NSDateFormatter()
-    var pickerVisible = false
-    var alarmPickerVisible = false
-    var dateAlarm = [[String]]()
+    private var pickerVisible = false
+    private var alarmPickerVisible = false
+    private var dateAlarm = [[String]]()
     
-    var alarmDate = NSDate()
-    var appointmentDate = NSDate()
+    private var alarmDate = NSDate()
+    private var appointmentDate = NSDate()
     
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var alarmLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var doctorTextfield: UITextField!
-    @IBOutlet weak var notesTextfield: UITextField!
-    @IBOutlet weak var localTextfield: UITextField!
-    @IBOutlet weak var alarmPickerView: UIPickerView!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var alarmLabel: UILabel!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var doctorTextfield: UITextField!
+    @IBOutlet private weak var notesTextfield: UITextField!
+    @IBOutlet private weak var localTextfield: UITextField!
+    @IBOutlet private weak var alarmPickerView: UIPickerView!
     
-    var day = 0, hour = 0, min = 0
+    private var day = 0, hour = 0, min = 0
     
     //pensar em como configurar o local e o notes
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        dateLabel.text = dateFormatter.stringFromDate(NSDate())
+        alarmPickerView.dataSource = self
+        alarmPickerView.delegate = self
+        
+        dateLabel.text = NSDate().toString
         
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.tableFooterView = UIView(frame: CGRectZero)
@@ -61,14 +61,11 @@ class AddAppointimentsTableViewController: UITableViewController {
         
         dateAlarm.append(hours)
         
-        alarmPickerView.dataSource = self
-        alarmPickerView.delegate = self
-        
         alarmLabel.text = ""
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
-        dateLabel.text = dateFormatter.stringFromDate(sender.date)
+        dateLabel.text = sender.date.toString
         appointmentDate = sender.date
     }
     
@@ -87,7 +84,7 @@ class AddAppointimentsTableViewController: UITableViewController {
             return
         }
         
-        guard let date = dateFormatter.dateFromString(dateLabel.text!) else { return }
+        guard let date = dateLabel.text?.toDate else { return }
         let doctor = doctorTextfield.text?.isEmpty == false ? doctorTextfield.text : ""
         let local = localTextfield.text?.isEmpty == false ? localTextfield.text : ""
         let notes = notesTextfield.text?.isEmpty == false ? notesTextfield.text : ""
@@ -216,7 +213,4 @@ extension AddAppointimentsTableViewController: UIPickerViewDelegate, UIPickerVie
         tableView.reloadData()
         alarmLabel.text = text
     }
-    
-    
-    
 }

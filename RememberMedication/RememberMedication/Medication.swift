@@ -17,8 +17,4 @@ struct Medication {
     let endDate: NSDate
     let weekDay: WeekDay
     let id: String
-    
-    func verifyEndDate() -> Bool {
-        return NSCalendar.currentCalendar().compareDate(NSDate(), toDate: endDate, toUnitGranularity: .Hour) == .OrderedSame ? true : false
-    }
 }

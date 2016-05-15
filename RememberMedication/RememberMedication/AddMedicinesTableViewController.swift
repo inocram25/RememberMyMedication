@@ -38,13 +38,14 @@ extension NSIndexPath {
 
 class AddMedicineTableViewController: UITableViewController {
     
-    var startDatePickerVisible = false
-    var endDatePickerVisible = false
-    var weekDayVisible = false
+    private var startDatePickerVisible = false
+    private var endDatePickerVisible = false
+    private var weekDayVisible = false
     
-    var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
-    var weekDaySelected: WeekDay?
-    var interval = 0, index = 0
+    private var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+    private var weekDaySelected: WeekDay?
+    private var interval = 0
+    private var index = 0
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -56,17 +57,12 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var sliderInterval: UISlider!
     @IBOutlet weak var intervalTimeLabel: UILabel!
     
-    let dateFormatter = NSDateFormatter()
     var intervals = [1,2,3,4,6,8,12,24]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeStyle = .MediumStyle
-        dateLabel.text = dateFormatter.stringFromDate(NSDate())
-        
+        dateLabel.text = NSDate().toString
         endDateLabel.text = ""
         
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -74,17 +70,16 @@ class AddMedicineTableViewController: UITableViewController {
         
         weekDayCollectionView.delegate = self
         weekDayCollectionView.dataSource = self
-        
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
-        dateLabel.text = dateFormatter.stringFromDate(sender.date)
+        dateLabel.text = sender.date.toString
     }
     @IBAction func pickerEndDate(sender: UIDatePicker) {
-        endDateLabel.text = dateFormatter.stringFromDate(sender.date)
+        endDateLabel.text = sender.date.toString
     }
+    
     @IBAction func saveButtonFunction(sender: AnyObject) {
-        
         var name = ""
         
         if nameTextfield.text != "" {
@@ -96,18 +91,13 @@ class AddMedicineTableViewController: UITableViewController {
             return
         }
         
-        guard let startDate = dateFormatter.dateFromString(dateLabel.text!) else { return }
-        let endDate = endDateLabel.text?.isEmpty == false ? dateFormatter.dateFromString(endDateLabel.text!) : NSDate()
+        guard let startDate = dateLabel.text!.toDate else { return }
+        let endDate = endDateLabel.text?.isEmpty == false ? endDateLabel.text!.toDate : NSDate()
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
         let i = interval == 24 ? 0 : interval
         
-        let days:WeekDay?
-        if weekDaySelected == nil {
-            days = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday]
-        } else {
-            days = weekDaySelected
-        }
+        let days = weekDaySelected == nil ? [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday] : weekDaySelected
         
         let medication = Medication(name: name,
                                     dosage: dosage!,
@@ -129,6 +119,7 @@ class AddMedicineTableViewController: UITableViewController {
     
     @IBAction func sliderValueChanged(sender: UISlider) {
         let indexAux = Int(sender.value)
+        //?????????
         sliderInterval?.setValue(Float(indexAux), animated: false)
         interval = intervals[indexAux]
         if index != indexAux {
