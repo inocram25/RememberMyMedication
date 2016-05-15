@@ -124,8 +124,12 @@ class AddAppointimentsTableViewController: UITableViewController {
         return 44.0
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20.0
+    }
+    
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 44.0
+        return 20.0
     }
     
     func transformToDate(){

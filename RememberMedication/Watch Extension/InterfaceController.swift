@@ -23,7 +23,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         print("rows = \(tableView.numberOfRows)")
         
-        print("entrou no setup\(medicines.count)")
         for i in 0 ..< medicines.count {
             if let row = tableView.rowControllerAtIndex(i) as? MedicineRow {
                 row.nameLabel.setText(medicines[i].name)
@@ -64,8 +63,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 let meds = response["medicines"] as? [[String : String]]
                 
                 for m in meds! {
-                    print("entrou no for")
-                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["data"]!, patient: m["patient"]!)
+                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["date"]!, patient: m["patient"]!)
                     self.medicines.append(medicine)
                 }
                 

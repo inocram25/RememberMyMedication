@@ -55,7 +55,7 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                 let meds = response["medicines"] as? [[String : String]]
                 
                 for m in meds! {
-                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["data"]!, patient: m["patient"]!)
+                    let medicine = MedicineWatch(name: m["name"]!, dosage: m["dosage"]!, date: m["date"]!, patient: m["patient"]!)
                     self.medicines.append(medicine)
                 }
                 
