@@ -21,6 +21,9 @@
 		7FC9CDA31CD7B8D200A87AC0 /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA21CD7B8D200A87AC0 /* AppointmentDAO.swift */; };
 		7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */; };
 		7FD5C30A1CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5C3091CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift */; };
+		7FD6A1E81CEA3BBC00AEA370 /* NSDate+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C5E1CE0F96B004989C9 /* NSDate+Diff.swift */; };
+		7FD6A1E91CEA3BC300AEA370 /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEDC6551CE82D7900172B16 /* String+toDate.swift */; };
+		7FD6A1EA1CEA3BD900AEA370 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A1C631CE39B91004989C9 /* Month.swift */; };
 		7FF840D51CE2660F009F779C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF840D41CE2660F009F779C /* NotificationScheduler.swift */; };
 		90B976B8A30D64DD0DFCFE5D /* Pods_RememberMedication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAF1F70E8BD1EF2469B0B18 /* Pods_RememberMedication.framework */; };
 		9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED621CDAA955002D1785 /* BorderedView.swift */; };
@@ -661,11 +664,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF137201CD29D0500FD16FF /* NotificationController.swift in Sources */,
+				7FD6A1E91CEA3BC300AEA370 /* String+toDate.swift in Sources */,
+				7FD6A1EA1CEA3BD900AEA370 /* Month.swift in Sources */,
 				9AF1371E1CD29D0500FD16FF /* ExtensionDelegate.swift in Sources */,
 				9AF137241CD29D0500FD16FF /* ComplicationController.swift in Sources */,
 				9AF1371C1CD29D0500FD16FF /* InterfaceController.swift in Sources */,
 				D189C38F1CE7A27D0047EDB5 /* MedicineRow.swift in Sources */,
 				9AF137221CD29D0500FD16FF /* GlanceController.swift in Sources */,
+				7FD6A1E81CEA3BBC00AEA370 /* NSDate+Diff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
