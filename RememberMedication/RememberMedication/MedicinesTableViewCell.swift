@@ -37,7 +37,8 @@ class MedicinesTableViewCell: UITableViewCell {
     func configureCell(medication: Medication) {
         currentMedication = medication
         
-        borderedView?.backgroundColor = UIColor.randomColor()
+        borderedView?.backgroundColor = UIColor(red: CGFloat(medication.red), green: CGFloat(medication.green), blue: CGFloat(medication.blue), alpha: 1)
+        
         progressView?.tintColor = medication.startDate.month?.color
         medicineNameLabel?.text = medication.name
         patient?.text = medication.patient

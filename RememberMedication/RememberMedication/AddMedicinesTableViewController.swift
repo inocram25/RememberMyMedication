@@ -85,7 +85,8 @@ class AddMedicineTableViewController: UITableViewController {
             let medication = Medication(name: m.name, dosage: m.dosage,
                                         patient: m.patient, interval: m.interval,
                                         startDate: m.startDate, endDate: m.endDate,
-                                        weekDay: m.weekDay, id: m.id)
+                                        weekDay: m.weekDay, id: m.id, red: m.red,
+                                        green: m.green, blue: m.blue)
             
             medicines.append(medication)
         }
@@ -119,14 +120,14 @@ class AddMedicineTableViewController: UITableViewController {
         
         let days = weekDaySelected == nil ? [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday] : weekDaySelected
         
-        let medication = Medication(name: name,
-                                    dosage: dosage!,
-                                    patient: pacient!,
-                                    interval: Int64(i),
-                                    startDate: startDate,
-                                    endDate: endDate!,
-                                    weekDay: days!,
-                                    id: NSUUID().UUIDString)
+        //get RGB color
+        var green = CGFloat()
+        var blue = CGFloat()
+        var red = CGFloat()
+        let medicineColor = UIColor.randomColor()
+        medicineColor.getRed(&red, green: &green, blue: &blue, alpha: nil)
+                
+        let medication = Medication(name: name, dosage: dosage!, patient: pacient!, interval: Int64(i), startDate: startDate, endDate: endDate!, weekDay: days!, id: NSUUID().UUIDString, red: Float(red), green: Float(green), blue: Float(blue))
         
         MedicationServices.createDataCD(medication)
         

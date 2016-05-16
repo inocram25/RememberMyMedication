@@ -17,4 +17,7 @@ struct Medication {
     let endDate: NSDate
     let weekDay: WeekDay
     let id: String
+    let red: Float
+    let green: Float
+    let blue: Float
 }

@@ -32,7 +32,7 @@ class MedicinesDetailsViewController: UITableViewController {
             endDateLabel?.text = "Termino: \(medication.endDate.day) de \(endMonth.description.lowercaseString)"
             dosageLabel?.text = medication.dosage
             patientLabel?.text = medication.patient
-            borderedView?.backgroundColor = medication.startDate.month?.color
+            borderedView?.backgroundColor = UIColor(red: CGFloat(medication.red), green: CGFloat(medication.green), blue: CGFloat(medication.blue), alpha: 1)
 //            weekDayLabel?.text = medication.weekDay
         }
         

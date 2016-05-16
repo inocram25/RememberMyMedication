@@ -41,7 +41,8 @@ class MedicinesViewController: UIViewController {
             let medication = Medication(name: m.name, dosage: m.dosage,
                                         patient: m.patient, interval: m.interval,
                                         startDate: m.startDate, endDate: m.endDate,
-                                        weekDay: m.weekDay, id: m.id)
+                                        weekDay: m.weekDay, id: m.id, red: m.red,
+                                        green: m.green, blue: m.blue)
             
             medicines.append(medication)
         }

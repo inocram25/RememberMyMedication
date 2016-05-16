@@ -21,6 +21,9 @@ class MedicationServices {
         m.endDate = medication.endDate
         m.weekDay = medication.weekDay
         m.id = medication.id
+        m.red = medication.red
+        m.green = medication.green
+        m.blue = medication.blue
         
         MedicationDAO.insert(m)
     }
