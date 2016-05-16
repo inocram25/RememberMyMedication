@@ -106,9 +106,9 @@ extension MedicinesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
         
         let font = UIFont.boldSystemFontOfSize(18.0)
         
-        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blueColor(), NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.darkGrayColor(), NSParagraphStyleAttributeName: paragraph]
         
-        return NSAttributedString(string: "Nenhum favorito ainda", attributes: attributes)
+        return NSAttributedString(string: "Nenhum medicamento adicionado", attributes: attributes)
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -118,18 +118,15 @@ extension MedicinesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
         
         let font = UIFont.systemFontOfSize(18.0)
         
-        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.redColor(), NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.healthU_Orange(), NSParagraphStyleAttributeName: paragraph]
         
-        return NSAttributedString(string: "Para adicionar um favorito clique na estrela da tatuagem", attributes: attributes)
+        return NSAttributedString(string: "Clique no ＋ para adicionar um medicamento", attributes: attributes)
+    }
+
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "tutorial")
     }
     
-//    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-//        return UIImage()
-//    }
-    
-//    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
-//        return UIColor.cyanColor()
-//    }
     
     func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
         return 20.0

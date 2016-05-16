@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate{
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
 
         print("Session AppDelegate")
+        medicines.removeAll()
+        
         if let type = message["messageType"] as? String where type == "medicine" {
             
             let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
