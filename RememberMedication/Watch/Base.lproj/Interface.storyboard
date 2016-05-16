@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -154,8 +154,9 @@
             <objects>
                 <controller id="U8n-3G-r6a" customClass="NotificationController" customModule="Watch_Extension">
                     <items>
-                        <label width="1" height="30" alignment="left" text="Label" numberOfLines="0" id="pFq-9x-mxe"/>
-                        <label alignment="left" text="Label" id="l4Y-m4-gaE"/>
+                        <label width="136" alignment="left" text="Hora de tomar" textAlignment="center" id="RZp-xF-LcC"/>
+                        <label width="1" height="30" alignment="left" text="Benegripe" textAlignment="center" numberOfLines="0" id="pFq-9x-mxe"/>
+                        <label width="136" alignment="left" text="100 mg" textAlignment="center" id="l4Y-m4-gaE"/>
                     </items>
                     <connections>
                         <outlet property="dosageLabel" destination="l4Y-m4-gaE" id="joz-dx-jRY"/>

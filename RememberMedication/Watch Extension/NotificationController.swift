@@ -16,32 +16,22 @@ class NotificationController: WKUserNotificationInterfaceController {
     @IBOutlet var dosageLabel: WKInterfaceLabel!
 
     override init() {
-        // Initialize variables here.
         super.init()
-        
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        print("will")
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        print("did")
-        super.didDeactivate()
     }
 
     override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
         print("recieve")
-        let name = localNotification.userInfo?["name"] as? String
-        let dosage = localNotification.userInfo?["dosage"] as? String
-        let patient = localNotification.userInfo?["patient"] as? String
+        if let name = localNotification.userInfo?["name"] as? String {
+            nameLabel.setText(name)
+        }
+        if let dosage = localNotification.userInfo?["dosage"] as? String {
+            dosageLabel.setText("\(dosage)mg")
+
+        }
+        if let patient = localNotification.userInfo?["patient"] as? String {
+            
+        }
         
-        nameLabel.setText("Hora de tomar \(name)")
-        dosageLabel.setText(dosage)
         completionHandler(.Custom)
     }
  
