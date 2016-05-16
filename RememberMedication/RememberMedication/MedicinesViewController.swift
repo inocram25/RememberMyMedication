@@ -19,6 +19,8 @@ class MedicinesViewController: UIViewController {
         super.viewDidLoad()
         
         loadMedicines()
+        let notification = NotificationScheduler()
+        notification.scheduleNotificationWithMedications(medicines)
     
         medicinesTableView.emptyDataSetSource = self
         medicinesTableView.emptyDataSetDelegate = self
@@ -29,8 +31,6 @@ class MedicinesViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadMedicines()
-        let notification = NotificationScheduler()
-        notification.scheduleNotificationWithMedications(medicines)
         medicinesTableView.reloadData()
     }
     
@@ -83,6 +83,8 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
             print(medicines[indexPath.row])
             MedicationServices.deleteByName(medicines[indexPath.row].name)
             medicines.removeAtIndex(indexPath.row)
+            
+            NotificationScheduler().scheduleNotificationWithMedications(medicines)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

@@ -45,6 +45,7 @@ class AddMedicineTableViewController: UITableViewController {
     private var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
     private var weekDaySelected: WeekDay?
     private var interval = 0
+    var medicines = [Medication]()
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -77,6 +78,20 @@ class AddMedicineTableViewController: UITableViewController {
         endDatePicker.maximumDate = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: 6, toDate: NSDate(), options: [])
     }
     
+    func loadMedicines() {
+        let medicationCD = MedicationDAO.returnAll()! as [MedicationCD]
+        medicines.removeAll()
+        for m in medicationCD {
+            let medication = Medication(name: m.name, dosage: m.dosage,
+                                        patient: m.patient, interval: m.interval,
+                                        startDate: m.startDate, endDate: m.endDate,
+                                        weekDay: m.weekDay, id: m.id)
+            
+            medicines.append(medication)
+        }
+    }
+
+    
     @IBAction func pickerDate(sender: UIDatePicker) {
         dateLabel.text = sender.date.toString
     }
@@ -97,7 +112,7 @@ class AddMedicineTableViewController: UITableViewController {
         }
         
         guard let startDate = dateLabel.text!.toDate else { return }
-        let endDate = endDateLabel.text?.isEmpty == false ? endDateLabel.text!.toDate : NSDate()
+        let endDate = endDateLabel.text?.isEmpty == false ? endDateLabel.text!.toDate : NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: 1, toDate: NSDate(), options: [])
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""
         let i = interval == 24 ? 0 : interval
@@ -114,7 +129,9 @@ class AddMedicineTableViewController: UITableViewController {
                                     id: NSUUID().UUIDString)
         
         MedicationServices.createDataCD(medication)
-        // Chamar Notificacao
+        
+        loadMedicines()
+        NotificationScheduler().scheduleNotificationWithMedications(medicines)
         navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
 
