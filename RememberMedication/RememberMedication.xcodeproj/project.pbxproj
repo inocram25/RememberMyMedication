@@ -159,7 +159,6 @@
 		9AF137231CD29D0500FD16FF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		9AF137251CD29D0500FD16FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF137271CD29D0500FD16FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RememberMedication.entitlements; path = RememberMedication/RememberMedication.entitlements; sourceTree = "<group>"; };
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
 		D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRow.swift; sourceTree = "<group>"; };
@@ -277,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				7FC9CD941CD7B41F00A87AC0 /* AppDelegate.swift */,
-				9AF137351CD29F7000FD16FF /* RememberMedication.entitlements */,
 				9AF136ED1CD29CE900FD16FF /* Assets.xcassets */,
 				9AF136EF1CD29CE900FD16FF /* LaunchScreen.storyboard */,
 				9AF136F21CD29CE900FD16FF /* Info.plist */,
