@@ -50,7 +50,10 @@ class MedicinesTableViewCell: UITableViewCell {
         print("diferenca = \(diff)")
         progressView?.setProgress(diff, animated: true)
         
-        let remainingDays = totalDays.day - completedDays.day
-        dosageLabel?.text = "Dosagem: \(medication.dosage)mg / \(remainingDays) Restantes"
+        var remainingDays = totalDays.day - completedDays.day
+        if remainingDays < 0 {
+            remainingDays = 0
+        }
+        dosageLabel?.text = "Dosagem: \(medication.dosage)mg / \(remainingDays) Dias restantes"
     }
 }
