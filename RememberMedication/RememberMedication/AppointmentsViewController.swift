@@ -115,13 +115,13 @@ extension AppointmentsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDele
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "")
+        return UIImage(named: "MedicineIcon")
     }
     
-    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
-        return UIColor.cyanColor()
-    }
-    
+//    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+//        return UIColor.cyanColor()
+//    }
+//    
     func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
         return 20.0
     }

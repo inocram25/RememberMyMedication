@@ -74,6 +74,7 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("medicinesCell") as? MedicinesTableViewCell
         cell?.configureCell(medicines[indexPath.row])
+        cell?.selectionStyle = .None
         return cell!
     }
     
@@ -120,13 +121,13 @@ extension MedicinesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
         return NSAttributedString(string: "Para adicionar um favorito clique na estrela da tatuagem", attributes: attributes)
     }
     
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "")
-    }
+//    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+//        return UIImage()
+//    }
     
-    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
-        return UIColor.cyanColor()
-    }
+//    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+//        return UIColor.cyanColor()
+//    }
     
     func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
         return 20.0
