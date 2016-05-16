@@ -22,6 +22,7 @@
 		7FC9CDA51CD7B8EE00A87AC0 /* AppointmentServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9CDA41CD7B8EE00A87AC0 /* AppointmentServices.swift */; };
 		7FD5C30A1CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5C3091CE3C1CA000F3EB0 /* MedicinesDetailsViewController.swift */; };
 		7FF840D51CE2660F009F779C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF840D41CE2660F009F779C /* NotificationScheduler.swift */; };
+		90B976B8A30D64DD0DFCFE5D /* Pods_RememberMedication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAF1F70E8BD1EF2469B0B18 /* Pods_RememberMedication.framework */; };
 		9A04ED631CDAA955002D1785 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED621CDAA955002D1785 /* BorderedView.swift */; };
 		9A04ED651CDAAAEF002D1785 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04ED641CDAAAEF002D1785 /* WeekDay.swift */; };
 		9A2F6E681CD3CE7A006F3133 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F6E671CD3CE7A006F3133 /* CustomTabBarController.swift */; };
@@ -106,6 +107,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F066D02B33A8E55D1502A6A /* Pods-RememberMedication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RememberMedication.release.xcconfig"; path = "Pods/Target Support Files/Pods-RememberMedication/Pods-RememberMedication.release.xcconfig"; sourceTree = "<group>"; };
+		28D93B29B1330617F3DE25E9 /* Pods-RememberMedication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RememberMedication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RememberMedication/Pods-RememberMedication.debug.xcconfig"; sourceTree = "<group>"; };
 		7F42E4951CDBD5B800F06691 /* UIColor+HealthU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HealthU.swift"; sourceTree = "<group>"; };
 		7F4474AA1CDA6BB100BFE6F6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4474AC1CDA6FCD00BFE6F6 /* AddAppointimentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointimentsTableViewController.swift; sourceTree = "<group>"; };
@@ -160,14 +163,23 @@
 		9AF137361CD29F7C00FD16FF /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		CA19474C1CD93AFF001A3F74 /* AddMedicinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicinesTableViewController.swift; sourceTree = "<group>"; };
 		D189C38D1CE7A27D0047EDB5 /* MedicineRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineRow.swift; sourceTree = "<group>"; };
+		DEAF1F70E8BD1EF2469B0B18 /* Pods_RememberMedication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RememberMedication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEDC6551CE82D7900172B16 /* String+toDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1345693B3DBFE7B97D94F920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9AF136DD1CD29CE800FD16FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B976B8A30D64DD0DFCFE5D /* Pods_RememberMedication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +295,8 @@
 				9AF136FA1CD29CE900FD16FF /* RememberMedicationTests */,
 				9AF137091CD29D0500FD16FF /* Watch */,
 				9AF136E11CD29CE800FD16FF /* Products */,
+				FBB69F811010E086287215D0 /* Pods */,
+				D7AC3AF84D9E0537A5EE99F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,6 +369,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D7AC3AF84D9E0537A5EE99F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEAF1F70E8BD1EF2469B0B18 /* Pods_RememberMedication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBB69F811010E086287215D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28D93B29B1330617F3DE25E9 /* Pods-RememberMedication.debug.xcconfig */,
+				0F066D02B33A8E55D1502A6A /* Pods-RememberMedication.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,10 +393,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AF137001CD29CE900FD16FF /* Build configuration list for PBXNativeTarget "RememberMedication" */;
 			buildPhases = (
+				BB4E3DEF53A39B173E338204 /* 📦 Check Pods Manifest.lock */,
 				9AF136DC1CD29CE800FD16FF /* Sources */,
 				9AF136DD1CD29CE800FD16FF /* Frameworks */,
 				9AF136DE1CD29CE800FD16FF /* Resources */,
 				9AF137321CD29D0500FD16FF /* Embed Watch Content */,
+				2C3750742D7D859EE5E4853B /* 📦 Embed Pods Frameworks */,
+				F7439E485C93B5814D50C525 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,6 +435,7 @@
 			buildPhases = (
 				9AF137061CD29D0500FD16FF /* Resources */,
 				9AF1372E1CD29D0500FD16FF /* Embed App Extensions */,
+				1345693B3DBFE7B97D94F920 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -524,6 +559,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3750742D7D859EE5E4853B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RememberMedication/Pods-RememberMedication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB4E3DEF53A39B173E338204 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7439E485C93B5814D50C525 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RememberMedication/Pods-RememberMedication-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9AF136DC1CD29CE800FD16FF /* Sources */ = {
@@ -721,6 +804,7 @@
 		};
 		9AF137011CD29CE900FD16FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D93B29B1330617F3DE25E9 /* Pods-RememberMedication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -733,6 +817,7 @@
 		};
 		9AF137021CD29CE900FD16FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F066D02B33A8E55D1502A6A /* Pods-RememberMedication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
