@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class AppointmentsViewController: UIViewController {
     
@@ -21,9 +22,8 @@ class AppointmentsViewController: UIViewController {
         
         loadAppointments()
         
-        let userDefault =  NSUserDefaults(suiteName: "medicines")
-        let name = userDefault?.valueForKey("medicineName")
-        print(name)
+        appointmentsTableView.emptyDataSetSource = self
+        appointmentsTableView.emptyDataSetDelegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,4 +86,43 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         performSegueWithIdentifier("AppointmentDetail", sender: cell)
     }
     
+}
+
+extension AppointmentsViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        
+        let font = UIFont.boldSystemFontOfSize(18.0)
+        
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blueColor(), NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: "Nenhuma consulta ainda", attributes: attributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        
+        let font = UIFont.systemFontOfSize(18.0)
+        
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.redColor(), NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: "Para adicionar clique no - acima", attributes: attributes)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "MedicineIcon")
+    }
+    
+//    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+//        return UIColor.cyanColor()
+//    }
+//    
+    func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return 20.0
+    }
 }

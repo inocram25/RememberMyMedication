@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class MedicinesViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class MedicinesViewController: UIViewController {
         
         loadMedicines()
     
+        medicinesTableView.emptyDataSetSource = self
+        medicinesTableView.emptyDataSetDelegate = self
         medicinesTableView.backgroundColor = UIColor.healthU_LightGrey()
         medicinesTableView.tableFooterView = UIView()
     }
@@ -71,6 +74,7 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("medicinesCell") as? MedicinesTableViewCell
         cell?.configureCell(medicines[indexPath.row])
+        cell?.selectionStyle = .None
         return cell!
     }
     
@@ -88,5 +92,44 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
         performSegueWithIdentifier("MedicineDetail", sender: cell)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
+    }
+}
+
+extension MedicinesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        
+        let font = UIFont.boldSystemFontOfSize(18.0)
+        
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blueColor(), NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: "Nenhum favorito ainda", attributes: attributes)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        
+        let font = UIFont.systemFontOfSize(18.0)
+        
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.redColor(), NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: "Para adicionar um favorito clique na estrela da tatuagem", attributes: attributes)
+    }
+    
+//    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+//        return UIImage()
+//    }
+    
+//    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+//        return UIColor.cyanColor()
+//    }
+    
+    func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return 20.0
     }
 }

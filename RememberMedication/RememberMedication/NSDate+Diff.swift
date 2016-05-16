@@ -21,7 +21,7 @@ extension NSDate {
         return "\(getComponentForUnit(.Hour))"
     }
     var minute: String {
-        return getComponentForUnit(.Minute) > 10 ? "\(getComponentForUnit(.Minute))" : "0\(getComponentForUnit(.Minute))"
+        return getComponentForUnit(.Minute) >= 10 ? "\(getComponentForUnit(.Minute))" : "0\(getComponentForUnit(.Minute))"
     }
     var day: Int {
         return getComponentForUnit(.Day)

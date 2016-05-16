@@ -45,7 +45,6 @@ class AddMedicineTableViewController: UITableViewController {
     private var weekDay = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
     private var weekDaySelected: WeekDay?
     private var interval = 0
-    private var index = 0
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
@@ -59,9 +58,6 @@ class AddMedicineTableViewController: UITableViewController {
     
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
-    
-    
-    var intervals = [1,2,3,4,6,8,12,24]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,13 +123,7 @@ class AddMedicineTableViewController: UITableViewController {
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {
-        let indexAux = Int(sender.value)
-        //?????????
-        sliderInterval?.setValue(Float(indexAux), animated: false)
-        interval = intervals[indexAux]
-        if index != indexAux {
-            index = indexAux
-        }
+        interval = Int(sender.value)
         intervalTimeLabel.text = "\(interval) horas"
     }
 
