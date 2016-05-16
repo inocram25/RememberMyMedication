@@ -57,6 +57,10 @@ class AddMedicineTableViewController: UITableViewController {
     @IBOutlet weak var sliderInterval: UISlider!
     @IBOutlet weak var intervalTimeLabel: UILabel!
     
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
+    
+    
     var intervals = [1,2,3,4,6,8,12,24]
     
     override func viewDidLoad() {
@@ -70,6 +74,11 @@ class AddMedicineTableViewController: UITableViewController {
         
         weekDayCollectionView.delegate = self
         weekDayCollectionView.dataSource = self
+        
+        //limitando os datepickers
+        startDatePicker.minimumDate = NSDate()
+        endDatePicker.minimumDate = NSDate()
+        endDatePicker.maximumDate = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: 6, toDate: NSDate(), options: [])
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {

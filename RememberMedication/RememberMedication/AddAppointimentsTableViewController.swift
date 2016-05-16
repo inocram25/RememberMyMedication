@@ -25,6 +25,9 @@ class AddAppointimentsTableViewController: UITableViewController {
     @IBOutlet private weak var localTextfield: UITextField!
     @IBOutlet private weak var alarmPickerView: UIPickerView!
     
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    
+    
     private var day = 0, hour = 0, min = 0
     
     //pensar em como configurar o local e o notes
@@ -62,6 +65,10 @@ class AddAppointimentsTableViewController: UITableViewController {
         dateAlarm.append(hours)
         
         alarmLabel.text = ""
+        
+        //limitando a data da consulta
+        startDatePicker.minimumDate = NSDate()
+        
     }
     
     @IBAction func pickerDate(sender: UIDatePicker) {
