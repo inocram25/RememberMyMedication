@@ -755,7 +755,7 @@
                             <outlet property="delegate" destination="bOn-WF-pY3" id="bxq-tq-UtE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Appointiments" id="hGs-fP-c4u">
+                    <navigationItem key="navigationItem" title="Consultas" id="hGs-fP-c4u">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="psh-fC-nPd">
                             <connections>
                                 <segue destination="7c6-g3-eGc" kind="unwind" unwindAction="unwindSegueToAppointmentViewController:" id="c8H-Jo-Jyf"/>
