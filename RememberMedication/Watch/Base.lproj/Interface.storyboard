@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -19,24 +19,24 @@
                                                 <items>
                                                     <group width="1" alignment="left" id="jLS-5V-czo">
                                                         <items>
-                                                            <imageView width="30" height="30" alignment="left" image="MedicineFilledIcon" id="lfu-k4-6tj">
-                                                                <color key="tintColor" red="0.75686281919999998" green="0.7254902124" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
+                                                            <imageView width="18" height="18" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="lfu-k4-6tj">
+                                                                <color key="tintColor" red="0.99215686274509807" green="0.41960784313725491" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                                             </imageView>
-                                                            <label width="1" height="1" alignment="left" text="pintozol" textAlignment="left" id="HD0-tf-K6k">
+                                                            <label width="1" height="1" alignment="left" textAlignment="left" id="HD0-tf-K6k">
                                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                             </label>
                                                         </items>
                                                     </group>
                                                     <group width="1" alignment="left" id="BhO-NM-lwP">
                                                         <items>
-                                                            <label width="1" alignment="left" text="13 de mai de 2016 14:47" textAlignment="center" id="7gJ-Qh-Wji">
-                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            <label width="1" alignment="left" textAlignment="left" id="7gJ-Qh-Wji">
+                                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                             </label>
                                                         </items>
                                                     </group>
                                                     <group width="1" alignment="left" id="QLc-fL-IrS">
                                                         <items>
-                                                            <label width="1" alignment="left" text="João carlos" textAlignment="center" id="24h-Yv-XgU">
+                                                            <label width="1" alignment="left" textAlignment="left" id="24h-Yv-XgU">
                                                                 <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                                             </label>
                                                         </items>
@@ -69,7 +69,7 @@
                     <items>
                         <group alignment="left" spacing="6" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="HealthU" id="vIb-5o-ku0">
+                                <label alignment="center" verticalAlignment="center" text="Medicate" id="vIb-5o-ku0">
                                     <fontDescription key="font" type="system" pointSize="22"/>
                                 </label>
                             </items>
@@ -79,16 +79,16 @@
                             <items>
                                 <group width="1" alignment="left" id="gMe-28-HVq">
                                     <items>
-                                        <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="9D1-LR-Ve6">
+                                        <imageView width="24" height="24" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="9D1-LR-Ve6">
                                             <color key="tintColor" red="0.94117647058823528" green="0.47843137254901963" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <group alignment="left" layout="vertical" id="OKk-eu-6qS">
                                             <items>
-                                                <label alignment="left" text="Label" id="jES-Zh-WtA"/>
+                                                <label alignment="left" id="jES-Zh-WtA"/>
                                                 <group height="17" alignment="left" spacing="8" id="IM9-3Q-1xD">
                                                     <items>
-                                                        <label alignment="left" text="Label" id="HRZ-a6-u6w"/>
-                                                        <label alignment="left" text="Label" id="gzM-nJ-4t3"/>
+                                                        <label alignment="left" id="HRZ-a6-u6w"/>
+                                                        <label alignment="left" id="gzM-nJ-4t3"/>
                                                     </items>
                                                 </group>
                                             </items>
@@ -97,16 +97,16 @@
                                 </group>
                                 <group width="1" alignment="left" id="RcT-CW-bdb">
                                     <items>
-                                        <imageView width="30" height="30" alignment="left" image="MedicineFilledIcon" id="89h-iI-IiE">
+                                        <imageView width="24" height="24" alignment="left" image="MedicineFilledIcon" id="89h-iI-IiE">
                                             <color key="tintColor" red="0.6705882353" green="0.85098039219999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <group width="1" alignment="left" layout="vertical" id="cpA-83-4bv">
                                             <items>
-                                                <label alignment="left" text="Label" id="ZwT-mY-gek"/>
+                                                <label alignment="left" id="ZwT-mY-gek"/>
                                                 <group width="1" alignment="left" spacing="8" id="Gwe-ju-sqj">
                                                     <items>
-                                                        <label alignment="left" text="Label" id="Zyj-RX-qoa"/>
-                                                        <label alignment="left" text="Label" id="xYt-Z0-xWR"/>
+                                                        <label alignment="left" id="Zyj-RX-qoa"/>
+                                                        <label alignment="left" id="xYt-Z0-xWR"/>
                                                     </items>
                                                 </group>
                                             </items>
@@ -134,13 +134,15 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="test" id="XkS-y5-khE"/>
+                        <label alignment="left" text="test" id="XkS-y5-khE">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
                         <color key="titleColor" red="0.94580027472426664" green="0.94713498268942975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sashColor" red="0.76470588235294112" green="0.3908419027670969" blue="0.012833751319711532" alpha="1" colorSpace="calibratedRGB"/>
                     </notificationCategory>
-                    <color key="backgroundColor" red="0.85905448717948718" green="0.56687025297284988" blue="0.0092981190384413669" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="U8n-3G-r6a" kind="relationship" relationship="dynamicNotificationInterface" id="n94-uI-dWa"/>
@@ -154,9 +156,13 @@
             <objects>
                 <controller id="U8n-3G-r6a" customClass="NotificationController" customModule="Watch_Extension">
                     <items>
-                        <label width="136" alignment="left" text="Hora de tomar" textAlignment="center" id="RZp-xF-LcC"/>
-                        <label width="1" height="30" alignment="left" text="Benegripe" textAlignment="center" numberOfLines="0" id="pFq-9x-mxe"/>
-                        <label width="136" alignment="left" text="100 mg" textAlignment="center" id="l4Y-m4-gaE"/>
+                        <label width="136" height="20.5" alignment="left" text="Hora de tomar" textAlignment="left" id="RZp-xF-LcC">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="1" height="18" alignment="left" text="Benegripe" textAlignment="left" numberOfLines="0" id="pFq-9x-mxe"/>
+                        <label width="136" height="18" alignment="left" text="100 mg" textAlignment="left" id="l4Y-m4-gaE">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="dosageLabel" destination="l4Y-m4-gaE" id="joz-dx-jRY"/>
