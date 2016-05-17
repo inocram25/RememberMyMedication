@@ -51,7 +51,7 @@ import UIKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        backgroundColor = UIColor.lightGrayColor()
         borderRadius = Float(self.frame.size.width / 2)
     }
     

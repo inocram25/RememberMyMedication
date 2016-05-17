@@ -205,7 +205,7 @@ extension AddMedicineTableViewController: UICollectionViewDelegate, UICollection
         let identifier = "WeekDayCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as? WeekDayCollectionViewCell
         cell?.configureCell(weekDay[indexPath.row])
-        
+        cell?.backgroundColor = UIColor.lightGrayColor()
         return cell!
     }
     
