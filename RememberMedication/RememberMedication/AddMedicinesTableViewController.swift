@@ -47,18 +47,20 @@ class AddMedicineTableViewController: UITableViewController {
     private var interval = 0
     var medicines = [Medication]()
     
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var pacientTextField: UITextField!
-    @IBOutlet weak var weekDayCollectionView: UICollectionView!
-    @IBOutlet weak var frequencySwitch: UISwitch!
-    @IBOutlet weak var sliderInterval: UISlider!
-    @IBOutlet weak var intervalTimeLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var endDatePicker: UIDatePicker!
+    @IBOutlet weak var frequencySwitch: UISwitch!
+    @IBOutlet weak var weekDayCollectionView: UICollectionView!
+    @IBOutlet weak var intervalTimeLabel: UILabel!
+    @IBOutlet weak var sliderInterval: UISlider!
+    
+    @IBOutlet weak var pacientTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,11 +179,15 @@ class AddMedicineTableViewController: UITableViewController {
             return 70.0
         }
         
-        return 44.0
+        return 50.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 44.0
+        return 30.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0001
     }
     
 }
