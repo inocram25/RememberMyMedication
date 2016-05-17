@@ -24,7 +24,7 @@ enum Month: Int {
     case December
 }
 
-extension Month {
+extension Month: CustomStringConvertible {
     var description: String {
         switch self {
         case .January:

@@ -26,15 +26,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         for i in 0 ..< medicines.count {
             if let row = tableView.rowControllerAtIndex(i) as? MedicineRow {
                 
-//                let day = medicines[i].date.toDate?.day
-//                let month = medicines[i].date.toDate?.month?.description
-//                let hour = medicines[i].date.toDate?.hour
-//                let min = medicines[i].date.toDate?.minute
-//                
-//                let date = "\(day)/\(month) \(hour):\(min)"
+                let day = medicines[i].date.toDate?.day
+                let month = medicines[i].date.toDate?.month?.description
+                let hour = medicines[i].date.toDate?.hour
+                let min = medicines[i].date.toDate?.minute
+                
+                let date = "\(day)/\(month) \(hour):\(min)"
                 
                 row.nameLabel.setText(medicines[i].name)
-                row.timeLabel.setText(medicines[i].date)
+                row.timeLabel.setText(date)
                 row.patientLabel.setText(medicines[i].patient)
             }
         }
