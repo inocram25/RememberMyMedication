@@ -18,9 +18,9 @@ public final class MedicationCD: NSManagedObject {
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
     @NSManaged var id: String
-    @NSManaged var red: Float
-    @NSManaged var green: Float
-    @NSManaged var blue: Float
+    @NSManaged var red: Double
+    @NSManaged var green: Double
+    @NSManaged var blue: Double
     @NSManaged private var primitiveWeekDay: NSNumber
     
     private static let WeekDayKey = "weekDay"

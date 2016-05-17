@@ -126,8 +126,14 @@ class AddMedicineTableViewController: UITableViewController {
         var red = CGFloat()
         let medicineColor = UIColor.randomColor()
         medicineColor.getRed(&red, green: &green, blue: &blue, alpha: nil)
-                
-        let medication = Medication(name: name, dosage: dosage!, patient: pacient!, interval: Int64(i), startDate: startDate, endDate: endDate!, weekDay: days!, id: NSUUID().UUIDString, red: Float(red), green: Float(green), blue: Float(blue))
+        
+        print("red RGB = \(red)")
+        print("red float = \(Float(red))")
+        print("red double = \(Double(red))")
+
+
+        
+        let medication = Medication(name: name, dosage: dosage!, patient: pacient!, interval: Int64(i), startDate: startDate, endDate: endDate!, weekDay: days!, id: NSUUID().UUIDString, red: Double(red), green: Double(green), blue: Double(blue))
         
         MedicationServices.createDataCD(medication)
         

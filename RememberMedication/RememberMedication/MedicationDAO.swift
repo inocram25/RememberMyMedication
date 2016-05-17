@@ -18,7 +18,7 @@ class MedicationDAO{
         
         // assign predicate
         request.predicate = NSPredicate(format: "name == %@", name)
-        
+            
         // perform search
         let results = (try! DatabaseManager.sharedInstance.managedObjectContext?.executeFetchRequest(request)) as! [MedicationCD]
         return results.first

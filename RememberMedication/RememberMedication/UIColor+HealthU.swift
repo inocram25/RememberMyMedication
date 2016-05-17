@@ -20,10 +20,16 @@ extension UIColor {
     
 
     class func randomColor() -> Self {
-        let randomRed:CGFloat = CGFloat(drand48())
-        let randomGreen:CGFloat = CGFloat(drand48())
-        let randomBlue:CGFloat = CGFloat(drand48())
+        let randomRed:CGFloat = CGFloat.random()
+        let randomGreen:CGFloat = CGFloat.random()
+        let randomBlue:CGFloat = CGFloat.random()
         
         return self.init(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    }
+}
+
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
