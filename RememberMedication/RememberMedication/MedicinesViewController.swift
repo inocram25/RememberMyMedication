@@ -81,7 +81,6 @@ extension MedicinesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            print(medicines[indexPath.row])
             MedicationServices.deleteByName(medicines[indexPath.row].name)
             medicines.removeAtIndex(indexPath.row)
             

@@ -126,13 +126,7 @@ class AddMedicineTableViewController: UITableViewController {
         var red = CGFloat()
         let medicineColor = UIColor.randomColor()
         medicineColor.getRed(&red, green: &green, blue: &blue, alpha: nil)
-        
-        print("red RGB = \(red)")
-        print("red float = \(Float(red))")
-        print("red double = \(Double(red))")
 
-
-        
         let medication = Medication(name: name, dosage: dosage!, patient: pacient!, interval: Int64(i), startDate: startDate, endDate: endDate!, weekDay: days!, id: NSUUID().UUIDString, red: Double(red), green: Double(green), blue: Double(blue))
         
         MedicationServices.createDataCD(medication)
@@ -204,7 +198,6 @@ extension AddMedicineTableViewController: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = "WeekDayCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as? WeekDayCollectionViewCell
-        print(weekDay[indexPath.row])
         cell?.configureCell(weekDay[indexPath.row])
         
         return cell!

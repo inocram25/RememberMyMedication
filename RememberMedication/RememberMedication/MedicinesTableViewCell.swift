@@ -36,10 +36,10 @@ class MedicinesTableViewCell: UITableViewCell {
     
     func configureCell(medication: Medication) {
         currentMedication = medication
+        let medicineColor = UIColor(red: CGFloat(medication.red), green: CGFloat(medication.green), blue: CGFloat(medication.blue), alpha: 1)
         
-        borderedView?.backgroundColor = UIColor(red: CGFloat(medication.red), green: CGFloat(medication.green), blue: CGFloat(medication.blue), alpha: 1)
-        
-        progressView?.tintColor = medication.startDate.month?.color
+        borderedView?.backgroundColor = medicineColor
+        progressView?.progressTintColor = medicineColor
         medicineNameLabel?.text = medication.name
         patient?.text = medication.patient
         timeLabel?.text = "\(medication.startDate.hour):\(medication.startDate.minute)"
@@ -48,7 +48,6 @@ class MedicinesTableViewCell: UITableViewCell {
         let totalDays = calendar.components(NSCalendarUnit.Day, fromDate: medication.startDate, toDate: medication.endDate, options: NSCalendarOptions.MatchFirst)
         let completedDays = calendar.components(NSCalendarUnit.Day, fromDate: medication.startDate, toDate: NSDate() , options: NSCalendarOptions.MatchFirst)
         let diff = Float(completedDays.day) / Float (totalDays.day + 1)
-        print("diferenca = \(diff)")
         progressView?.setProgress(diff, animated: true)
         
         var remainingDays = totalDays.day - completedDays.day

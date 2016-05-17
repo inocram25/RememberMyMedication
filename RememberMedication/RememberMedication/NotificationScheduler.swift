@@ -38,7 +38,7 @@ class NotificationScheduler {
         var notifications = [UILocalNotification]()
         for med in result {
             notifications.append(createNotificationWithDate(med))
-            print("Nome = \(med.name)    ----- Data = \(med.startDate)")
+//            print("Nome = \(med.name)    ----- Data = \(med.startDate)")
         }
         
         return notifications
@@ -63,7 +63,6 @@ class NotificationScheduler {
                 break;
             }
             if medication.weekDay.contains(WeekDay(rawValue: Int16(newDate.dayOfWeek!))) {
-                print(newDate)
                 if newDate.isGreaterThanDate(NSDate()) {
                     let m = Medication(name: medication.name, dosage: medication.dosage,
                                        patient: medication.patient, interval: medication.interval,
