@@ -70,6 +70,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCellWithIdentifier("appointmentCell") as? AppointmentsTableViewCell
         
         cell?.configureCell(appointments[indexPath.row])
+        cell?.selectionStyle = .None
         return cell!
     }
     
