@@ -59,25 +59,15 @@ class GlanceController: WKInterfaceController, WCSessionDelegate {
                     self.medicines.append(medicine)
                 }
                 
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-                dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-                let date = dateFormatter.dateFromString(self.medicines[0].date)
-                let seocndDate = dateFormatter.dateFromString(self.medicines[1].date)
-                
-                let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date!)
-                let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: date!)
-                
-                let secondHour = NSCalendar.currentCalendar().component(.Hour, fromDate: seocndDate!)
-                let secondMinute = NSCalendar.currentCalendar().component(.Minute, fromDate: seocndDate!)
-                
-                self.nameLabel.setText(self.medicines[0].name)
-                self.timeLabel.setText("\(hour):\(minute)")
-                self.patientLabel.setText(self.medicines[0].patient)
-                
-                self.secondNameLabel.setText(self.medicines[1].name)
-                self.secondTimeLabel.setText("\(secondHour):\(secondMinute)")
-                self.secondPatientLabel.setText(self.medicines[0].patient)
+                if let date = self.medicines[0].date.toDate {
+                    self.timeLabel.setText("\(date.hour):\(date.minute)")
+                    self.nameLabel.setText(self.medicines[0].name)
+                    self.patientLabel.setText("\(self.medicines[0].dosage)mg")
+                }
+//                
+//                self.secondNameLabel.setText(self.medicines[1].name)
+//                self.secondTimeLabel.setText("\(secondHour):\(secondMinute)")
+//                self.secondPatientLabel.setText(self.medicines[0].patient)
                 
                 }, errorHandler: { error in
                     print(#function,error)

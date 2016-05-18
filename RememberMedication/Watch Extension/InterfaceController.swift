@@ -18,35 +18,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var medicines = [MedicineWatch]()
     var messageDictionary = ["messageType": "medicine"]
     
-    func setupTable() {
-        tableView.setNumberOfRows(medicines.count, withRowType: "medicineRow")
-        
-        print("rows = \(tableView.numberOfRows)")
-        
-        for i in 0 ..< medicines.count {
-            if let row = tableView.rowControllerAtIndex(i) as? MedicineRow {
-                
-                var startDate = ""
-                
-                if let date =  medicines[i].date.toDate, month = date.month {
-                    
-                    let day = date.day
-                    let month = month.description
-                    let hour = date.hour
-                    let min = date.minute
-                    startDate = "\(day)/\(month) \(hour):\(min)"
-                }
-                
-                
-                
-                
-                row.nameLabel.setText(medicines[i].name)
-                row.timeLabel.setText(startDate)
-                row.patientLabel.setText(medicines[i].patient)
-            }
-        }
-    }
-    
     var session: WCSession? {
         didSet {
             if let session = session {
@@ -55,7 +26,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             }
         }
     }
-    
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -91,5 +61,34 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             })
         }
         
+    }
+    
+    
+    func setupTable() {
+        tableView.setNumberOfRows(medicines.count, withRowType: "medicineRow")
+        
+        print("rows = \(tableView.numberOfRows)")
+        
+        for i in 0 ..< medicines.count {
+            if let row = tableView.rowControllerAtIndex(i) as? MedicineRow {
+                
+                var startDate = ""
+                
+                if let date =  medicines[i].date.toDate, month = date.month {
+                    
+                    let day = date.day
+                    let month = month.description
+                    let hour = date.hour
+                    let min = date.minute
+                    startDate = "\(day)/\(month) \(hour):\(min)"
+                }
+                
+                
+                row.medicineIcon.setTintColor(UIColor.whiteColor())
+                row.nameLabel.setText(medicines[i].name)
+                row.timeLabel.setText(startDate)
+                row.patientLabel.setText(medicines[i].patient)
+            }
+        }
     }
 }

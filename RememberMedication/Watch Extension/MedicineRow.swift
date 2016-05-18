@@ -10,7 +10,7 @@ import WatchKit
 
 class MedicineRow: NSObject {
     @IBOutlet var nameLabel: WKInterfaceLabel!
-
+    @IBOutlet var medicineIcon: WKInterfaceImage!
     @IBOutlet var patientLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
 }

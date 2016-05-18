@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -17,28 +17,26 @@
                                         <items>
                                             <group width="1" alignment="left" layout="vertical" id="Ygu-S8-N0d">
                                                 <items>
-                                                    <group width="1" alignment="left" id="jLS-5V-czo">
+                                                    <group width="1" alignment="left" spacing="10" id="jLS-5V-czo">
                                                         <items>
-                                                            <imageView width="18" height="18" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="lfu-k4-6tj">
+                                                            <imageView width="18" height="18" alignment="left" verticalAlignment="center" image="pill-Icon" id="lfu-k4-6tj">
                                                                 <color key="tintColor" red="0.99215686274509807" green="0.41960784313725491" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                                             </imageView>
-                                                            <label width="1" height="1" alignment="left" textAlignment="left" id="HD0-tf-K6k">
-                                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                    <group width="1" alignment="left" id="BhO-NM-lwP">
-                                                        <items>
-                                                            <label width="1" alignment="left" textAlignment="left" id="7gJ-Qh-Wji">
-                                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                    <group width="1" alignment="left" id="QLc-fL-IrS">
-                                                        <items>
-                                                            <label width="1" alignment="left" textAlignment="left" id="24h-Yv-XgU">
-                                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
-                                                            </label>
+                                                            <group width="1" alignment="left" layout="vertical" spacing="1" id="ELr-d4-Xtl">
+                                                                <items>
+                                                                    <label alignment="left" text="Benegripe" id="uKy-qH-uOE">
+                                                                        <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                                                    </label>
+                                                                    <label alignment="left" text="18/MAI 15:56" id="JHT-27-yX0">
+                                                                        <color key="textColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                                        <fontDescription key="font" type="system" pointSize="13"/>
+                                                                    </label>
+                                                                    <label alignment="left" text="Maffei - 100mg" id="2gb-Ke-T0E">
+                                                                        <color key="textColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                                        <fontDescription key="font" type="system" pointSize="13"/>
+                                                                    </label>
+                                                                </items>
+                                                            </group>
                                                         </items>
                                                     </group>
                                                 </items>
@@ -46,9 +44,10 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="nameLabel" destination="HD0-tf-K6k" id="j7c-bf-Twd"/>
-                                        <outlet property="patientLabel" destination="24h-Yv-XgU" id="g4p-Uy-uDy"/>
-                                        <outlet property="timeLabel" destination="7gJ-Qh-Wji" id="sOu-ST-H15"/>
+                                        <outlet property="medicineIcon" destination="lfu-k4-6tj" id="cP4-mG-gWI"/>
+                                        <outlet property="nameLabel" destination="uKy-qH-uOE" id="WG9-un-Z63"/>
+                                        <outlet property="patientLabel" destination="2gb-Ke-T0E" id="X0A-aa-KO6"/>
+                                        <outlet property="timeLabel" destination="JHT-27-yX0" id="toS-9D-bw9"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -67,28 +66,33 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <group alignment="left" spacing="6" id="t8f-Gd-c4y">
+                        <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Medicate" id="vIb-5o-ku0">
-                                    <fontDescription key="font" type="system" pointSize="22"/>
+                                <label alignment="center" verticalAlignment="center" text="Proximos lembretes" textAlignment="left" id="vIb-5o-ku0">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                             </items>
-                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                         <group alignment="left" layout="vertical" spacing="10" id="uCw-4Q-Ouw">
                             <items>
                                 <group width="1" alignment="left" id="gMe-28-HVq">
                                     <items>
-                                        <imageView width="24" height="24" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="9D1-LR-Ve6">
+                                        <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="MedicineFilledIcon" id="9D1-LR-Ve6">
                                             <color key="tintColor" red="0.94117647058823528" green="0.47843137254901963" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <group alignment="left" layout="vertical" id="OKk-eu-6qS">
                                             <items>
-                                                <label alignment="left" id="jES-Zh-WtA"/>
+                                                <label alignment="left" text="Benegripe" id="jES-Zh-WtA">
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                                </label>
                                                 <group height="17" alignment="left" spacing="8" id="IM9-3Q-1xD">
                                                     <items>
-                                                        <label alignment="left" id="HRZ-a6-u6w"/>
-                                                        <label alignment="left" id="gzM-nJ-4t3"/>
+                                                        <label alignment="left" text="09h00" id="HRZ-a6-u6w">
+                                                            <fontDescription key="font" type="system" pointSize="13"/>
+                                                        </label>
+                                                        <label alignment="left" text="100 mg" id="gzM-nJ-4t3">
+                                                            <fontDescription key="font" type="system" pointSize="13"/>
+                                                        </label>
                                                     </items>
                                                 </group>
                                             </items>
@@ -156,11 +160,11 @@
             <objects>
                 <controller id="U8n-3G-r6a" customClass="NotificationController" customModule="Watch_Extension">
                     <items>
-                        <label width="136" height="20.5" alignment="left" text="Hora de tomar" textAlignment="left" id="RZp-xF-LcC">
+                        <label width="136" height="20.5" alignment="left" text="Hora de tomar" textAlignment="center" id="RZp-xF-LcC">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <label width="1" height="18" alignment="left" text="Benegripe" textAlignment="left" numberOfLines="0" id="pFq-9x-mxe"/>
-                        <label width="136" height="18" alignment="left" text="100 mg" textAlignment="left" id="l4Y-m4-gaE">
+                        <label width="1" height="18" alignment="left" text="Benegripe" textAlignment="center" numberOfLines="0" id="pFq-9x-mxe"/>
+                        <label width="136" height="18" alignment="left" text="100 mg" textAlignment="center" id="l4Y-m4-gaE">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
                     </items>
