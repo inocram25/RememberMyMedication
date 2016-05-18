@@ -115,6 +115,9 @@ class AddMedicineTableViewController: UITableViewController {
         }
         
         guard let startDate = dateLabel.text!.toDate else { return }
+        
+        startDate.setSecond
+        
         let endDate = endDateLabel.text?.isEmpty == false ? endDateLabel.text!.toDate : NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: 1, toDate: NSDate(), options: [])
         let dosage = dosageTextField.text?.isEmpty == false ? dosageTextField.text : "0"
         let pacient = pacientTextField.text?.isEmpty == false ? pacientTextField.text : ""

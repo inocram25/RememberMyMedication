@@ -17,6 +17,15 @@ extension NSDate {
         return dateFormatter.stringFromDate(self)
     }
     
+    var setSecond: NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let str = dateFormatter.stringFromDate(self)
+        dateFormatter.dateFromString(str)!
+        
+        return self
+    }
+    
     var hour: String {
         return "\(getComponentForUnit(.Hour))"
     }
